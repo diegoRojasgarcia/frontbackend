@@ -1,0 +1,131 @@
+.container {
+    margin: 5%;
+    margin-top: -0.1%;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headers-align .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+mat-divider {
+    margin-bottom: 15px;
+    width: 75%;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+.card-sub-division~.card-sub-division {
+    margin-top: 15px;
+}
+
+.card-divider {
+    margin-top: -15px;
+}
+
+.spaced-label {
+    margin-right: 5px;
+    /* margin-left: 40px; */
+}
+
+.mat-expansion-panel-body {
+    text-align: center;
+}
+
+section {
+    /* display: block; */
+    margin: 0 auto;
+    text-align: left;
+}
+
+.checkbox-margin {
+    margin-right: 15px !important;
+}
+
+.select-placeholder-container {
+    display: flex;
+    align-items: center;
+}
+
+.select-placeholder-container>span {
+    flex: 1;
+}
+
+.mat-form-field-disabled .mat-form-field-underline {
+    height: 0;
+    background-color: transparent;
+}
+
+.mat-input-element:disabled {
+    color: black;
+}
+
+.block {
+    margin: 0 auto;
+}
+
+.centered-form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#decease-info {
+    align-items: center;
+}
+
+.editor {
+    position: fixed;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media only screen and (max-width:720px) {
+    .headers-align .mat-expansion-panel-header-description {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .headers-align .mat-form-field+.mat-form-field {
+        margin-left: 0;
+    }
+    section>*,
+    table {
+        width: 100%;
+    }
+}

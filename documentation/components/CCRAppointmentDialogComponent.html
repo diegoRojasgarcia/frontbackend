@@ -1,0 +1,1368 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CCRAppointmentDialogComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-ccr-appointment-dialog</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ccr-appointment-dialog.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ccr-appointment-dialog.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#appointmentForm" >appointmentForm</a>
+                            </li>
+                            <li>
+                                <a href="#backdrop" >backdrop</a>
+                            </li>
+                            <li>
+                                <a href="#collapse" >collapse</a>
+                            </li>
+                            <li>
+                                <a href="#currentDate" >currentDate</a>
+                            </li>
+                            <li>
+                                <a href="#dialogTitle" >dialogTitle</a>
+                            </li>
+                            <li>
+                                <a href="#endAppointment" >endAppointment</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpen" >panelOpen</a>
+                            </li>
+                            <li>
+                                <a href="#patientForm" >patientForm</a>
+                            </li>
+                            <li>
+                                <a href="#patients" >patients</a>
+                            </li>
+                            <li>
+                                <a href="#showPatient" >showPatient</a>
+                            </li>
+                            <li>
+                                <a href="#start" >start</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPatient" >addPatient</a>
+                            </li>
+                            <li>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
+                                <a href="#getStatusColor" >getStatusColor</a>
+                            </li>
+                            <li>
+                                <a href="#hidePatientForm" >hidePatientForm</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#removePatient" >removePatient</a>
+                            </li>
+                            <li>
+                                <a href="#save" >save</a>
+                            </li>
+                            <li>
+                                <a href="#showPatientForm" >showPatientForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(diaRef: <a href="../components/CCRAppointmentDialogComponent.html" target="_self">MatDialogRef&lt;CCRAppointmentDialogComponent&gt;</a>, data: <a href="../interfaces/AppointmentData.html" target="_self">AppointmentData</a>, DTService: <a href="../injectables/DateTimeService.html" target="_self">DateTimeService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>diaRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../components/CCRAppointmentDialogComponent.html" target="_self" >MatDialogRef&lt;CCRAppointmentDialogComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppointmentData.html" target="_self" >AppointmentData</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>DTService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DateTimeService.html" target="_self" >DateTimeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPatient"></a>
+                    <span class="name">
+                        <span ><b>addPatient</b></span>
+                        <a href="#addPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPatient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatusColor"></a>
+                    <span class="name">
+                        <span ><b>getStatusColor</b></span>
+                        <a href="#getStatusColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStatusColor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hidePatientForm"></a>
+                    <span class="name">
+                        <span ><b>hidePatientForm</b></span>
+                        <a href="#hidePatientForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hidePatientForm(event: boolean | string)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>boolean | string</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removePatient"></a>
+                    <span class="name">
+                        <span ><b>removePatient</b></span>
+                        <a href="#removePatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removePatient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="save"></a>
+                    <span class="name">
+                        <span ><b>save</b></span>
+                        <a href="#save"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>save()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showPatientForm"></a>
+                    <span class="name">
+                        <span ><b>showPatientForm</b></span>
+                        <a href="#showPatientForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showPatientForm(value: CCREnrollmentPatientSchedule | string)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                            <code>CCREnrollmentPatientSchedule | string</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appointmentForm"></a>
+                    <span class="name">
+                        <span ><b>appointmentForm</b></span>
+                        <a href="#appointmentForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="backdrop"></a>
+                    <span class="name">
+                        <span ><b>backdrop</b></span>
+                        <a href="#backdrop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="collapse"></a>
+                    <span class="name">
+                        <span ><b>collapse</b></span>
+                        <a href="#collapse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentDate"></a>
+                    <span class="name">
+                        <span ><b>currentDate</b></span>
+                        <a href="#currentDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogTitle"></a>
+                    <span class="name">
+                        <span ><b>dialogTitle</b></span>
+                        <a href="#dialogTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endAppointment"></a>
+                    <span class="name">
+                        <span ><b>endAppointment</b></span>
+                        <a href="#endAppointment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpen"></a>
+                    <span class="name">
+                        <span ><b>panelOpen</b></span>
+                        <a href="#panelOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientForm"></a>
+                    <span class="name">
+                        <span ><b>patientForm</b></span>
+                        <a href="#patientForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patients"></a>
+                    <span class="name">
+                        <span ><b>patients</b></span>
+                        <a href="#patients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CCREnrollmentPatientSchedule[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showPatient"></a>
+                    <span class="name">
+                        <span ><b>showPatient</b></span>
+                        <a href="#showPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="start"></a>
+                    <span class="name">
+                        <span ><b>start</b></span>
+                        <a href="#start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/features/scheduling/components/ccr-appointment-dialog/ccr-appointment-dialog.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, style, transition, trigger, AnimationEvent } from &#x27;@angular/animations&#x27;;
+import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup } from &#x27;@angular/forms&#x27;;
+import { MatDialogRef, MAT_DIALOG_DATA } from &#x27;@angular/material/dialog&#x27;;
+import { CCREnrollmentPatientSchedule } from &#x27;src/app/features/colon-rectal/models/patient-schedule&#x27;;
+import { Schedule } from &#x27;src/app/features/scheduling/models/schedule&#x27;;
+import { DateTimeService } from &#x27;src/app/core/services/date-time/date-time.service&#x27;;
+
+
+
+@Component({
+  selector: &#x27;app-ccr-appointment-dialog&#x27;,
+  templateUrl: &#x27;./ccr-appointment-dialog.component.html&#x27;,
+  styleUrls: [&#x27;./ccr-appointment-dialog.component.css&#x27;],
+  animations: [
+    trigger(&#x27;collapseForm&#x27;, [
+      transition(&#x27;:enter&#x27;, [style({ height: 0 }), animate(270)]),
+      transition(&#x27;:leave&#x27;, [animate(270, style({ height: 0 }))]),
+    ]),
+  ],
+})
+
+export class CCRAppointmentDialogComponent implements OnInit {
+
+  dialogTitle: string;
+  patientForm: FormGroup;
+  patients: CCREnrollmentPatientSchedule[] &#x3D; [];
+  appointmentForm: FormGroup;
+
+  //for formatting
+  start: FormControl;
+  endAppointment: FormControl;
+  backdrop: boolean &#x3D; false;
+  currentDate: Date;
+  panelOpen: boolean &#x3D; false;
+  showPatient &#x3D; false;
+  collapse: any;
+  constructor(private diaRef: MatDialogRef&lt;CCRAppointmentDialogComponent&gt;, @Inject(MAT_DIALOG_DATA) data: AppointmentData, private DTService: DateTimeService) {
+
+    // appintment form
+    this.start &#x3D; new FormControl();
+    this.endAppointment &#x3D; new FormControl();
+    this.appointmentForm &#x3D; new FormGroup({
+      idSchedule: new FormControl(),
+      cancer: new FormControl({ value: &quot;Cáncer colorectal&quot;, disabled: true }),
+      title: new FormControl({ value: &quot;enrolamiento&quot;, disabled: true }),
+      patients: new FormControl(this.patients),
+      start: this.start,
+      location: new FormControl(),
+      end: this.endAppointment
+    })
+    this.patientForm &#x3D; new FormGroup({
+      name: new FormControl(),
+      age: new FormControl(),
+      rut: new FormControl(),
+      id_schedule_patient: new FormControl()
+    })
+    this.currentDate &#x3D; data.start;
+    this.dialogTitle &#x3D; data.title ? data.title.toLocaleUpperCase() : &quot;Nueva Cita&quot;;
+
+    if (data.extendedProps) {
+      const extRef &#x3D; data.extendedProps;
+      this.patients &#x3D; Object.assign([{}], extRef.patients);
+
+      // when the patient list is empty, backend return a list with an empty object
+      // this part deals with it
+      const firstRef &#x3D; this.patients.pop()
+      if(firstRef?.id_schedule_patient)
+        this.patients.push(firstRef)
+        
+      this.appointmentForm.setValue({
+        idSchedule: extRef.idSchedule,
+        cancer: extRef.cancer,
+        patients: this.patients,
+        start: DTService.format(data.start),
+        location: extRef.location,
+        end: DTService.format(data.end),
+        title: data.title
+      })
+    }
+    else {
+      this.appointmentForm.get(&quot;end&quot;)?.setValue(DTService.format(DTService.add(this.currentDate, { hours: 1 })));
+      this.appointmentForm.get(&quot;start&quot;)?.setValue(DTService.format(this.currentDate));
+      data.cancer ? this.appointmentForm.get(&quot;cancer&quot;)?.setValue(data.cancer) : this.appointmentForm.get(&quot;cancer&quot;)?.setValue(&quot;Cáncer colorectal&quot;);
+      data.title ? this.appointmentForm.get(&quot;title&quot;)?.setValue(data.title) : this.appointmentForm.get(&quot;title&quot;)?.setValue(&quot;enrolamiento&quot;);
+    }
+  }
+
+  ngOnInit(): void {
+  }
+
+  close(): void {
+    this.diaRef.close();
+  }
+
+  save(): void {
+    this.diaRef.close({
+      data: {
+        idSchedule: this.appointmentForm.get(&#x27;idSchedule&#x27;)?.value,
+        start: this.DTService.parseISO(this.appointmentForm.get(&#x27;start&#x27;)?.value),
+        end: this.DTService.parseISO(this.appointmentForm.get(&#x27;end&#x27;)?.value),
+        title: this.appointmentForm.get(&#x27;title&#x27;)?.value,
+        location: this.appointmentForm.get(&#x27;location&#x27;)?.value,
+        patients: this.patients,
+        cancer: this.appointmentForm.get(&#x27;cancer&#x27;)?.value,
+      }
+    });
+  }
+  showPatientForm(value: CCREnrollmentPatientSchedule | string): void {
+    this.showPatient &#x3D; true;
+    if (value &amp;&amp; typeof value !&#x3D; &quot;string&quot;)
+      this.patientForm.setValue(value);
+
+
+  }
+  hidePatientForm(event: boolean | string): void {
+    if (event) {
+      this.showPatient &#x3D; false;
+      this.patientForm.reset();
+    }
+  }
+
+  addPatient(): void {
+    const idKey &#x3D;&quot;id_schedule_patient&quot;
+    const id &#x3D; this.patientForm.get(idKey)?.value
+    if (!id) {
+      this.patientForm.get(idKey)?.setValue(this.patients.length+1)
+      this.patients.push(this.patientForm.value)
+    }
+    else {
+      this.patients &#x3D; this.patients.map(e &#x3D;&gt; e.id_schedule_patient !&#x3D;&#x3D; id ? e : this.patientForm.value)
+    }
+    this.patientForm.reset()
+    this.showPatient &#x3D; false;
+  }
+
+  removePatient(): void {
+    const idRef &#x3D; this.patientForm.get(&quot;id_schedule_patient&quot;)?.value
+    this.patients &#x3D; this.patients.filter(e &#x3D;&gt; e.id_schedule_patient !&#x3D; idRef)
+    this.patientForm.reset()
+    this.showPatient &#x3D; false;
+  }
+
+  getStatusColor(): string {
+    const l &#x3D; this.patients.length
+    return l &gt; 6 ? &#x27;red&#x27; : l &lt; 6 &amp;&amp; l &gt; 4 ? &#x27;#ffbb2f&#x27; : l &gt; 0 &amp;&amp; l &lt; 5 ? &#x27;green&#x27; : &#x27;black&#x27;;
+  }
+}
+
+interface ExtendedProps extends Schedule {
+  patients: any[],
+  location: string,
+}
+interface AppointmentData {
+  start: Date,
+  end: Date,
+  title?: string,
+  cancer?: string,
+  extendedProps?: ExtendedProps
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h1 mat-dialog-title cdkDrag cdkDragRootElement&#x3D;&quot;.cdk-overlay-pane&quot;&gt;
+    {{dialogTitle}}
+&lt;/h1&gt;
+&lt;div mat-dialog-content [formGroup]&#x3D;&quot;appointmentForm&quot; class&#x3D;&quot;dialog-container&quot;&gt;
+    &lt;p&gt;{{currentDate.toLocaleString()}}&lt;/p&gt;
+    &lt;table class&#x3D;&quot;full-width&quot;&gt;
+        &lt;td&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;datetime-local&quot; placeholder&#x3D;&quot;Inicio&quot; formControlName&#x3D;&quot;start&quot;&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/td&gt;
+        &lt;mat-divider [vertical]&#x3D;&quot;true&quot;&gt;&lt;/mat-divider&gt;
+        &lt;td&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;datetime-local&quot; placeholder&#x3D;&quot;Fin&quot; formControlName&#x3D;&quot;end&quot;&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/td&gt;
+    &lt;/table&gt;
+    &lt;div @collapseForm *ngIf&#x3D;&quot;!panelOpen &amp;&amp; !showPatient&quot;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Cáncer&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;cancer&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Razón&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;title&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Ubicación&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;location&quot;&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;div @collapseForm *ngIf&#x3D;&quot;panelOpen &amp;&amp; showPatient&quot; [formGroup]&#x3D;&quot;patientForm&quot; (@collapseForm.done)&#x3D;&quot;hidePatientForm($event.toState)&quot;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;RUT&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;rut&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Nombre Completo&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;name&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Edad&lt;/mat-label&gt;
+            &lt;input matInput type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;age&quot;&gt;
+        &lt;/mat-form-field&gt;
+
+    &lt;/div&gt;
+
+    &lt;mat-accordion @collapseForm *ngIf&#x3D;&quot;!showPatient&quot; class&#x3D;&quot;patient-list-panel&quot;&gt;
+        &lt;mat-expansion-panel [(expanded)]&#x3D;&quot;panelOpen&quot;&gt;
+            &lt;mat-expansion-panel-header&gt;
+                &lt;mat-panel-title&gt;
+                    Grupo
+                &lt;/mat-panel-title&gt;
+                &lt;mat-panel-description [ngStyle]&#x3D;&quot;{color:getStatusColor()}&quot;&gt;
+                    ({{patients.length}})
+                &lt;/mat-panel-description&gt;
+            &lt;/mat-expansion-panel-header&gt;
+            &lt;mat-selection-list #patientList [multiple]&#x3D;&quot;false&quot; (selectionChange)&#x3D;&quot;showPatientForm(patientList.selectedOptions.selected[0]?.value)&quot;&gt;
+                &lt;mat-list-option *ngFor&#x3D;&quot;let patient of patients&quot; [value]&#x3D;&quot;patient&quot;&gt;
+                    &lt;mat-icon mat-list-icon color&#x3D;&quot;primary&quot;&gt;edit&lt;/mat-icon&gt;
+                    &lt;mat-icon mat-list-icon color&#x3D;&quot;primary&quot;&gt;delete&lt;/mat-icon&gt;
+                    &lt;div mat-line&gt;{{patient.name}}&lt;/div&gt;
+                    &lt;div mat-line&gt;RUT:{{patient.rut}}&lt;/div&gt;
+                &lt;/mat-list-option&gt;
+                &lt;mat-list-option&gt;
+                    &lt;mat-icon mat-list-icon color&#x3D;&quot;primary&quot;&gt;person_add&lt;/mat-icon&gt;
+                    &lt;div&gt;
+                        Agregar Paciente
+                    &lt;/div&gt;
+                &lt;/mat-list-option&gt;
+            &lt;/mat-selection-list&gt;
+        &lt;/mat-expansion-panel&gt;
+    &lt;/mat-accordion&gt;
+    &lt;br&gt;
+&lt;/div&gt;
+&lt;div mat-dialog-actions *ngIf&#x3D;&quot;!showPatient&quot;&gt;
+    &lt;button mat-button (click)&#x3D;&quot;close()&quot;&gt;Cancelar&lt;/button&gt;
+    &lt;button mat-raised-button (click)&#x3D;&quot;save()&quot; color&#x3D;&quot;primary&quot;&gt;Guardar&lt;/button&gt;
+&lt;/div&gt;
+&lt;div mat-dialog-actions *ngIf&#x3D;&quot;panelOpen &amp;&amp; showPatient&quot;&gt;
+    &lt;button mat-button (click)&#x3D;&quot;hidePatientForm(true)&quot;&gt;Cancelar&lt;/button&gt;
+    &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;addPatient()&quot;&gt;{{patientForm.get(&#x27;id_schedule_patient&#x27;)?.value? &#x27;Modificar&#x27;:&#x27;Agregar&#x27;}}&lt;/button&gt;
+    &lt;button mat-raised-button *ngIf&#x3D;&quot;patientForm.get(&#x27;id_schedule_patient&#x27;)?.value&quot; color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;removePatient()&quot;&gt;Eliminar&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./ccr-appointment-dialog.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.dialog-header {
+    border: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: move;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dialog-header:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+mat-form-field,
+.full-width {
+    width: 100%;
+}
+
+.after-panel {
+    margin-top: 20px;
+}
+
+.patient-list-panel::ng-deep mat-expansion-panel&gt;.mat-expansion-panel-content {
+    max-height: 230px;
+    overflow: auto;
+}
+
+
+/* .mat-expansion-panel-body {
+    padding-bottom: 10px !important;
+} */</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h1 mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">    {{dialogTitle}}</h1><div mat-dialog-content [formGroup]="appointmentForm" class="dialog-container">    <p>{{currentDate.toLocaleString()}}</p>    <table class="full-width">        <td>            <mat-form-field>                <input matInput type="datetime-local" placeholder="Inicio" formControlName="start">            </mat-form-field>        </td>        <mat-divider [vertical]="true"></mat-divider>        <td>            <mat-form-field>                <input matInput type="datetime-local" placeholder="Fin" formControlName="end">            </mat-form-field>        </td>    </table>    <div @collapseForm *ngIf="!panelOpen && !showPatient">        <mat-form-field appearance="fill">            <mat-label>Cáncer</mat-label>            <input matInput formControlName="cancer">        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label>Razón</mat-label>            <input matInput formControlName="title">        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label>Ubicación</mat-label>            <input matInput formControlName="location">        </mat-form-field>    </div>    <div @collapseForm *ngIf="panelOpen && showPatient" [formGroup]="patientForm" (@collapseForm.done)="hidePatientForm($event.toState)">        <mat-form-field appearance="fill">            <mat-label>RUT</mat-label>            <input matInput formControlName="rut">        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label>Nombre Completo</mat-label>            <input matInput formControlName="name">        </mat-form-field>        <mat-form-field appearance="fill">            <mat-label>Edad</mat-label>            <input matInput type="number" formControlName="age">        </mat-form-field>    </div>    <mat-accordion @collapseForm *ngIf="!showPatient" class="patient-list-panel">        <mat-expansion-panel [(expanded)]="panelOpen">            <mat-expansion-panel-header>                <mat-panel-title>                    Grupo                </mat-panel-title>                <mat-panel-description [ngStyle]="{color:getStatusColor()}">                    ({{patients.length}})                </mat-panel-description>            </mat-expansion-panel-header>            <mat-selection-list #patientList [multiple]="false" (selectionChange)="showPatientForm(patientList.selectedOptions.selected[0]?.value)">                <mat-list-option *ngFor="let patient of patients" [value]="patient">                    <mat-icon mat-list-icon color="primary">edit</mat-icon>                    <mat-icon mat-list-icon color="primary">delete</mat-icon>                    <div mat-line>{{patient.name}}</div>                    <div mat-line>RUT:{{patient.rut}}</div>                </mat-list-option>                <mat-list-option>                    <mat-icon mat-list-icon color="primary">person_add</mat-icon>                    <div>                        Agregar Paciente                    </div>                </mat-list-option>            </mat-selection-list>        </mat-expansion-panel>    </mat-accordion>    <br></div><div mat-dialog-actions *ngIf="!showPatient">    <button mat-button (click)="close()">Cancelar</button>    <button mat-raised-button (click)="save()" color="primary">Guardar</button></div><div mat-dialog-actions *ngIf="panelOpen && showPatient">    <button mat-button (click)="hidePatientForm(true)">Cancelar</button>    <button mat-raised-button color="primary" (click)="addPatient()">{{patientForm.get(\'id_schedule_patient\')?.value? \'Modificar\':\'Agregar\'}}</button>    <button mat-raised-button *ngIf="patientForm.get(\'id_schedule_patient\')?.value" color="warn" (click)="removePatient()">Eliminar</button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CBPMainComponent', 'selector': 'app-cbp-main'},{'name': 'CBPPatientComponent', 'selector': 'app-cbp-patient'},{'name': 'CBPPatientListComponent', 'selector': 'app-cbp-patient-list'},{'name': 'CBPTrackingComponent', 'selector': 'app-cbp-tracking'},{'name': 'CCRAppointmentDialogComponent', 'selector': 'app-ccr-appointment-dialog'},{'name': 'CCRMainComponent', 'selector': 'app-colon-rectal-tabs'},{'name': 'CCRPatientComponent', 'selector': 'app-ccr-patient'},{'name': 'CCRPatientListComponent', 'selector': 'app-ccr-patient-list'},{'name': 'ColonRectalSummaryComponent', 'selector': 'app-ccr-summary'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoggedInLayoutComponent', 'selector': 'app-logged-in-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PatientProfileComponent', 'selector': 'app-patient-profile'},{'name': 'PatientRegisterComponent', 'selector': 'app-patient-register'},{'name': 'SchedulerComponent', 'selector': 'app-scheduler'},{'name': 'TitleComponent', 'selector': 'app-title'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [{'name': 'PermissionDirective', 'selector': '[appPermission]'},{'name': 'SpecialityDirective', 'selector': '[appSpeciality]'}];
+    var ACTUAL_COMPONENT = {'name': 'CCRAppointmentDialogComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CCRAppointmentDialogComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

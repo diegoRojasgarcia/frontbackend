@@ -1,0 +1,85 @@
+<div class="container">
+    <app-title [pageTitle]="'USUARIOS'"></app-title>
+
+    <mat-toolbar class="action-toolbar">
+        <!-- Search function -->
+        <mat-form-field appearance="fill">
+            <mat-label>Buscar en usuarios</mat-label>
+            <input matInput type="text" [(ngModel)]="value" (keyup)="search()">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetSearch()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="spacer"></div>
+        <button mat-fab color="primary" aria-label="Add user button" class="add-btn" (click)="addUser()">
+            <mat-icon>person_add</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <br>
+    <div class="menu-container">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- RUT Column -->
+                <ng-container matColumnDef="rut">
+                    <th mat-header-cell *matHeaderCellDef> RUT </th>
+                    <td mat-cell *matCellDef="let user"> {{user.rut}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                    <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+                </ng-container>
+
+                <!-- Member Column -->
+                <ng-container matColumnDef="foundation">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fundación </th>
+                    <td mat-cell *matCellDef="let user">
+                        <mat-icon *ngIf="user.foundation">check</mat-icon>
+                    </td>
+                </ng-container>
+
+                <!-- Profession Column -->
+                <ng-container matColumnDef="profession">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Profesión </th>
+                    <td mat-cell *matCellDef="let user"> {{searchProfession(user.profession)}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="edit">
+                    <th mat-header-cell *matHeaderCellDef> Editar </th>
+
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button color="primary" (click)="editUser(row)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef> Bloquear Acceso </th>
+
+                    <td mat-cell *matCellDef="let row">
+                        <span [ngSwitch]="row.access">
+                            <button *ngSwitchCase="true" mat-icon-button color="primary" (click)="updateUserAccess(row)"><mat-icon>lock_open</mat-icon> </button>
+                            <button *ngSwitchCase="false" mat-icon-button color="primary"(click)="updateUserAccess(row)"><mat-icon>lock</mat-icon></button>
+                            <mat-spinner *ngSwitchDefault diameter="20"></mat-spinner>
+                        </span>
+                    </td>
+                </ng-container>
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">{{ NO_TABLE_DATA }}</td>
+                </tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" class="center-header"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label=" Seleccione alguna página.">
+            </mat-paginator>
+        </div>
+    </div>
+    <br>
+    <mat-divider></mat-divider>
+</div>

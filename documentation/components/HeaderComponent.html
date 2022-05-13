@@ -1,0 +1,1019 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/core/components/header/header.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#navStyle" >navStyle</a>
+                            </li>
+                            <li>
+                                <a href="#sidenav" >sidenav</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#closeSidenav" >closeSidenav</a>
+                            </li>
+                            <li>
+                                <a href="#logOut" >logOut</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#openSidenav" >openSidenav</a>
+                            </li>
+                            <li>
+                                <a href="#seeUserProfile" >seeUserProfile</a>
+                            </li>
+                            <li>
+                                <a href="#toCBP" >toCBP</a>
+                            </li>
+                            <li>
+                                <a href="#toCCR" >toCCR</a>
+                            </li>
+                            <li>
+                                <a href="#toHome" >toHome</a>
+                            </li>
+                            <li>
+                                <a href="#toUsersAdministration" >toUsersAdministration</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, profileDialog: MatDialog, authService: <a href="../injectables/AuthenticationService.html" target="_self">AuthenticationService</a>, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/core/components/header/header.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>profileDialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeSidenav"></a>
+                    <span class="name">
+                        <span ><b>closeSidenav</b></span>
+                        <a href="#closeSidenav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeSidenav()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <span ><b>logOut</b></span>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSidenav"></a>
+                    <span class="name">
+                        <span ><b>openSidenav</b></span>
+                        <a href="#openSidenav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openSidenav()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seeUserProfile"></a>
+                    <span class="name">
+                        <span ><b>seeUserProfile</b></span>
+                        <a href="#seeUserProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seeUserProfile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toCBP"></a>
+                    <span class="name">
+                        <span ><b>toCBP</b></span>
+                        <a href="#toCBP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toCBP()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toCCR"></a>
+                    <span class="name">
+                        <span ><b>toCCR</b></span>
+                        <a href="#toCCR"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toCCR()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toHome"></a>
+                    <span class="name">
+                        <span ><b>toHome</b></span>
+                        <a href="#toHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toHome()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toUsersAdministration"></a>
+                    <span class="name">
+                        <span ><b>toUsersAdministration</b></span>
+                        <a href="#toUsersAdministration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toUsersAdministration()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/core/components/header/header.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navStyle"></a>
+                    <span class="name">
+                        <span ><b>navStyle</b></span>
+                        <a href="#navStyle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;sidenav-container&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/core/components/header/header.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sidenav"></a>
+                    <span class="name">
+                        <span ><b>sidenav</b></span>
+                        <a href="#sidenav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDrawer</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;sidenav&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/components/header/header.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, AfterViewInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatDialog, MatDialogConfig } from &#x27;@angular/material/dialog&#x27;;
+import { MatDrawer } from &#x27;@angular/material/sidenav&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { UsersService } from &#x27;src/app/features/users-management/services/users/users.service&#x27;;
+import { EditUserComponent } from &#x27;src/app/shared/components/edit-user/edit-user.component&#x27;;
+import { AuthenticationService } from &#x27;../../services/authentication/authentication.service&#x27;;
+
+@Component({
+  selector: &#x27;app-header&#x27;,
+  templateUrl: &#x27;./header.component.html&#x27;,
+  styleUrls: [&#x27;./header.component.css&#x27;]
+})
+export class HeaderComponent implements AfterViewInit {
+  @ViewChild(&#x27;sidenav&#x27;)
+  sidenav!: MatDrawer;
+
+  navStyle &#x3D; &#x27;sidenav-container&#x27;;
+
+  constructor(private router: Router, private profileDialog: MatDialog, private authService: AuthenticationService, private usersService: UsersService) { }
+
+  ngAfterViewInit(): void {
+  }
+
+  openSidenav(): void {
+    this.navStyle &#x3D; &#x27;sidenav-container-opened&#x27;;
+    this.sidenav.open()
+  }
+
+  closeSidenav(): void {
+    this.sidenav.close()
+    this.navStyle &#x3D; &#x27;sidenav-container&#x27;;
+  }
+
+  toUsersAdministration(): void {
+    this.router.navigate([&quot;users&quot;]);
+    this.closeSidenav();
+  }
+  toHome(): void {
+    this.router.navigate([&quot;/&quot;]);
+    this.closeSidenav();
+  }
+
+  toCBP(): void {
+    this.router.navigate([&quot;bronchopulmonary&quot;]);
+    this.closeSidenav();
+  }
+
+  toCCR(): void {
+    this.router.navigate([&quot;colon-rectal&quot;]);
+    this.closeSidenav();
+  }
+
+  seeUserProfile(): void {
+    const dialogConfig &#x3D; new MatDialogConfig();
+    let data;
+    if (this.authService.isLoggedIn())
+      this.usersService.getUser(this.authService.getUserId()).subscribe((res) &#x3D;&gt; {
+        data &#x3D; res.data;
+        dialogConfig.disableClose &#x3D; true;
+        dialogConfig.autoFocus &#x3D; true;
+        dialogConfig.data &#x3D; {
+          title: &quot;Perfil de Usuario&quot;,
+          user: data[0]
+        }
+        this.profileDialog.open(EditUserComponent, dialogConfig);
+
+      });
+  }
+  logOut(): void {
+    this.authService.logout();
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar color&#x3D;&quot;primary&quot; class&#x3D;&quot;sticky-main-header&quot;&gt;
+
+    &lt;button mat-icon-button class&#x3D;&quot;icon&quot; (click)&#x3D;&quot;openSidenav()&quot; aria-label&#x3D;&quot;Side menu.&quot;&gt;
+        &lt;mat-icon&gt;menu&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;!-- &lt;span&gt;PRECOS&lt;/span&gt; --&gt;
+    &lt;button mat-icon-button class&#x3D;&quot;logo-btn&quot; (click)&#x3D;&quot;toHome()&quot;&gt;
+        &lt;img mat-card-image class&#x3D;&quot;logo-img&quot; src&#x3D;&quot;assets/images/completo.png&quot; alt&#x3D;&quot;logo&quot; (click)&#x3D;&quot;toHome()&quot;&gt;
+    &lt;/button&gt;
+    &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
+    &lt;a href&#x3D;&quot;login&quot; (click)&#x3D;&quot;logOut()&quot;&gt;Cerrar Sesión&lt;/a&gt;
+&lt;/mat-toolbar&gt;
+
+&lt;mat-drawer-container [ngClass]&#x3D;&quot;[navStyle]&quot; (backdropClick)&#x3D;&quot;closeSidenav()&quot;&gt;
+    &lt;mat-drawer #sidenav class&#x3D;&quot;sidenav&quot; mode&#x3D;&quot;over&quot;&gt;
+        &lt;img class&#x3D;&quot;menu-logo&quot; mat-card-image src&#x3D;&quot;assets/images/manos.png&quot; alt&#x3D;&quot;logo&quot;&gt;
+        &lt;div class&#x3D;&quot;menu-title&quot;&gt;MENU&lt;/div&gt;
+        &lt;button mat-icon-button (click)&#x3D;&quot;closeSidenav()&quot;&gt;&lt;mat-icon&gt;close&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;mat-action-list&gt;
+            &lt;button mat-list-item class&#x3D;&quot;menu-btn&quot; (click)&#x3D;&quot;toHome()&quot;&gt;&lt;mat-icon class&#x3D;&quot;menu-option-icon&quot; &gt;home&lt;/mat-icon&gt; HOME &lt;/button&gt;
+            &lt;button mat-list-item class&#x3D;&quot;menu-btn&quot; (click)&#x3D;&quot;seeUserProfile()&quot;&gt;&lt;mat-icon class&#x3D;&quot;menu-option-icon&quot;&gt;perm_identity&lt;/mat-icon&gt; PERFIL &lt;/button&gt;
+            &lt;button mat-list-item class&#x3D;&quot;menu-btn&quot; (click)&#x3D;&quot;toUsersAdministration()&quot;&gt;&lt;mat-icon class&#x3D;&quot;menu-option-icon&quot;&gt;manage_accounts &lt;/mat-icon&gt; ADMINISTRACIÓN &lt;/button&gt;
+            &lt;mat-divider&gt;&lt;/mat-divider&gt;
+            &lt;div mat-subheader class&#x3D;&quot;menu-btn&quot;&gt;Menú Cáncer&lt;/div&gt;
+            &lt;button mat-list-item class&#x3D;&quot;menu-btn&quot; (click)&#x3D;&quot;toCBP()&quot;&gt;&lt;mat-icon class&#x3D;&quot;menu-option-icon&quot; &gt;home&lt;/mat-icon&gt; BRONCOPULMONAR &lt;/button&gt;
+            &lt;button mat-list-item class&#x3D;&quot;menu-btn&quot; (click)&#x3D;&quot;toCCR()&quot;&gt;&lt;mat-icon class&#x3D;&quot;menu-option-icon&quot; &gt;home&lt;/mat-icon&gt; COLORRECTAL &lt;/button&gt;
+        &lt;/mat-action-list&gt;
+    &lt;/mat-drawer&gt;
+
+&lt;/mat-drawer-container&gt;
+
+&lt;!-- &lt;br&gt; --&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./header.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.spacer {
+    flex: 1 1 auto;
+}
+
+.icon {
+    padding: 0 9px;
+}
+
+.logo-btn {
+    display: flex;
+    width: 105px;
+    height: auto;
+}
+
+.logo-img {
+    width: 100%;
+    margin: 0;
+}
+
+.menu-logo {
+    max-width: 150px;
+    width: 100%;
+}
+
+a {
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+    color: white;
+}
+
+.sidenav-container {
+    top: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    background-color: transparent;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.sidenav-container-opened {
+    top: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav {
+    margin-top: 0;
+    padding-top: 30px;
+    width: 30vw;
+    min-width: 230px;
+    max-width: 400px;
+    background-color: #673ab7;
+    color: white;
+    text-align: center;
+}
+
+.menu-title {
+    margin: 15px;
+    text-align: center;
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+    font-size: 40px;
+}
+
+.menu-btn {
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+    color: white;
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+    font-size: 2vmax;
+}
+
+.menu-option-icon {
+    margin-right: 8%;
+    font-size: 2vmax;
+}
+
+.sticky-main-header {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
+
+.mat-divider {
+    width: 60%;
+    margin-top: 5px;
+    border-top-color: white;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary" class="sticky-main-header">    <button mat-icon-button class="icon" (click)="openSidenav()" aria-label="Side menu.">        <mat-icon>menu</mat-icon>    </button>    <!-- <span>PRECOS</span> -->    <button mat-icon-button class="logo-btn" (click)="toHome()">        <img mat-card-image class="logo-img" src="assets/images/completo.png" alt="logo" (click)="toHome()">    </button>    <div class="spacer"></div>    <a href="login" (click)="logOut()">Cerrar Sesión</a></mat-toolbar><mat-drawer-container [ngClass]="[navStyle]" (backdropClick)="closeSidenav()">    <mat-drawer #sidenav class="sidenav" mode="over">        <img class="menu-logo" mat-card-image src="assets/images/manos.png" alt="logo">        <div class="menu-title">MENU</div>        <button mat-icon-button (click)="closeSidenav()"><mat-icon>close</mat-icon></button>        <mat-action-list>            <button mat-list-item class="menu-btn" (click)="toHome()"><mat-icon class="menu-option-icon" >home</mat-icon> HOME </button>            <button mat-list-item class="menu-btn" (click)="seeUserProfile()"><mat-icon class="menu-option-icon">perm_identity</mat-icon> PERFIL </button>            <button mat-list-item class="menu-btn" (click)="toUsersAdministration()"><mat-icon class="menu-option-icon">manage_accounts </mat-icon> ADMINISTRACIÓN </button>            <mat-divider></mat-divider>            <div mat-subheader class="menu-btn">Menú Cáncer</div>            <button mat-list-item class="menu-btn" (click)="toCBP()"><mat-icon class="menu-option-icon" >home</mat-icon> BRONCOPULMONAR </button>            <button mat-list-item class="menu-btn" (click)="toCCR()"><mat-icon class="menu-option-icon" >home</mat-icon> COLORRECTAL </button>        </mat-action-list>    </mat-drawer></mat-drawer-container><!-- <br> --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CBPMainComponent', 'selector': 'app-cbp-main'},{'name': 'CBPPatientComponent', 'selector': 'app-cbp-patient'},{'name': 'CBPPatientListComponent', 'selector': 'app-cbp-patient-list'},{'name': 'CBPTrackingComponent', 'selector': 'app-cbp-tracking'},{'name': 'CCRAppointmentDialogComponent', 'selector': 'app-ccr-appointment-dialog'},{'name': 'CCRMainComponent', 'selector': 'app-colon-rectal-tabs'},{'name': 'CCRPatientComponent', 'selector': 'app-ccr-patient'},{'name': 'CCRPatientListComponent', 'selector': 'app-ccr-patient-list'},{'name': 'ColonRectalSummaryComponent', 'selector': 'app-ccr-summary'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoggedInLayoutComponent', 'selector': 'app-logged-in-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PatientProfileComponent', 'selector': 'app-patient-profile'},{'name': 'PatientRegisterComponent', 'selector': 'app-patient-register'},{'name': 'SchedulerComponent', 'selector': 'app-scheduler'},{'name': 'TitleComponent', 'selector': 'app-title'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [{'name': 'PermissionDirective', 'selector': '[appPermission]'},{'name': 'SpecialityDirective', 'selector': '[appSpeciality]'}];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

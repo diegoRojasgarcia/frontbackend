@@ -1,0 +1,16 @@
+.container,
+p,
+.mat-dialog-title {
+    justify-content: center;
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

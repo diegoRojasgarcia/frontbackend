@@ -1,0 +1,78 @@
+<h2 mat-dialog-title>{{title}} <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button></h2>
+<div>
+    <mat-dialog-content>
+        <form [formGroup]="userForm">
+            <p>
+                <mat-form-field appearance="fill" (change)="formatRut()">
+                    <mat-label>RUT (*)</mat-label>
+                    <input matInput formControlName="rut">
+                    <mat-error *ngIf="rutControl.hasError('invalidRut') && !rutControl.hasError('required')">Ingrese RUT válido</mat-error>
+                    <mat-error *ngIf="rutControl.hasError('required')">Campo requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre Completo (*)</mat-label>
+                    <input matInput placeholder="Ej: Juan Pérez Gómez" formControlName="name">
+                    <mat-error *ngIf="false">Campo requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-checkbox *ngIf="userForm.get('idUser')?.value" [checked]="changePassword" (change)="changePassword=$event.checked">Cambiar Contraseña</mat-checkbox>
+                <mat-form-field *ngIf="changePassword" appearance="fill">
+                    <mat-label>Nueva Contraseña (*)</mat-label>
+                    <input [type]="hide ? 'password' : 'text'" matInput [formControl]="password">
+                    <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="password.hasError('required')">Contraseña inválida</mat-error>
+                </mat-form-field>
+            </p>
+            <section *appPermission="[PERMISSIONS.ADMIN]; feature: FEATURES.USER_MANAGEMENT">
+                <p>
+                    <mat-checkbox formControlName="foundation">Miembro de la Fundación</mat-checkbox>
+                </p>
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Profesión (*)</mat-label>
+                        <mat-select formControlName="profession">
+                            <mat-option *ngFor="let profession of professions" [value]="profession.idProfession">
+                                {{profession.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="fill" *ngIf="!userForm.get('foundation')?.value&&userForm.get('profession')?.value==2">
+                        <mat-label>Especialización (*)</mat-label>
+                        <mat-select formControlName="idSpeciality">
+                            <mat-option *ngFor="let specialization of specializations" [value]="specialization.idSpeciality">
+                                {{specialization.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="!userForm.valid"></mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Privilegio (*)</mat-label>
+                        <mat-select formControlName="privilege">
+                            <mat-option *ngFor="let privilege of privileges" [value]="privilege.idPrivilege">
+                                {{privilege.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="!userForm.valid"></mat-error>
+                    </mat-form-field>
+                </p>
+            </section>
+            <br>
+            <p>(*) Campo requerido.</p>
+            <mat-error *ngIf="!userForm.valid && userForm.touched">Información inválida. Por favor revise los datos nuevamente.</mat-error>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions class="container">
+        <button class="mat-raised-button mat-primary" (click)="closeEdit()">Guardar</button>
+    </mat-dialog-actions>
+</div>

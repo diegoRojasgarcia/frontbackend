@@ -1,0 +1,2271 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  PatientRegisterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/patient/components/patient-register/patient-register.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-patient-register</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./patient-register.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./patient-register.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#communes" >communes</a>
+                            </li>
+                            <li>
+                                <a href="#communesLoading" >communesLoading</a>
+                            </li>
+                            <li>
+                                <a href="#enrollmentSurvey" >enrollmentSurvey</a>
+                            </li>
+                            <li>
+                                <a href="#final" >final</a>
+                            </li>
+                            <li>
+                                <a href="#hint" >hint</a>
+                            </li>
+                            <li>
+                                <a href="#isEditable" >isEditable</a>
+                            </li>
+                            <li>
+                                <a href="#isLoaded" >isLoaded</a>
+                            </li>
+                            <li>
+                                <a href="#isReady" >isReady</a>
+                            </li>
+                            <li>
+                                <a href="#patientData" >patientData</a>
+                            </li>
+                            <li>
+                                <a href="#patientId" >patientId</a>
+                            </li>
+                            <li>
+                                <a href="#patientRUT" >patientRUT</a>
+                            </li>
+                            <li>
+                                <a href="#phonePattern" >phonePattern</a>
+                            </li>
+                            <li>
+                                <a href="#regions" >regions</a>
+                            </li>
+                            <li>
+                                <a href="#resTime" >resTime</a>
+                            </li>
+                            <li>
+                                <a href="#showOptionalRegion" >showOptionalRegion</a>
+                            </li>
+                            <li>
+                                <a href="#stepper" >stepper</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#checkOptionalRegion" >checkOptionalRegion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkPatientInCancer" >checkPatientInCancer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#disableForm" >disableForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#enableForm" >enableForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCommunes" >getCommunes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lookupPatient" >lookupPatient</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#resetSteps" >resetSteps</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setPatientData" >setPatientData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submitEnrollment" >submitEnrollment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submitPatient" >submitPatient</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ageRange" >ageRange</a>
+                            </li>
+                            <li>
+                                <a href="#cancer" >cancer</a>
+                            </li>
+                            <li>
+                                <a href="#cancerKey" >cancerKey</a>
+                            </li>
+                            <li>
+                                <a href="#survey" >survey</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openProfile" >openProfile</a>
+                            </li>
+                            <li>
+                                <a href="#patientSubmit" >patientSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#surveySubmit" >surveySubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(patientService: <a href="../injectables/PatientService.html" target="_self">PatientService</a>, admin: <a href="../injectables/AdministrativeService.html" target="_self">AdministrativeService</a>, confirmDialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>patientService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PatientService.html" target="_self" >PatientService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>admin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AdministrativeService.html" target="_self" >AdministrativeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmDialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ageRange"></a>
+                        <b>ageRange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancer"></a>
+                        <b>cancer</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:25</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancerKey"></a>
+                        <b>cancerKey</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="survey"></a>
+                        <b>survey</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ScreeningSurveyQuestion.html" target="_self" >ScreeningSurveyQuestion[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openProfile"></a>
+                        <b>openProfile</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="patientSubmit"></a>
+                        <b>patientSubmit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Patient.html" target="_self" >EventEmitter&lt;Patient&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="surveySubmit"></a>
+                        <b>surveySubmit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkOptionalRegion"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>checkOptionalRegion</b></span>
+                        <a href="#checkOptionalRegion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkOptionalRegion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:166</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkPatientInCancer"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>checkPatientInCancer</b></span>
+                        <a href="#checkPatientInCancer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkPatientInCancer(data: <a href="../interfaces/CancerCheck.html" target="_self">CancerCheck</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:230</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CancerCheck.html" target="_self" >CancerCheck</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableForm"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>disableForm</b></span>
+                        <a href="#disableForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disableForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableForm"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>enableForm</b></span>
+                        <a href="#enableForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enableForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCommunes"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getCommunes</b></span>
+                        <a href="#getCommunes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCommunes()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lookupPatient"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>lookupPatient</b></span>
+                        <a href="#lookupPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>lookupPatient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetSteps"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>resetSteps</b></span>
+                        <a href="#resetSteps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetSteps()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="175"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:175</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPatientData"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>setPatientData</b></span>
+                        <a href="#setPatientData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPatientData(patient: <a href="../interfaces/Patient.html" target="_self">Patient</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:203</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>patient</td>
+                                    <td>
+                                                <code><a href="../interfaces/Patient.html" target="_self" >Patient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitEnrollment"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>submitEnrollment</b></span>
+                        <a href="#submitEnrollment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>submitEnrollment()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitPatient"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>submitPatient</b></span>
+                        <a href="#submitPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>submitPatient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="communes"></a>
+                    <span class="name">
+                        <span ><b>communes</b></span>
+                        <a href="#communes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Region.html" target="_self" >Region[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="communesLoading"></a>
+                    <span class="name">
+                        <span ><b>communesLoading</b></span>
+                        <a href="#communesLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enrollmentSurvey"></a>
+                    <span class="name">
+                        <span ><b>enrollmentSurvey</b></span>
+                        <a href="#enrollmentSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="final"></a>
+                    <span class="name">
+                        <span ><b>final</b></span>
+                        <a href="#final"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | undefined</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;Esperando respuesta del servidor...&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hint"></a>
+                    <span class="name">
+                        <span ><b>hint</b></span>
+                        <a href="#hint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;Verifique si existen datos antes de empezar&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEditable"></a>
+                    <span class="name">
+                        <span ><b>isEditable</b></span>
+                        <a href="#isEditable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoaded"></a>
+                    <span class="name">
+                        <span ><b>isLoaded</b></span>
+                        <a href="#isLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isReady"></a>
+                    <span class="name">
+                        <span ><b>isReady</b></span>
+                        <a href="#isReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientData"></a>
+                    <span class="name">
+                        <span ><b>patientData</b></span>
+                        <a href="#patientData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientId"></a>
+                    <span class="name">
+                        <span ><b>patientId</b></span>
+                        <a href="#patientId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientRUT"></a>
+                    <span class="name">
+                        <span ><b>patientRUT</b></span>
+                        <a href="#patientRUT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="phonePattern"></a>
+                    <span class="name">
+                        <span ><b>phonePattern</b></span>
+                        <a href="#phonePattern"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>AppConstants.phoneNumberPattern</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="regions"></a>
+                    <span class="name">
+                        <span ><b>regions</b></span>
+                        <a href="#regions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Region.html" target="_self" >Region[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resTime"></a>
+                    <span class="name">
+                        <span ><b>resTime</b></span>
+                        <a href="#resTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showOptionalRegion"></a>
+                    <span class="name">
+                        <span ><b>showOptionalRegion</b></span>
+                        <a href="#showOptionalRegion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stepper"></a>
+                    <span class="name">
+                        <span ><b>stepper</b></span>
+                        <a href="#stepper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatStepper</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatStepper)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/features/patient/components/patient-register/patient-register.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup } from &#x27;@angular/forms&#x27;;
+import { MatDialog, MatDialogConfig } from &#x27;@angular/material/dialog&#x27;;
+import { MatStepper } from &#x27;@angular/material/stepper&#x27;;
+import { AppConstants } from &#x27;src/app/core/constants/app.constants&#x27;;
+import { CancerCheck, Patient } from &#x27;src/app/features/patient/models/patient&#x27;;
+import { Region } from &#x27;src/app/core/models/region&#x27;;
+import { ScreeningSurveyQuestion } from &#x27;src/app/core/models/ScreeningSurveyQuestion&#x27;;
+import { AdministrativeService } from &#x27;src/app/core/services/administrative/administrative.service&#x27;;
+import { PatientService } from &#x27;src/app/features/patient/services/patient.service&#x27;;
+import { ConfirmDialogComponent } from &#x27;../../../../shared/components/confirm-dialog/confirm-dialog.component&#x27;;
+import { PatientProfileComponent } from &#x27;../patient-profile/patient-profile.component&#x27;;
+
+@Component({
+  selector: &#x27;app-patient-register&#x27;,
+  templateUrl: &#x27;./patient-register.component.html&#x27;,
+  styleUrls: [&#x27;./patient-register.component.css&#x27;]
+})
+
+export class PatientRegisterComponent implements OnInit, OnChanges {
+
+  @ViewChild(MatStepper) stepper!: MatStepper;
+  // patient
+  @Input() ageRange: string &#x3D; &quot;&quot;
+  @Input() cancer: string &#x3D; &quot;&quot;;
+  @Input() cancerKey: string &#x3D; &quot;&quot;
+  @Output() patientSubmit: EventEmitter&lt;Patient&gt; &#x3D; new EventEmitter&lt;Patient&gt;();
+
+  // survey
+  @Input() survey: ScreeningSurveyQuestion[] &#x3D; [];
+  @Output() surveySubmit: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+
+  // patient profile
+  @Output() openProfile: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
+
+  isReady: boolean &#x3D; false;
+
+  patientId!: number;
+  isEditable: boolean &#x3D; true;
+  isLoaded: boolean &#x3D; false;
+  communesLoading: boolean &#x3D; false;
+  showOptionalRegion: boolean &#x3D; false;
+
+  hint: string &#x3D; &quot;Verifique si existen datos antes de empezar&quot;
+  final: string | undefined &#x3D; &quot;Esperando respuesta del servidor...&quot;
+  patientData: FormGroup;
+  patientRUT: FormControl;
+  resTime: FormControl;
+  enrollmentSurvey: FormGroup;
+
+  regions: Region[] &#x3D; [];
+  communes: Region[] &#x3D; [];
+  phonePattern: string &#x3D; AppConstants.phoneNumberPattern
+
+  constructor(private patientService: PatientService, private admin: AdministrativeService, private confirmDialog: MatDialog) {
+    this.patientRUT &#x3D; new FormControl();
+    this.resTime &#x3D; new FormControl();
+    this.patientData &#x3D; new FormGroup({
+      name: new FormControl(),
+      lastName: new FormControl(),
+      lastName2: new FormControl(),
+      nationality: new FormControl({ disabled: !this.isEditable }),
+      rut: this.patientRUT,
+      birthday: new FormControl(),
+      maritalState: new FormControl({ disabled: !this.isEditable }),
+      sex: new FormControl(),
+      region: new FormControl({ disabled: !this.isEditable }),
+      commune: new FormControl({ disabled: !this.isEditable }),
+      address: new FormControl(),
+      village: new FormControl(),
+      residenceTime: new FormControl(),
+      previousRegion: new FormControl({ disabled: !this.isEditable }),//check the actual name later
+      cesfam: new FormControl({ disabled: !this.isEditable }),
+      medicalFacility: new FormControl({ disabled: !this.isEditable }),
+      cellphone: new FormControl(),
+      emergencyPhone: new FormControl(),
+      mail: new FormControl(),
+      landline: new FormControl(),
+      fonasa: new FormControl({ disabled: !this.isEditable }),
+      volunteerAgreement: new FormControl(),
+    })
+    this.enrollmentSurvey &#x3D; new FormGroup({})
+
+
+  }
+  ngOnChanges(): void {
+    if (this.survey) {
+      for (let question of this.survey)
+        this.enrollmentSurvey.addControl(question.name, new FormControl())
+      this.isReady &#x3D; true;
+    }
+  }
+
+  ngOnInit() {
+    this.admin.getRegions().subscribe(res &#x3D;&gt; {
+      this.regions &#x3D; res.data;
+      this.isLoaded &#x3D; true;
+    })
+
+  }
+
+  public lookupPatient() {
+    const rut &#x3D; this.patientRUT.value;
+    this.isLoaded &#x3D; false;
+    this.patientService.getPatientCancerByRUT(rut).subscribe(res &#x3D;&gt; {
+      const patientCancer &#x3D; res.data[0];
+      console.log(res);
+      this.isLoaded &#x3D; true;
+      if (patientCancer &amp;&amp; this.checkPatientInCancer(patientCancer)) {
+        this.patientId &#x3D; patientCancer.idPatient
+
+        const dialogConfig &#x3D; new MatDialogConfig();
+        dialogConfig.hasBackdrop &#x3D; true;
+        dialogConfig.disableClose &#x3D; true;
+        dialogConfig.maxWidth &#x3D; &#x27;400px&#x27;;
+        dialogConfig.data &#x3D; {
+          title: &quot;Paciente ya registrado&quot;,
+          action: &quot;Ir al perfil&quot;,
+          msg: &quot;El paciente ya se encuentra registrado en la sección &quot; + this.cancer + &quot; de la plataforma.\n&quot; +
+            &quot;Si desea modificar/agregar datos, por favor dirigirse al perfil del paciente.&quot;
+        }
+        const diaRef &#x3D; this.confirmDialog.open(ConfirmDialogComponent, dialogConfig);
+        diaRef.afterClosed().subscribe(res &#x3D;&gt; {
+          if (res.response)
+            this.openProfile.emit(this.patientId)
+          else
+            this.resetSteps();
+        })
+      }
+      else if (patientCancer) {
+        this.patientId &#x3D; patientCancer.idPatient
+
+        this.patientService.getPatient(this.patientId).subscribe(res &#x3D;&gt; {
+          this.isEditable &#x3D; false;
+          this.disableForm();
+          const patient &#x3D; res.data[0];
+          this.setPatientData(patient);
+        })
+      }
+    })
+  }
+  public submitPatient(): void {
+    if (this.isEditable) {
+      this.patientSubmit.emit(this.patientData.value);
+    }
+    else
+      this.stepper.next()
+  }
+
+  public submitEnrollment(): void {
+    this.enrollmentSurvey.addControl(&quot;idPatient&quot;, new FormControl(this.patientId))
+    this.surveySubmit.emit(this.enrollmentSurvey.value);
+  }
+
+  //utilities
+
+  public getCommunes(): void {
+    this.communesLoading &#x3D; true;
+    this.communes &#x3D; [];
+    this.admin.getCommuneByRegion(this.patientData.get(&#x27;region&#x27;)?.value).subscribe(res &#x3D;&gt; {
+      this.communes &#x3D; res.data;
+      this.communesLoading &#x3D; false;
+    })
+  }
+
+  public checkOptionalRegion(): void {
+    if (!this.patientData.get(&quot;residenceTime&quot;)?.value)
+      this.showOptionalRegion &#x3D; true;
+    else {
+      this.showOptionalRegion &#x3D; false
+      this.patientData.get(&quot;previousRegion&quot;)?.reset();
+    }
+  }
+
+  public resetSteps(): void {
+    this.patientData.reset();
+    this.stepper.reset();
+    this.enableForm();
+    this.isEditable &#x3D; true;
+  }
+
+  //private utilities
+  private disableForm(): void {
+    this.patientData.get(&quot;nationality&quot;)?.disable();
+    this.patientData.get(&quot;region&quot;)?.disable();
+    this.patientData.get(&quot;commune&quot;)?.disable();
+    this.patientData.get(&quot;casfam&quot;)?.disable();
+    this.patientData.get(&quot;medicalFacility&quot;)?.disable();
+    this.patientData.get(&quot;maritalState&quot;)?.disable();
+    this.patientData.get(&quot;fonasa&quot;)?.disable();
+    this.patientData.get(&quot;region2&quot;)?.disable();
+  }
+  private enableForm(): void {
+    this.patientData.get(&quot;nationality&quot;)?.enable();
+    this.patientData.get(&quot;region&quot;)?.enable();
+    this.patientData.get(&quot;commune&quot;)?.enable();
+    this.patientData.get(&quot;casfam&quot;)?.enable();
+    this.patientData.get(&quot;medicalFacility&quot;)?.enable();
+    this.patientData.get(&quot;maritalState&quot;)?.enable();
+    this.patientData.get(&quot;fonasa&quot;)?.enable();
+    this.patientData.get(&quot;region2&quot;)?.enable();
+  }
+  private setPatientData(patient: Patient): void {
+    this.patientData.setValue({
+      name: patient.name,
+      lastName: patient.lastName,
+      lastName2: patient.lastName2,
+      nationality: patient.nationality,
+      rut: patient.rut,
+      birthday: patient.birthday,
+      maritalState: patient.maritalState,
+      sex: patient.sex,
+      region: patient.region,
+      commune: patient.commune,
+      address: patient.adress,
+      village: patient.village,
+      residenceTime: patient.residenceTime,
+      previousRegion: patient.previousRegion,
+      cesfam: patient.cesfam,
+      medicalFacility: patient.medicalFacility,
+      cellphone: patient.cellphone,
+      emergencyPhone: patient.emergencyPhone,
+      mail: patient.mail,
+      landline: patient.landline,
+      fonasa: patient.fonasa,
+      volunteerAgreement: patient.volunteerAgreement,
+    })
+  }
+
+  private checkPatientInCancer(data: CancerCheck):boolean{
+    console.log(Object.entries(data))
+    return Object.entries(data).some(e &#x3D;&gt; e[0]&#x3D;&#x3D;this.cancerKey &amp;&amp; e[1]!&#x3D;null)
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-title [pageTitle]&#x3D;&quot;&#x27;Nuevo Paciente&#x27;&quot;&gt;&lt;/app-title&gt;
+&lt;div class&#x3D;&quot;stepper-container&quot;&gt;
+    &lt;mat-stepper linear #stepper&gt;
+        &lt;mat-step [stepControl]&#x3D;&quot;patientData&quot; [editable]&#x3D;&quot;false&quot;&gt;
+            &lt;mat-spinner *ngIf&#x3D;&quot;!isLoaded&quot;&gt;&lt;/mat-spinner&gt;
+            &lt;div *ngIf&#x3D;&quot;!isEditable&quot;&gt;
+                &lt;span class&#x3D;&quot;warn-text&quot;&gt;El paciente ya se encuentra en nuestros registros. Por favor,
+                    &lt;strong&gt;PROCEDA AL SIGUIENTE PASO&lt;/strong&gt; si desea agregar datos en la sección {{cancer}} de la plataforma. Si desea modificar datos,
+                    diríjase al perfil del paciente en el cáncer correspondiente.&lt;/span&gt;
+                &lt;br&gt;
+                &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;resetSteps()&quot;&gt;Intentar con otro paciente&lt;/button&gt;
+                &lt;button mat-raised-button class&#x3D;&quot;next-btn&quot; color&#x3D;&quot;primary&quot; matStepperNext&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;fieldset *ngIf&#x3D;&quot;isLoaded&quot; [formGroup]&#x3D;&quot;patientData&quot; class&#x3D;&quot;step-form&quot; [disabled]&#x3D;&quot;!isEditable&quot;&gt;
+                &lt;ng-template matStepLabel&gt;Datos personales&lt;/ng-template&gt;
+                &lt;h4&gt;Generales&lt;/h4&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;table cellspacing&#x3D;&quot;0&quot;&gt;
+
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Nombres&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Ingrese ambos nombres&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Apellido paterno&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;Primer apellido&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Apellido materno&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;lastName2&quot; placeholder&#x3D;&quot;Segundo apellido&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;table&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Nacionalidad&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;nationality&quot;&gt;
+                                &lt;mat-option value&#x3D;&quot;option1&quot;&gt;Option 1&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option2&quot; disabled&gt;Option 2 (disabled)&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option3&quot;&gt;Option 3&lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;RUT&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;rut&quot; placeholder&#x3D;&quot;RUT/DNI&quot; (change)&#x3D;&quot;lookupPatient()&quot; autofocus required&gt;
+                            &lt;mat-hint&gt;{{hint}}&lt;/mat-hint&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Fecha de nacimiento&lt;/mat-label&gt;
+                            &lt;input matInput [matDatepicker]&#x3D;&quot;birthday&quot; formControlName&#x3D;&quot;birthday&quot;&gt;
+                            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;birthday&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                            &lt;mat-datepicker #birthday&gt;&lt;/mat-datepicker&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;table cellspacing&#x3D;&quot;0&quot;&gt;
+
+
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Estado Civil&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;maritalState&quot;&gt;
+                                &lt;mat-option value&#x3D;&quot;option1&quot;&gt;Casado/a&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option2&quot;&gt;Soltero/a&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option3&quot;&gt;Divorciado/a&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option4&quot;&gt;Viudo/a&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option4&quot;&gt;Conviviente&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option4&quot;&gt;Civil&lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;h4&gt;Sexo&lt;/h4&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;table&gt;
+                    &lt;td&gt;
+                        &lt;mat-radio-group aria-label&#x3D;&quot;Seleccione una opción&quot; formControlName&#x3D;&quot;sex&quot;&gt;
+                            &lt;mat-radio-button value&#x3D;&quot;M&quot;&gt;Masculino
+                            &lt;/mat-radio-button&gt;
+                            &lt;mat-radio-button value&#x3D;&quot;F&quot;&gt;Femenino&lt;/mat-radio-button&gt;
+                        &lt;/mat-radio-group&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;br&gt;
+                &lt;h4&gt;Dirección&lt;/h4&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;table cellspacing&#x3D;&quot;0&quot;&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field *ngIf&#x3D;&quot;isLoaded&quot; appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Región&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;region&quot; (selectionChange)&#x3D;&quot;getCommunes()&quot;&gt;
+                                &lt;mat-option *ngFor&#x3D;&quot;let region of regions&quot; [value]&#x3D;&quot;region.codigo&quot;&gt;{{region.nombre}}
+                                &lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label *ngIf&#x3D;&quot;!communesLoading&quot;&gt;Comuna&lt;/mat-label&gt;
+                            &lt;mat-label *ngIf&#x3D;&quot;communesLoading&quot;&gt;
+                                &lt;span class&#x3D;&quot;select-placeholder-container&quot;&gt;Cargando...
+                                    &lt;mat-spinner diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+                                &lt;/span&gt;
+                            &lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;commune&quot;&gt;
+                                &lt;mat-option *ngIf&#x3D;&quot;!communes.length &amp;&amp; !communesLoading&quot; disabled&gt;Primero, seleccione una región.&lt;/mat-option&gt;
+                                &lt;mat-option *ngFor&#x3D;&quot;let commune of communes&quot; [value]&#x3D;&quot;commune.codigo&quot;&gt;{{commune.nombre}}
+                                &lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Dirección&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;address&quot; placeholder&#x3D;&quot;Dirección #num&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;section&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Villa/población&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;village&quot; placeholder&#x3D;&quot;Nombre villa/población&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td class&#x3D;&quot;radio-cell&quot;&gt;
+                        &lt;div class&#x3D;&quot;radio-selector&quot;&gt;
+                            &lt;mat-label&gt;Tiempo de residencia en la región&lt;/mat-label&gt; &lt;br&gt;
+                            &lt;mat-radio-group aria-label&#x3D;&quot;Seleccione una opción&quot; formControlName&#x3D;&quot;residenceTime&quot; (change)&#x3D;&quot;checkOptionalRegion()&quot;&gt;
+                                &lt;mat-radio-button [value]&#x3D;&quot;false&quot;&gt;Menos de 5 años
+                                &lt;/mat-radio-button&gt;
+                                &lt;mat-radio-button [value]&#x3D;&quot;true&quot;&gt;Más de 5 años&lt;/mat-radio-button&gt;
+                            &lt;/mat-radio-group&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field *ngIf&#x3D;&quot;isLoaded &amp;&amp; showOptionalRegion&quot; appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Indique la región anterior.&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;previousRegion&quot;&gt;
+                                &lt;mat-option *ngFor&#x3D;&quot;let region of regions&quot; [value]&#x3D;&quot;region.codigo&quot;&gt;{{region.nombre}}
+                                &lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+
+                    &lt;/td&gt;
+                &lt;/section&gt;
+                &lt;section cellspacing&#x3D;&quot;0&quot;&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Cesfam&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;cesfam&quot;&gt;
+                                &lt;mat-option value&#x3D;&quot;option1&quot;&gt;Option 1&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option2&quot; disabled&gt;Option 2 (disabled)&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option3&quot;&gt;Option 3&lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Centro&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;medicalFacility&quot;&gt;
+                                &lt;mat-option value&#x3D;&quot;option1&quot;&gt;Option 1&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option2&quot; disabled&gt;Option 2 (disabled)&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;option3&quot;&gt;Option 3&lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+
+                &lt;/section&gt;
+                &lt;h4&gt;Contacto&lt;/h4&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;table cellspacing&#x3D;&quot;0&quot;&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Celular&lt;/mat-label&gt;
+                            &lt;input matInput type&#x3D;&quot;tel&quot; formControlName&#x3D;&quot;cellphone&quot; placeholder&#x3D;&quot;(9) 1234 5678&quot;&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Teléfono de emergencia&lt;/mat-label&gt;
+                            &lt;input matInput type&#x3D;&quot;tel&quot; formControlName&#x3D;&quot;emergencyPhone&quot; placeholder&#x3D;&quot;(9) 1234 5678&quot;&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Correo&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;mail&quot; placeholder&#x3D;&quot;ejemplo@dominio.com&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;table&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;Número fijo&lt;/mat-label&gt;
+                            &lt;input matInput formControlName&#x3D;&quot;landline&quot; placeholder&#x3D;&quot;Fijo&quot; type&#x3D;&quot;tel&quot; required&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+                &lt;/table&gt;
+                &lt;h4&gt;Otros&lt;/h4&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;table&gt;
+                    &lt;td&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                            &lt;mat-label&gt;FONASA&lt;/mat-label&gt;
+                            &lt;mat-select formControlName&#x3D;&quot;fonasa&quot;&gt;
+                                &lt;mat-option value&#x3D;&quot;A&quot;&gt;Tipo A&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;B&quot;&gt;Tipo B&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;C&quot;&gt;Tipo C&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;D&quot;&gt;Tipo D&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;PRAIS&quot;&gt;Prais&lt;/mat-option&gt;
+                                &lt;mat-option value&#x3D;&quot;NN&quot;&gt;No Afiliado&lt;/mat-option&gt;
+                            &lt;/mat-select&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/td&gt;
+
+                &lt;/table&gt;
+                &lt;br&gt;
+                &lt;br&gt;
+                &lt;table&gt;
+                    &lt;section&gt;
+                        &lt;mat-checkbox required&gt;El paciente tiene entre {{ageRange}} años&lt;/mat-checkbox&gt;&lt;br&gt;
+                        &lt;mat-checkbox required&gt;El paciente está de acuerdo en que se usen sus datos personales solo con fines de estudios médicos.&lt;/mat-checkbox&gt;&lt;br&gt;
+                        &lt;mat-checkbox formControlName&#x3D;&quot;volunteerAgreement&quot; required&gt;El paciente firmó el acuerdo de participación voluntaria en el programa colorrectal de la Fundación Vivir sin Cáncer.
+                        &lt;/mat-checkbox&gt;
+                    &lt;/section&gt;
+                &lt;/table&gt;
+                &lt;div&gt;
+                    &lt;button mat-raised-button class&#x3D;&quot;next-btn&quot; color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;submitPatient()&quot;&gt;Siguiente&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+        &lt;/mat-step&gt;
+
+        &lt;!-- initial records --&gt;
+        &lt;mat-step [stepControl]&#x3D;&quot;enrollmentSurvey&quot; [editable]&#x3D;&quot;false&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;enrollmentSurvey&quot;&gt;
+                &lt;ng-template matStepLabel&gt;Encuesta Screening&lt;/ng-template&gt;
+
+                &lt;!-- displat questions by type --&gt;
+                &lt;section *ngIf&#x3D;&quot;isReady&quot;&gt;
+                    &lt;h4&gt;Marque los campos que apliquen:&lt;/h4&gt;
+                    &lt;p *ngFor&#x3D;&quot;let question of survey&quot;&gt;
+                        &lt;mat-checkbox *ngIf&#x3D;&quot;question.type&#x3D;&#x3D;&#x27;boolean&#x27;&quot; ([ngModel])&#x3D;&quot;true&quot; formControlName&#x3D;&quot;{{question.name}}&quot;&gt;{{question.msg}}&lt;/mat-checkbox&gt;
+                    &lt;/p&gt;
+                &lt;/section&gt;
+                &lt;br&gt;
+                &lt;br&gt;
+                &lt;div&gt;
+                    &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;resetSteps()&quot;&gt;Cancelar y volver&lt;/button&gt;
+                    &lt;button mat-raised-button class&#x3D;&quot;next-btn&quot; color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;submitEnrollment()&quot;&gt;Siguiente&lt;/button&gt;&lt;br&gt;
+                    &lt;mat-hint&gt;Los datos previamente guardados se mantendrán&lt;/mat-hint&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/mat-step&gt;
+        &lt;mat-step [editable]&#x3D;&quot;false&quot;&gt;
+            &lt;ng-template matStepLabel&gt;Resultados&lt;/ng-template&gt;
+            &lt;p&gt;{{final}}&lt;/p&gt;
+            &lt;div&gt;
+                &lt;button mat-raised-button class&#x3D;&quot;next-btn&quot; color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;resetSteps()&quot;&gt;Terminar y volver
+                    al inicio&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/mat-step&gt;
+    &lt;/mat-stepper&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./patient-register.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.stepper-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 3%;
+    justify-content: center;
+}
+
+h1 {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 3vw;
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+}
+
+td {
+    padding-right: 8px;
+}
+
+table,
+section {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.step-form {
+    justify-content: center;
+    min-width: 150px;
+    max-width: auto;
+    width: 100%;
+}
+
+mat-divider {
+    margin-top: -1%;
+    margin-bottom: 3%;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+.next-btn {
+    float: right;
+}
+
+mat-radio-button~mat-radio-button {
+    margin-left: 15px;
+}
+
+fieldset {
+    border: none;
+}
+
+.warn-text {
+    color: red;
+}
+
+.select-placeholder-container {
+    display: flex;
+    /* align-items: center; */
+}
+
+.select-placeholder-container&gt;span {
+    flex: 1;
+}
+
+section&gt;*:not(:last-child) {
+    padding-right: 34px;
+}
+
+.radio-selector {
+    padding-right: 30px;
+}
+
+td&gt;* {
+    vertical-align: text-top;
+}
+
+mat-spinner {
+    margin: 0 auto;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-title [pageTitle]="\'Nuevo Paciente\'"></app-title><div class="stepper-container">    <mat-stepper linear #stepper>        <mat-step [stepControl]="patientData" [editable]="false">            <mat-spinner *ngIf="!isLoaded"></mat-spinner>            <div *ngIf="!isEditable">                <span class="warn-text">El paciente ya se encuentra en nuestros registros. Por favor,                    <strong>PROCEDA AL SIGUIENTE PASO</strong> si desea agregar datos en la sección {{cancer}} de la plataforma. Si desea modificar datos,                    diríjase al perfil del paciente en el cáncer correspondiente.</span>                <br>                <button mat-raised-button color="primary" (click)="resetSteps()">Intentar con otro paciente</button>                <button mat-raised-button class="next-btn" color="primary" matStepperNext>Siguiente</button>            </div>            <fieldset *ngIf="isLoaded" [formGroup]="patientData" class="step-form" [disabled]="!isEditable">                <ng-template matStepLabel>Datos personales</ng-template>                <h4>Generales</h4>                <mat-divider></mat-divider>                <table cellspacing="0">                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Nombres</mat-label>                            <input matInput formControlName="name" placeholder="Ingrese ambos nombres" required>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Apellido paterno</mat-label>                            <input matInput formControlName="lastName" placeholder="Primer apellido" required>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Apellido materno</mat-label>                            <input matInput formControlName="lastName2" placeholder="Segundo apellido" required>                        </mat-form-field>                    </td>                </table>                <table>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Nacionalidad</mat-label>                            <mat-select formControlName="nationality">                                <mat-option value="option1">Option 1</mat-option>                                <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>                                <mat-option value="option3">Option 3</mat-option>                            </mat-select>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>RUT</mat-label>                            <input matInput formControlName="rut" placeholder="RUT/DNI" (change)="lookupPatient()" autofocus required>                            <mat-hint>{{hint}}</mat-hint>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Fecha de nacimiento</mat-label>                            <input matInput [matDatepicker]="birthday" formControlName="birthday">                            <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>                            <mat-datepicker #birthday></mat-datepicker>                        </mat-form-field>                    </td>                </table>                <table cellspacing="0">                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Estado Civil</mat-label>                            <mat-select formControlName="maritalState">                                <mat-option value="option1">Casado/a</mat-option>                                <mat-option value="option2">Soltero/a</mat-option>                                <mat-option value="option3">Divorciado/a</mat-option>                                <mat-option value="option4">Viudo/a</mat-option>                                <mat-option value="option4">Conviviente</mat-option>                                <mat-option value="option4">Civil</mat-option>                            </mat-select>                        </mat-form-field>                    </td>                </table>                <h4>Sexo</h4>                <mat-divider></mat-divider>                <table>                    <td>                        <mat-radio-group aria-label="Seleccione una opción" formControlName="sex">                            <mat-radio-button value="M">Masculino                            </mat-radio-button>                            <mat-radio-button value="F">Femenino</mat-radio-button>                        </mat-radio-group>                    </td>                </table>                <br>                <h4>Dirección</h4>                <mat-divider></mat-divider>                <table cellspacing="0">                    <td>                        <mat-form-field *ngIf="isLoaded" appearance="fill">                            <mat-label>Región</mat-label>                            <mat-select formControlName="region" (selectionChange)="getCommunes()">                                <mat-option *ngFor="let region of regions" [value]="region.codigo">{{region.nombre}}                                </mat-option>                            </mat-select>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label *ngIf="!communesLoading">Comuna</mat-label>                            <mat-label *ngIf="communesLoading">                                <span class="select-placeholder-container">Cargando...                                    <mat-spinner diameter="20"></mat-spinner>                                </span>                            </mat-label>                            <mat-select formControlName="commune">                                <mat-option *ngIf="!communes.length && !communesLoading" disabled>Primero, seleccione una región.</mat-option>                                <mat-option *ngFor="let commune of communes" [value]="commune.codigo">{{commune.nombre}}                                </mat-option>                            </mat-select>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Dirección</mat-label>                            <input matInput formControlName="address" placeholder="Dirección #num" required>                        </mat-form-field>                    </td>                </table>                <section>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Villa/población</mat-label>                            <input matInput formControlName="village" placeholder="Nombre villa/población" required>                        </mat-form-field>                    </td>                    <td class="radio-cell">                        <div class="radio-selector">                            <mat-label>Tiempo de residencia en la región</mat-label> <br>                            <mat-radio-group aria-label="Seleccione una opción" formControlName="residenceTime" (change)="checkOptionalRegion()">                                <mat-radio-button [value]="false">Menos de 5 años                                </mat-radio-button>                                <mat-radio-button [value]="true">Más de 5 años</mat-radio-button>                            </mat-radio-group>                        </div>                    </td>                    <td>                        <mat-form-field *ngIf="isLoaded && showOptionalRegion" appearance="fill">                            <mat-label>Indique la región anterior.</mat-label>                            <mat-select formControlName="previousRegion">                                <mat-option *ngFor="let region of regions" [value]="region.codigo">{{region.nombre}}                                </mat-option>                            </mat-select>                        </mat-form-field>                    </td>                </section>                <section cellspacing="0">                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Cesfam</mat-label>                            <mat-select formControlName="cesfam">                                <mat-option value="option1">Option 1</mat-option>                                <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>                                <mat-option value="option3">Option 3</mat-option>                            </mat-select>                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Centro</mat-label>                            <mat-select formControlName="medicalFacility">                                <mat-option value="option1">Option 1</mat-option>                                <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>                                <mat-option value="option3">Option 3</mat-option>                            </mat-select>                        </mat-form-field>                    </td>                </section>                <h4>Contacto</h4>                <mat-divider></mat-divider>                <table cellspacing="0">                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Celular</mat-label>                            <input matInput type="tel" formControlName="cellphone" placeholder="(9) 1234 5678">                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Teléfono de emergencia</mat-label>                            <input matInput type="tel" formControlName="emergencyPhone" placeholder="(9) 1234 5678">                        </mat-form-field>                    </td>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Correo</mat-label>                            <input matInput formControlName="mail" placeholder="ejemplo@dominio.com" required>                        </mat-form-field>                    </td>                </table>                <table>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>Número fijo</mat-label>                            <input matInput formControlName="landline" placeholder="Fijo" type="tel" required>                        </mat-form-field>                    </td>                </table>                <h4>Otros</h4>                <mat-divider></mat-divider>                <table>                    <td>                        <mat-form-field appearance="fill">                            <mat-label>FONASA</mat-label>                            <mat-select formControlName="fonasa">                                <mat-option value="A">Tipo A</mat-option>                                <mat-option value="B">Tipo B</mat-option>                                <mat-option value="C">Tipo C</mat-option>                                <mat-option value="D">Tipo D</mat-option>                                <mat-option value="PRAIS">Prais</mat-option>                                <mat-option value="NN">No Afiliado</mat-option>                            </mat-select>                        </mat-form-field>                    </td>                </table>                <br>                <br>                <table>                    <section>                        <mat-checkbox required>El paciente tiene entre {{ageRange}} años</mat-checkbox><br>                        <mat-checkbox required>El paciente está de acuerdo en que se usen sus datos personales solo con fines de estudios médicos.</mat-checkbox><br>                        <mat-checkbox formControlName="volunteerAgreement" required>El paciente firmó el acuerdo de participación voluntaria en el programa colorrectal de la Fundación Vivir sin Cáncer.                        </mat-checkbox>                    </section>                </table>                <div>                    <button mat-raised-button class="next-btn" color="primary" (click)="submitPatient()">Siguiente</button>                </div>            </fieldset>        </mat-step>        <!-- initial records -->        <mat-step [stepControl]="enrollmentSurvey" [editable]="false">            <form [formGroup]="enrollmentSurvey">                <ng-template matStepLabel>Encuesta Screening</ng-template>                <!-- displat questions by type -->                <section *ngIf="isReady">                    <h4>Marque los campos que apliquen:</h4>                    <p *ngFor="let question of survey">                        <mat-checkbox *ngIf="question.type==\'boolean\'" ([ngModel])="true" formControlName="{{question.name}}">{{question.msg}}</mat-checkbox>                    </p>                </section>                <br>                <br>                <div>                    <button mat-raised-button color="primary" (click)="resetSteps()">Cancelar y volver</button>                    <button mat-raised-button class="next-btn" color="primary" (click)="submitEnrollment()">Siguiente</button><br>                    <mat-hint>Los datos previamente guardados se mantendrán</mat-hint>                </div>            </form>        </mat-step>        <mat-step [editable]="false">            <ng-template matStepLabel>Resultados</ng-template>            <p>{{final}}</p>            <div>                <button mat-raised-button class="next-btn" color="primary" (click)="resetSteps()">Terminar y volver                    al inicio</button>            </div>        </mat-step>    </mat-stepper></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CBPMainComponent', 'selector': 'app-cbp-main'},{'name': 'CBPPatientComponent', 'selector': 'app-cbp-patient'},{'name': 'CBPPatientListComponent', 'selector': 'app-cbp-patient-list'},{'name': 'CBPTrackingComponent', 'selector': 'app-cbp-tracking'},{'name': 'CCRAppointmentDialogComponent', 'selector': 'app-ccr-appointment-dialog'},{'name': 'CCRMainComponent', 'selector': 'app-colon-rectal-tabs'},{'name': 'CCRPatientComponent', 'selector': 'app-ccr-patient'},{'name': 'CCRPatientListComponent', 'selector': 'app-ccr-patient-list'},{'name': 'ColonRectalSummaryComponent', 'selector': 'app-ccr-summary'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoggedInLayoutComponent', 'selector': 'app-logged-in-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PatientProfileComponent', 'selector': 'app-patient-profile'},{'name': 'PatientRegisterComponent', 'selector': 'app-patient-register'},{'name': 'SchedulerComponent', 'selector': 'app-scheduler'},{'name': 'TitleComponent', 'selector': 'app-title'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [{'name': 'PermissionDirective', 'selector': '[appPermission]'},{'name': 'SpecialityDirective', 'selector': '[appSpeciality]'}];
+    var ACTUAL_COMPONENT = {'name': 'PatientRegisterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PatientRegisterComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

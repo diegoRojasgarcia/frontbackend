@@ -1,0 +1,85 @@
+.stepper-container {
+    justify-content: center;
+    overflow-y: scroll;
+    max-height: 88vh;
+}
+
+.stepper-container>mat-stepper {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 3%;
+}
+
+h1 {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Barlow', sans-serif;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.block {
+    margin: 0 auto;
+}
+
+.step-form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+}
+
+h4 {
+    display: block;
+}
+
+mat-divider {
+    margin-top: -1%;
+    margin-bottom: 3%;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+.next-btn {
+    float: right;
+}
+
+mat-radio-button~mat-radio-button {
+    margin-left: 15px;
+}
+
+.warn-text {
+    color: red;
+}
+
+.select-placeholder-container {
+    display: flex;
+    /* align-items: center; */
+}
+
+.select-placeholder-container>span {
+    flex: 1;
+}
+
+.radio-selector {
+    padding-right: 30px;
+}
+
+td>* {
+    vertical-align: text-top;
+}
+
+.error-text {
+    color: #f44336;
+}
+
+@media only screen and (max-width:1000px) {
+    mat-stepper>::ng-deep .mat-horizontal-content-container {
+        overflow-x: scroll !important;
+    }
+}

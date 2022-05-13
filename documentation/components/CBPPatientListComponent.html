@@ -1,0 +1,1398 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CBPPatientListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cbp-patient-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cbp-patient-list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cbp-patient-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#columnsJoin" >columnsJoin</a>
+                            </li>
+                            <li>
+                                <a href="#columnsToDisplay" >columnsToDisplay</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#expandedElement" >expandedElement</a>
+                            </li>
+                            <li>
+                                <a href="#filterMsg" >filterMsg</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#NO_VALUE" >NO_VALUE</a>
+                            </li>
+                            <li>
+                                <a href="#pageSizeOptions" >pageSizeOptions</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkDataDisplay" >checkDataDisplay</a>
+                            </li>
+                            <li>
+                                <a href="#filterData" >filterData</a>
+                            </li>
+                            <li>
+                                <a href="#handleProfile" >handleProfile</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filter" >filter</a>
+                            </li>
+                            <li>
+                                <a href="#filter1" >filter1</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openProfile" >openProfile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(cbpPatientService: <a href="../injectables/CBPPatientService.html" target="_self">CBPPatientService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cbpPatientService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CBPPatientService.html" target="_self" >CBPPatientService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filter"></a>
+                        <b>filter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:47</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filter1"></a>
+                        <b>filter1</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:48</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openProfile"></a>
+                        <b>openProfile</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:50</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkDataDisplay"></a>
+                    <span class="name">
+                        <span ><b>checkDataDisplay</b></span>
+                        <a href="#checkDataDisplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkDataDisplay(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterData"></a>
+                    <span class="name">
+                        <span ><b>filterData</b></span>
+                        <a href="#filterData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleProfile"></a>
+                    <span class="name">
+                        <span ><b>handleProfile</b></span>
+                        <a href="#handleProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleProfile(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>patientId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>search()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="columnsJoin"></a>
+                    <span class="name">
+                        <span ><b>columnsJoin</b></span>
+                        <a href="#columnsJoin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ColumnInterface[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { columnValue: &#x27;name&#x27;, columnName: &#x27;Nombre Completo&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.name + &quot; &quot; + row.lastName + &quot; &quot; + (row.lastName2 ? row.lastName2 : &#x27;&#x27;) },
+    { columnValue: &#x27;age&#x27;, columnName: &#x27;Edad&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.age ? row.age : this.NO_VALUE },
+    { columnValue: &#x27;work&#x27;, columnName: &#x27;Profesión de Riesgo&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.riskProfession },
+    { columnValue: &#x27;tacCounter&#x27;, columnName: &quot;Contador TAC&quot;, cell: (row: CBPPatient) &#x3D;&gt; row.tacCounter ? row.tacCounter : this.NO_VALUE },
+    { columnValue: &#x27;state&#x27;, columnName: &#x27;Derivación&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.derivationStateNfm ? row.derivationStateNfm : this.NO_VALUE },
+    { columnValue: &#x27;rads&#x27;, columnName: &#x27;LUNG RADS&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.lungRads ? row.lungRads : this.NO_VALUE },
+    { columnValue: &#x27;expand&#x27;, columnName: &#x27;&#x27;, cell: (row: CBPPatient) &#x3D;&gt; undefined },
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="columnsToDisplay"></a>
+                    <span class="name">
+                        <span ><b>columnsToDisplay</b></span>
+                        <a href="#columnsToDisplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.columnsJoin.map(e &#x3D;&gt; e.columnValue)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatTableDataSource&lt;CBPPatient&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandedElement"></a>
+                    <span class="name">
+                        <span ><b>expandedElement</b></span>
+                        <a href="#expandedElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CBPPatient | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterMsg"></a>
+                    <span class="name">
+                        <span ><b>filterMsg</b></span>
+                        <a href="#filterMsg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NO_VALUE"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>NO_VALUE</b></span>
+                        <a href="#NO_VALUE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;No Informado&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSizeOptions"></a>
+                    <span class="name">
+                        <span ><b>pageSizeOptions</b></span>
+                        <a href="#pageSizeOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>AppConstants.pageSizeOptions</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/features/bronchopulmonary/components/cbp-patient-list/cbp-patient-list.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { trigger, state, style, transition, animate } from &#x27;@angular/animations&#x27;;
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { AppConstants } from &#x27;src/app/core/constants/app.constants&#x27;;
+import { CBPPatient } from &#x27;src/app/features/bronchopulmonary/models/cbp-patient&#x27;;
+import { CBPPatientService } from &#x27;src/app/features/bronchopulmonary/services/cbp-patient/cbp-patient.service&#x27;;
+
+@Component({
+  selector: &#x27;app-cbp-patient-list&#x27;,
+  templateUrl: &#x27;./cbp-patient-list.component.html&#x27;,
+  styleUrls: [&#x27;./cbp-patient-list.component.css&#x27;],
+  animations: [
+    trigger(&#x27;detailExpand&#x27;, [
+      state(&#x27;collapsed&#x27;, style({ height: &#x27;0px&#x27;, minHeight: &#x27;0&#x27; })),
+      state(&#x27;expanded&#x27;, style({ height: &#x27;*&#x27; })),
+      transition(&#x27;expanded &lt;&#x3D;&gt; collapsed&#x27;, animate(&#x27;225ms cubic-bezier(0.4, 0.0, 0.2, 1)&#x27;)),
+    ]),
+  ]
+})
+export class CBPPatientListComponent implements AfterViewInit {
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  pageSizeOptions: number[] &#x3D; AppConstants.pageSizeOptions;
+  expandedElement: CBPPatient | null &#x3D; null;
+
+  private NO_VALUE: string &#x3D; &quot;No Informado&quot;
+
+  columnsJoin: ColumnInterface[] &#x3D; [
+    { columnValue: &#x27;name&#x27;, columnName: &#x27;Nombre Completo&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.name + &quot; &quot; + row.lastName + &quot; &quot; + (row.lastName2 ? row.lastName2 : &#x27;&#x27;) },
+    { columnValue: &#x27;age&#x27;, columnName: &#x27;Edad&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.age ? row.age : this.NO_VALUE },
+    { columnValue: &#x27;work&#x27;, columnName: &#x27;Profesión de Riesgo&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.riskProfession },
+    { columnValue: &#x27;tacCounter&#x27;, columnName: &quot;Contador TAC&quot;, cell: (row: CBPPatient) &#x3D;&gt; row.tacCounter ? row.tacCounter : this.NO_VALUE },
+    { columnValue: &#x27;state&#x27;, columnName: &#x27;Derivación&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.derivationStateNfm ? row.derivationStateNfm : this.NO_VALUE },
+    { columnValue: &#x27;rads&#x27;, columnName: &#x27;LUNG RADS&#x27;, cell: (row: CBPPatient) &#x3D;&gt; row.lungRads ? row.lungRads : this.NO_VALUE },
+    { columnValue: &#x27;expand&#x27;, columnName: &#x27;&#x27;, cell: (row: CBPPatient) &#x3D;&gt; undefined },
+  ];
+
+  columnsToDisplay: string[] &#x3D; this.columnsJoin.map(e &#x3D;&gt; e.columnValue)
+
+
+  dataSource!: MatTableDataSource&lt;CBPPatient&gt;;
+
+  isLoading &#x3D; true;
+  @Input() filter!: string;
+  @Input() filter1!: string;
+
+  @Output() openProfile: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
+
+  filterMsg: string &#x3D; &#x27;&#x27;;
+
+  constructor(private cbpPatientService: CBPPatientService) { }
+  ngAfterViewInit(): void {
+    this.cbpPatientService.getAllCBPPAtients().subscribe(res &#x3D;&gt; {
+      this.dataSource &#x3D; new MatTableDataSource(res.data);
+      this.dataSource.sort &#x3D; this.sort;
+      this.dataSource.paginator &#x3D; this.paginator;
+      this.isLoading &#x3D; false;
+    })
+  }
+
+  handleProfile(patientId: number): void {
+    this.openProfile.emit(patientId);
+  }
+
+  checkDataDisplay(data: any): string {
+    return typeof data;
+  }
+
+  filterData(): void {
+    const predRef &#x3D; this.dataSource.filterPredicate
+    this.dataSource.filterPredicate &#x3D; (data: CBPPatient, filter: string): boolean &#x3D;&gt; {
+      this.filterMsg &#x3D; &quot;Filtro: LUNG/RAD &quot; + filter
+      if (filter &#x3D;&#x3D;&#x3D; &#x27;NN&#x27;)
+        return !data.lungRads
+      else
+        return data.lungRads &#x3D;&#x3D;&#x3D; filter;
+    }
+    this.dataSource.filter &#x3D; this.filter1;
+    this.dataSource.filterPredicate &#x3D; predRef;
+  }
+
+  search(): void {
+    this.filter1 &#x3D; &#x27;&#x27;;
+    this.filterMsg &#x3D; &#x27;&#x27;;
+    this.dataSource.filter &#x3D; this.filter?.toLowerCase().trim();
+    if (this.dataSource.paginator)
+      this.dataSource.paginator.firstPage()
+  }
+
+}
+
+
+interface ColumnInterface {
+  columnValue: string;
+  columnName: string;
+  cell: Function;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-title [pageTitle]&#x3D;&quot;&#x27;Pacientes&#x27;&quot;&gt;&lt;/app-title&gt;
+&lt;div class&#x3D;&quot;container mat-elevation-z8&quot;&gt;
+    &lt;div class&#x3D;&quot;tab-top-toolbar&quot;&gt;
+        &lt;span&gt;
+            &lt;button mat-mini-fab color&#x3D;&quot;primary&quot; [matMenuTriggerFor]&#x3D;&quot;menu&quot;
+                aria-label&#x3D;&quot;Example icon button with a filter list icon&quot;&gt;
+                &lt;mat-icon&gt;filter_list&lt;/mat-icon&gt;
+            &lt;/button&gt;
+
+            &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+                &lt;mat-label&gt;Buscar en tabla&lt;/mat-label&gt;
+                &lt;mat-chip-list #filterList&gt;
+                    &lt;mat-chip *ngIf&#x3D;&quot;filter1&quot; color&#x3D;&quot;primary&quot; (removed)&#x3D;&quot;search()&quot; selected&gt;{{filterMsg}}
+                        &lt;button matChipRemove&gt;
+                            &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;
+                        &lt;/button&gt;
+                    &lt;/mat-chip&gt;
+                    &lt;input (keyup)&#x3D;&quot;search()&quot; [(ngModel)]&#x3D;&quot;filter&quot; [matChipInputFor]&#x3D;&quot;filterList&quot; matInput
+                        placeholder&#x3D;&quot;Ex. Mia&quot;&gt;
+                &lt;/mat-chip-list&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;mat-menu #menu&gt;
+        &lt;mat-radio-group aria-label&#x3D;&quot;Select an option&quot; [(ngModel)]&#x3D;&quot;filter1&quot; (change)&#x3D;&quot;filterData()&quot;&gt;
+            &lt;mat-list class&#x3D;&quot;menu-list&quot;&gt;
+                &lt;div mat-subheader&gt;TAC&lt;/div&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;NN&quot;&gt;SIN REALIZAR&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+        &lt;/mat-radio-group&gt;
+        &lt;button mat-menu-item [matMenuTriggerFor]&#x3D;&quot;N&quot;&gt;RAD N&lt;/button&gt;
+        &lt;button mat-menu-item [matMenuTriggerFor]&#x3D;&quot;tac4&quot;&gt;RAD 4X&lt;/button&gt;
+    &lt;/mat-menu&gt;
+    &lt;mat-menu #tac4&#x3D;&quot;matMenu&quot;&gt;
+        &lt;mat-radio-group [(ngModel)]&#x3D;&quot;filter1&quot; (change)&#x3D;&quot;filterData()&quot;&gt;
+            &lt;mat-list class&#x3D;&quot;menu-list&quot;&gt;
+                &lt;div mat-subheader&gt;4X&lt;/div&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;4A&quot;&gt;4A&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;4B&quot;&gt;4B&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;4S&quot;&gt;4S&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+        &lt;/mat-radio-group&gt;
+    &lt;/mat-menu&gt;
+    &lt;mat-menu #N&#x3D;&quot;matMenu&quot;&gt;
+        &lt;mat-radio-group [(ngModel)]&#x3D;&quot;filter1&quot; (change)&#x3D;&quot;filterData()&quot;&gt;
+            &lt;mat-list class&#x3D;&quot;menu-list&quot;&gt;
+                &lt;div mat-subheader&gt;N&lt;/div&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;0&quot;&gt;0&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;1&quot;&gt;1&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;2&quot;&gt;2&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+                &lt;mat-list-item&gt;
+                    &lt;mat-radio-button value&#x3D;&quot;3&quot;&gt;3&lt;/mat-radio-button&gt;
+                &lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+        &lt;/mat-radio-group&gt;
+    &lt;/mat-menu&gt;
+    &lt;mat-spinner *ngIf&#x3D;&quot;isLoading&quot; diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+    &lt;table mat-table class&#x3D;&quot;main-table&quot; [dataSource]&#x3D;&quot;dataSource&quot; multiTemplateDataRows matSort&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let column of columnsJoin&quot; matColumnDef&#x3D;&quot;{{column.columnValue}}&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;strong&gt;{{column.columnName}}&lt;/strong&gt;&lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot; [ngSwitch]&#x3D;&quot;checkDataDisplay(column.cell(row))&quot;&gt;
+                &lt;span *ngSwitchCase&#x3D;&quot;&#x27;boolean&#x27;&quot;&gt;
+                    &lt;mat-icon *ngIf&#x3D;&quot;column.cell(row); else elseIcon&quot; color&#x3D;&quot;warn&quot;&gt;check_box&lt;/mat-icon&gt;
+                    &lt;ng-template #elseIcon&gt;
+                        &lt;mat-icon class&#x3D;&quot;negative-exam-icon&quot;&gt;check_box_outline_blank&lt;/mat-icon&gt;
+                    &lt;/ng-template&gt;
+                &lt;/span&gt;
+                &lt;mat-icon *ngSwitchCase&#x3D;&quot;&#x27;object&#x27;&quot;&gt;pending&lt;/mat-icon&gt;
+                &lt;span *ngSwitchCase&#x3D;&quot;&#x27;undefined&#x27;&quot;&gt;
+                    &lt;mat-icon *ngIf&#x3D;&quot;expandedElement &#x3D;&#x3D;&#x3D; row; else elseExpand&quot;&gt;expand_less&lt;/mat-icon&gt;
+                    &lt;ng-template #elseExpand&gt;
+                        &lt;mat-icon&gt;expand_more&lt;/mat-icon&gt;
+                    &lt;/ng-template&gt;
+                &lt;/span&gt;
+                &lt;span *ngSwitchDefault&gt;
+                    {{column.cell(row)}}
+                &lt;/span&gt;
+
+            &lt;/td&gt;
+            &lt;!-- Row shown when there is no matching data. --&gt;
+            &lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+                &lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;4&quot;&gt;No hay datos que mostrar.&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns --&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;expandedDetail&quot;&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; [attr.colspan]&#x3D;&quot;columnsToDisplay.length&quot;&gt;
+                &lt;div class&#x3D;&quot;example-element-detail&quot; [@detailExpand]&#x3D;&quot;element &#x3D;&#x3D; expandedElement ? &#x27;expanded&#x27; : &#x27;collapsed&#x27;&quot;&gt;
+                    &lt;mat-list&gt;
+                        &lt;mat-list-item&gt;
+                            &lt;mat-icon mat-list-icon color&#x3D;&quot;primary&quot;&gt;phone&lt;/mat-icon&gt;
+                            {{element.cellphone}}
+                        &lt;/mat-list-item&gt;
+                        &lt;mat-list-item&gt;
+                            &lt;mat-icon mat-list-icon color&#x3D;&quot;primary&quot;&gt;contact_mail&lt;/mat-icon&gt;
+                            {{element.mail}}
+                        &lt;/mat-list-item&gt;
+                    &lt;/mat-list&gt;
+                    &lt;div class&#x3D;&quot;go-to-profile&quot;&gt;
+                        &lt;span&gt;Ver ficha paciente&lt;/span&gt;
+                        &lt;button mat-icon-button aria-label&#x3D;&quot;Go to profile link button&quot; (click)&#x3D;&quot;handleProfile(element.idPatient)&quot;&gt;
+                            &lt;mat-icon&gt;open_in_new&lt;/mat-icon&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/ng-container&gt;
+        &lt;!-- Row shown when there is no matching data. --&gt;
+        &lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+            &lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;4&quot;&gt;No hay datos que mostrar.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;columnsToDisplay&quot;&gt;&lt;/tr&gt;
+        &lt;tr mat-row *matRowDef&#x3D;&quot;let element; columns: columnsToDisplay;&quot; class&#x3D;&quot;example-element-row&quot; [class.example-expanded-row]&#x3D;&quot;expandedElement &#x3D;&#x3D;&#x3D; element&quot; (click)&#x3D;&quot;expandedElement &#x3D; expandedElement &#x3D;&#x3D;&#x3D; element ? null : element&quot;&gt;
+        &lt;/tr&gt;
+        &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;expandedDetail&#x27;]&quot; class&#x3D;&quot;example-detail-row&quot;&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;pageSizeOptions&quot; showFirstLastButtons aria-label&#x3D;&quot; Seleccione alguna página.&quot;&gt;
+    &lt;/mat-paginator&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./cbp-patient-list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">h1 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+    font-size: 3vw;
+}
+
+.container {
+    margin: 5%;
+}
+
+.main-table {
+    width: 100%;
+}
+
+mat-form-field {
+    margin-left: 20px;
+    width: 60%;
+    min-width: 500px;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+mat-radio-group {
+    margin-left: 15px;
+}
+
+.tab-top-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.spacer,
+.spacer&gt;span {
+    /* float: right; */
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.legend {
+    font-size: 17px;
+}
+
+.negative-exam-icon {
+    color: green
+}
+
+.menu-list ::ng-deep&gt;* {
+    font-size: 11px;
+}
+
+.menu-list ::ng-deep.mat-subheader {
+    display: flex;
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-title [pageTitle]="\'Pacientes\'"></app-title><div class="container mat-elevation-z8">    <div class="tab-top-toolbar">        <span>            <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu"                aria-label="Example icon button with a filter list icon">                <mat-icon>filter_list</mat-icon>            </button>            <mat-form-field appearance="standard">                <mat-label>Buscar en tabla</mat-label>                <mat-chip-list #filterList>                    <mat-chip *ngIf="filter1" color="primary" (removed)="search()" selected>{{filterMsg}}                        <button matChipRemove>                            <mat-icon>cancel</mat-icon>                        </button>                    </mat-chip>                    <input (keyup)="search()" [(ngModel)]="filter" [matChipInputFor]="filterList" matInput                        placeholder="Ex. Mia">                </mat-chip-list>            </mat-form-field>        </span>    </div>    <mat-menu #menu>        <mat-radio-group aria-label="Select an option" [(ngModel)]="filter1" (change)="filterData()">            <mat-list class="menu-list">                <div mat-subheader>TAC</div>                <mat-list-item>                    <mat-radio-button value="NN">SIN REALIZAR</mat-radio-button>                </mat-list-item>            </mat-list>        </mat-radio-group>        <button mat-menu-item [matMenuTriggerFor]="N">RAD N</button>        <button mat-menu-item [matMenuTriggerFor]="tac4">RAD 4X</button>    </mat-menu>    <mat-menu #tac4="matMenu">        <mat-radio-group [(ngModel)]="filter1" (change)="filterData()">            <mat-list class="menu-list">                <div mat-subheader>4X</div>                <mat-list-item>                    <mat-radio-button value="4A">4A</mat-radio-button>                </mat-list-item>                <mat-list-item>                    <mat-radio-button value="4B">4B</mat-radio-button>                </mat-list-item>                <mat-list-item>                    <mat-radio-button value="4S">4S</mat-radio-button>                </mat-list-item>            </mat-list>        </mat-radio-group>    </mat-menu>    <mat-menu #N="matMenu">        <mat-radio-group [(ngModel)]="filter1" (change)="filterData()">            <mat-list class="menu-list">                <div mat-subheader>N</div>                <mat-list-item>                    <mat-radio-button value="0">0</mat-radio-button>                </mat-list-item>                <mat-list-item>                    <mat-radio-button value="1">1</mat-radio-button>                </mat-list-item>                <mat-list-item>                    <mat-radio-button value="2">2</mat-radio-button>                </mat-list-item>                <mat-list-item>                    <mat-radio-button value="3">3</mat-radio-button>                </mat-list-item>            </mat-list>        </mat-radio-group>    </mat-menu>    <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>    <table mat-table class="main-table" [dataSource]="dataSource" multiTemplateDataRows matSort>        <ng-container *ngFor="let column of columnsJoin" matColumnDef="{{column.columnValue}}">            <th mat-header-cell *matHeaderCellDef mat-sort-header> <strong>{{column.columnName}}</strong></th>            <td mat-cell *matCellDef="let row" [ngSwitch]="checkDataDisplay(column.cell(row))">                <span *ngSwitchCase="\'boolean\'">                    <mat-icon *ngIf="column.cell(row); else elseIcon" color="warn">check_box</mat-icon>                    <ng-template #elseIcon>                        <mat-icon class="negative-exam-icon">check_box_outline_blank</mat-icon>                    </ng-template>                </span>                <mat-icon *ngSwitchCase="\'object\'">pending</mat-icon>                <span *ngSwitchCase="\'undefined\'">                    <mat-icon *ngIf="expandedElement === row; else elseExpand">expand_less</mat-icon>                    <ng-template #elseExpand>                        <mat-icon>expand_more</mat-icon>                    </ng-template>                </span>                <span *ngSwitchDefault>                    {{column.cell(row)}}                </span>            </td>            <!-- Row shown when there is no matching data. -->            <tr class="mat-row" *matNoDataRow>                <td class="mat-cell" colspan="4">No hay datos que mostrar.</td>            </tr>        </ng-container>        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->        <ng-container matColumnDef="expandedDetail">            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">                <div class="example-element-detail" [@detailExpand]="element == expandedElement ? \'expanded\' : \'collapsed\'">                    <mat-list>                        <mat-list-item>                            <mat-icon mat-list-icon color="primary">phone</mat-icon>                            {{element.cellphone}}                        </mat-list-item>                        <mat-list-item>                            <mat-icon mat-list-icon color="primary">contact_mail</mat-icon>                            {{element.mail}}                        </mat-list-item>                    </mat-list>                    <div class="go-to-profile">                        <span>Ver ficha paciente</span>                        <button mat-icon-button aria-label="Go to profile link button" (click)="handleProfile(element.idPatient)">                            <mat-icon>open_in_new</mat-icon>                        </button>                    </div>                </div>            </td>        </ng-container>        <!-- Row shown when there is no matching data. -->        <tr class="mat-row" *matNoDataRow>            <td class="mat-cell" colspan="4">No hay datos que mostrar.</td>        </tr>        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">        </tr>        <tr mat-row *matRowDef="let row; columns: [\'expandedDetail\']" class="example-detail-row"></tr>    </table>    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons aria-label=" Seleccione alguna página.">    </mat-paginator></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CBPMainComponent', 'selector': 'app-cbp-main'},{'name': 'CBPPatientComponent', 'selector': 'app-cbp-patient'},{'name': 'CBPPatientListComponent', 'selector': 'app-cbp-patient-list'},{'name': 'CBPTrackingComponent', 'selector': 'app-cbp-tracking'},{'name': 'CCRAppointmentDialogComponent', 'selector': 'app-ccr-appointment-dialog'},{'name': 'CCRMainComponent', 'selector': 'app-colon-rectal-tabs'},{'name': 'CCRPatientComponent', 'selector': 'app-ccr-patient'},{'name': 'CCRPatientListComponent', 'selector': 'app-ccr-patient-list'},{'name': 'ColonRectalSummaryComponent', 'selector': 'app-ccr-summary'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoggedInLayoutComponent', 'selector': 'app-logged-in-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PatientProfileComponent', 'selector': 'app-patient-profile'},{'name': 'PatientRegisterComponent', 'selector': 'app-patient-register'},{'name': 'SchedulerComponent', 'selector': 'app-scheduler'},{'name': 'TitleComponent', 'selector': 'app-title'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [{'name': 'PermissionDirective', 'selector': '[appPermission]'},{'name': 'SpecialityDirective', 'selector': '[appSpeciality]'}];
+    var ACTUAL_COMPONENT = {'name': 'CBPPatientListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CBPPatientListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

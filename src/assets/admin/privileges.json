@@ -1,0 +1,57 @@
+[{
+        "ID": 1,
+        "NAME": "ADMIN",
+        "FEATURE_PERMISSION": [
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "SCHEDULING", "PERMISSION": "ADMIN" },
+            { "FEATURE": "ENROLLMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "PATIENT_FILES", "PERMISSION": "ADMIN" },
+            { "FEATURE": "EXAMS", "PERMISSION": "ADMIN" }
+        ]
+    },
+    {
+        "ID": 2,
+        "NAME": "MEMBER",
+        "FEATURE_PERMISSION": [
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "NONE" },
+            { "FEATURE": "SCHEDULING", "PERMISSION": "ADMIN" },
+            { "FEATURE": "ENROLLMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "PATIENT_FILES", "PERMISSION": "ADMIN" },
+            { "FEATURE": "EXAMS", "PERMISSION": "ADMIN" }
+        ]
+    },
+    {
+        "ID": 3,
+        "NAME": "DOCTOR",
+        "FEATURE_PERMISSION": [
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "NONE" },
+            { "FEATURE": "SCHEDULING", "PERMISSION": "NONE" },
+            { "FEATURE": "ENROLLMENT", "PERMISSION": "NONE" },
+            { "FEATURE": "PATIENT_FILES", "PERMISSION": "VIEW" },
+            { "FEATURE": "EXAMS", "PERMISSION": "VIEW" }
+        ]
+    },
+    {
+        "ID": 4,
+        "NAME": "NURSE",
+        "FEATURE_PERMISSION": [
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "NONE" },
+            { "FEATURE": "SCHEDULING", "PERMISSION": "ADMIN" },
+            { "FEATURE": "ENROLLMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "PATIENT_FILES", "PERMISSION": "ADMIN" },
+            { "FEATURE": "EXAMS", "PERMISSION": "ADMIN" }
+        ]
+    },
+    {
+        "ID": 5,
+        "NAME": "TENS",
+        "FEATURE_PERMISSION": [
+            { "FEATURE": "USER_MANAGEMENT", "PERMISSION": "NONE" },
+            { "FEATURE": "SCHEDULING", "PERMISSION": "ADMIN" },
+            { "FEATURE": "ENROLLMENT", "PERMISSION": "ADMIN" },
+            { "FEATURE": "PATIENT_FILES", "PERMISSION": "ADMIN" },
+            { "FEATURE": "EXAMS", "PERMISSION": "VIEW" }
+        ]
+    }
+]

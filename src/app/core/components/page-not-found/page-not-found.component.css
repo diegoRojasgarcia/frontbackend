@@ -1,0 +1,25 @@
+.back-img {
+    background-image: url("/assets/images/swag_dog_original.jpg");
+    height: calc(100vh - 64px);
+    /* width: 100vw; */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nf-msg {
+    display: flex;
+    float: right;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-right: 2%;
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto
+}

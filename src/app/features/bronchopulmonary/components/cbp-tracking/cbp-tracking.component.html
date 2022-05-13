@@ -1,0 +1,76 @@
+<app-title [pageTitle]="'Seguimiento TAC'"></app-title>
+<div class="container">
+    <div class="mat-elevation-z8">
+        <!-- filter input -->
+        <mat-form-field appearance="standard">
+            <mat-label>Buscar en tabla</mat-label>
+            <input (keyup)="filterData()" [(ngModel)]="filter" matInput placeholder="Ex. Mia">
+        </mat-form-field>
+
+        <table mat-table class="main-table" [dataSource]="patientsTracking" multiTemplateDataRows matSort>
+            <ng-container *ngFor="let column of columns" matColumnDef="{{column.columnValue}}">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> <strong>{{column.name}}</strong></th>
+                <td mat-cell *matCellDef="let row" [ngSwitch]="checkDataDisplay(column.cell(row))">
+                    <span *ngSwitchCase="'boolean'">
+                        <mat-checkbox class="example-margin" [checked]="row.contact" (change)="updateTrackingContact($event.checked, row)"></mat-checkbox>
+                    </span>
+                    <span *ngSwitchCase="'undefined'">
+                        <mat-icon *ngIf="expandedElement === row; else elseExpand">expand_less</mat-icon>
+                        <ng-template #elseExpand>
+                            <mat-icon>expand_more</mat-icon>
+                        </ng-template>
+                    </span>
+                    <span *ngSwitchDefault>
+                        {{column.cell(row)}}
+                    </span>
+
+                </td>
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">{{NO_TABLE_DATA}}</td>
+                </tr>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                    <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <mat-list>
+                            <div mat-subheader>Teléfono de Emergencia: </div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon color="primary">phone</mat-icon>
+                                {{element.emergencyPhone}}
+                            </mat-list-item>
+                            <div mat-subheader>Correo: </div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon color="primary">contact_mail</mat-icon>
+                                {{element.mail}}
+                            </mat-list-item>
+                            <div mat-subheader>Último TAC: </div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon color="primary">event</mat-icon>
+                                {{formatViewDate(element.ldctDate)}}
+                            </mat-list-item>
+                        </mat-list>
+                        <div class="go-to-profile">
+                            <span>Ver ficha paciente</span>
+                            <button mat-icon-button aria-label="Go to profile link button" (click)="handleProfile(element.idPatient)">
+                                <mat-icon>open_in_new</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No hay datos que mostrar.</td>
+            </tr>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons aria-label=" Seleccione alguna página.">
+        </mat-paginator>
+    </div>
+</div>

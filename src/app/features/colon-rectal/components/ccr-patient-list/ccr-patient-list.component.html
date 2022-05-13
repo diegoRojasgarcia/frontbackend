@@ -1,0 +1,178 @@
+<app-title [pageTitle]="'Pacientes'"></app-title>
+
+<div class="container mat-elevation-z8">
+
+    <div class="tab-top-toolbar">
+
+        <span>
+            <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu"
+                aria-label="Example icon button with a filter list icon">
+                <mat-icon>filter_list</mat-icon>
+            </button>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Buscar en tabla</mat-label>
+                <mat-chip-list #filterList>
+                    <mat-chip *ngIf="filter1" color="primary" (removed)="search()" selected>{{filterMsg}}
+                        <button matChipRemove>
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip>
+                    <input (keyup)="search()" [(ngModel)]="filter" [matChipInputFor]="filterList" matInput
+                        placeholder="Ex. Mia">
+                </mat-chip-list>
+            </mat-form-field>
+
+        </span>
+
+        <div class="spacer" id="legend">
+            <span>
+                <mat-icon color="warn">add_circle</mat-icon>Positivo
+            </span>
+            <span>
+                <mat-icon class="negative-exam-icon">remove_circle</mat-icon>Negativo
+            </span>
+            <span>
+                <mat-icon>radio_button_unchecked</mat-icon>Pendiente
+            </span>
+        </div>
+    </div>
+
+    <mat-menu #menu>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="filter1" (change)="filterData()">
+            <mat-list class="menu-list">
+                <div mat-subheader>COLONCHECK</div>
+                <mat-list-item>
+                    <mat-radio-button value="1">POSITIVO</mat-radio-button>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-radio-button value="2">NEGATIVO</mat-radio-button>
+                </mat-list-item>
+                <div mat-subheader>COLONOSCOPÍA</div>
+                <mat-list-item>
+                    <mat-radio-button value="3">CON H.</mat-radio-button>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-radio-button value="4">SIN H.</mat-radio-button>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-radio-button value="5">N/A</mat-radio-button>
+                </mat-list-item>
+            </mat-list>
+        </mat-radio-group>
+    </mat-menu>
+    <table mat-table class="main-table" [dataSource]="dataSource" multiTemplateDataRows matSort>
+        <ng-container *ngFor="let column of columnsJoin" matColumnDef="{{column.columnValue}}">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> <strong>{{column.columnName}}</strong></th>
+            <td mat-cell *matCellDef="let row" [ngSwitch]="checkDataDisplay(column.cell(row))">
+                <span *ngSwitchCase="'boolean'">
+                    <mat-icon *ngIf="column.cell(row); else elseIcon" color="warn">add_circle</mat-icon>
+                    <ng-template #elseIcon>
+                        <mat-icon class="negative-exam-icon">remove_circle</mat-icon>
+                    </ng-template>
+                </span>
+                <mat-icon *ngSwitchCase="'object'">radio_button_unchecked</mat-icon>
+                <span *ngSwitchCase="'undefined'">
+                    <mat-icon *ngIf="expandedElement === row; else elseExpand">expand_less</mat-icon>
+                    <ng-template #elseExpand>
+                        <mat-icon>expand_more</mat-icon>
+                    </ng-template>
+                </span>
+                <span *ngSwitchDefault>
+                    {{column.cell(row)}}
+                </span>
+
+            </td>
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">{{ NO_TABLE_DATA }}</td>
+            </tr>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail"
+                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <mat-list *ngIf="element.colonoscopyResult; else elseColonoscopy">
+                        <div mat-subheader>Última colonoscopía: CON HALLAZGOS
+                            <mat-icon class="spacer" color="warn">sentiment_very_dissatisfied</mat-icon>
+                        </div>
+                        <mat-list-item>
+                            <mat-icon *ngIf="element.polyps; else elsePolyps" mat-list-icon color="warn">add_circle
+                            </mat-icon>
+                            <ng-template #elsePolyps>
+                                <mat-icon mat-list-icon class="negative-exam-icon">remove_circle</mat-icon>
+                            </ng-template>
+                            <div mat-line>Pólipos</div>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon *ngIf="element.neoplasticLesion; else elseLesion" mat-list-icon color="warn">
+                                add_circle</mat-icon>
+                            <ng-template #elseLesion>
+                                <mat-icon mat-list-icon class="negative-exam-icon">remove_circle</mat-icon>
+                            </ng-template>
+                            <div mat-line>Lesión Neoplásica</div>
+                        </mat-list-item>
+                        <span mat-line class="example-element-description-attribution"> --Exámen realizado a fecha
+                            {{parseViewDate(element.lastColonoscopyDate)}} </span>
+                    </mat-list>
+                    <ng-template #elseColonoscopy>
+                        <mat-list *ngIf="element.colonoscopyResult === false">
+                            <div matSubheader>Última colonoscopía: SIN HALLAZGOS</div>
+                            <span mat-line class="example-element-description-attribution"> --Exámen realizado a fecha
+                                {{parseViewDate(element.lastColonoscopyDate)}} </span>
+
+                        </mat-list>
+                        <div matSubheader *ngIf="element.coloncheckResult; else elseColoncheck">Esperando resultado
+                            próxima colonoscopía...
+                            <mat-icon class="spacer">sentiment_dissatisfied</mat-icon>
+                        </div>
+                        <ng-template #elseColoncheck>
+                            <div matSubheader>Nada que mostrar...
+                                <mat-icon class="negative-exam-icon spacer">sentiment_satisfied_alt</mat-icon>
+                            </div>
+                        </ng-template>
+                    </ng-template>
+                    <div class="go-to-profile">
+                        <span>Ver ficha paciente</span>
+                        <button mat-icon-button aria-label="Go to profile link button"
+                            (click)="handleProfile(element.idPatient)">
+                            <mat-icon>open_in_new</mat-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </td>
+
+
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+   
+
+        
+   
+   
+    </table>
+
+    <div class="tab-top-toolbar">
+        <button mat-icon-button [matMenuTriggerFor]="menuu" aria-label="Example icon-button with a menuu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuu="matMenu">
+            <button mat-menu-item (click)="exportToXlxs()" class="btn btn-success btn-sm">Excel</button>
+            <button mat-menu-item (click)="exportExcel()" class="btn btn-success btn-sm">Excel2</button>
+        </mat-menu>
+
+        <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons aria-label=" Seleccione alguna página.">
+        </mat-paginator>
+    </div>
+
+    
+
+    

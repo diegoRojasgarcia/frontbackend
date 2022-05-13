@@ -1,0 +1,45 @@
+<mat-tab-group [(selectedIndex)]="selectedIndex">
+
+    <mat-tab label="Resumen" [disabled]="lock">
+        <ng-template matTabContent>
+            <app-ccr-summary></app-ccr-summary>
+        </ng-template>
+    </mat-tab>
+    <mat-tab [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.SCHEDULING">
+        <ng-template matTabLabel>
+            <div>Agendamiento</div>
+            <button mat-icon-button (click)="refreshCalendar()" *ngIf="selectedIndex === 1"><mat-icon>refresh</mat-icon></button>
+        </ng-template>
+        <ng-template matTabContent>
+            <app-scheduler [cancer]="currentCancer" [(events)]="scheduledEvents" (timeRangeChange)="loadEnrollmentAppointments($event)" (editEvent)="editEnrollmentAppointment($event)" (eventChange)="updateEvent($event)" (scheduleEvent)="addEnrollmentAppointment($event)"></app-scheduler>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Enrolamiento Paciente" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.ENROLLMENT">
+        <ng-template matTabContent>
+            <app-patient-register [cancer]="currentCancer" [survey]="survey" [cancerKey]="currentCancerKey.toLowerCase()" [ageRange]="currentAgeRange" (patientSubmit)="addPatient($event)" (surveySubmit)="addEnrollmentSurvey($event)" (openProfile)="openPatientProfile($event)">
+            </app-patient-register>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Pacientes" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
+        <ng-template matTabContent>
+            <app-ccr-patient-list (openProfile)="openPatientProfile($event)"></app-ccr-patient-list>
+        </ng-template>
+    </mat-tab>
+    <mat-tab *ngFor="let patient of patientTabs">
+        <ng-template mat-tab-label>
+            <div>{{patient.name}}</div>
+            <button mat-icon-button (click)="closeProfile()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </ng-template>
+        <ng-template matTabContent>
+            <div class="container">
+                <div class="block">
+                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock">
+                    </app-patient-profile>
+                    <app-ccr-patient #ccrProfile [patientId]="patient.patientId"></app-ccr-patient>
+                </div>
+            </div>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,86 @@
+<h1 mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+    {{dialogTitle}}
+</h1>
+<div mat-dialog-content [formGroup]="appointmentForm" class="dialog-container">
+    <p>{{currentDate.toLocaleString()}}</p>
+    <table class="full-width">
+        <td>
+            <mat-form-field>
+                <input matInput type="datetime-local" placeholder="Inicio" formControlName="start">
+            </mat-form-field>
+        </td>
+        <mat-divider [vertical]="true"></mat-divider>
+        <td>
+            <mat-form-field>
+                <input matInput type="datetime-local" placeholder="Término" formControlName="end">
+            </mat-form-field>
+        </td>
+    </table>
+    <mat-error *ngIf="appointmentForm.hasError('badRange')">Error de rango; la fecha de inicio debe ser menor a la de término.</mat-error>
+    <div @collapseForm *ngIf="!panelOpen && !showPatient">
+        <mat-form-field appearance="fill">
+            <mat-label>Cáncer</mat-label>
+            <input matInput formControlName="cancer">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Razón</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Ubicación</mat-label>
+            <input matInput formControlName="location">
+        </mat-form-field>
+    </div>
+    <div @collapseForm *ngIf="panelOpen && showPatient" [formGroup]="patientForm" (@collapseForm.done)="hidePatientForm($event.toState)">
+        <mat-form-field appearance="fill" (change)="formatRut()">
+            <mat-label>RUT</mat-label>
+            <input matInput formControlName="rut">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Edad</mat-label>
+            <input matInput type="number" formControlName="age">
+        </mat-form-field>
+
+    </div>
+
+    <mat-accordion @collapseForm *ngIf="!showPatient" class="patient-list-panel">
+        <mat-expansion-panel [(expanded)]="panelOpen">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Grupo
+                </mat-panel-title>
+                <mat-panel-description [ngStyle]="{color:getStatusColor()}">
+                    ({{patients.length}})
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-selection-list #patientList [multiple]="false" (selectionChange)="showPatientForm(patientList.selectedOptions.selected[0]?.value)">
+                <mat-list-option *ngFor="let patient of patients" [value]="patient">
+                    <mat-icon mat-list-icon color="primary">edit</mat-icon>
+                    <mat-icon mat-list-icon color="primary">delete</mat-icon>
+                    <div mat-line>{{patient.name}}</div>
+                    <div mat-line>RUT:{{patient.rut}}</div>
+                </mat-list-option>
+                <mat-list-option>
+                    <mat-icon mat-list-icon color="primary">person_add</mat-icon>
+                    <div>
+                        Agregar Paciente
+                    </div>
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+</div>
+<div mat-dialog-actions *ngIf="!showPatient">
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-raised-button (click)="save()" color="primary" [disabled]="!appointmentForm.valid">Guardar</button>
+</div>
+<div mat-dialog-actions *ngIf="panelOpen && showPatient">
+    <button mat-button (click)="hidePatientForm(true)">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="addPatient()" [disabled]="!patientForm.valid">{{patientForm.get('id_schedule_patient')?.value? 'Modificar':'Agregar'}}</button>
+    <button mat-raised-button *ngIf="patientForm.get('id_schedule_patient')?.value" color="warn" (click)="removePatient()">Eliminar</button>
+</div>

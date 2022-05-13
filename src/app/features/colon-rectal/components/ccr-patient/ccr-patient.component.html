@@ -1,0 +1,507 @@
+<mat-divider></mat-divider>
+<div class="container">
+    <h2>Sección {{cancer}}</h2>
+
+    <mat-accordion class="headers-align" #accordionA="matAccordion" multi>
+        <!-- Screening survey panel -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Encuesta Inicial
+                </mat-panel-title>
+                <mat-panel-description>
+                    Contiene los datos obtenidos a través de la encuesta inicial.
+                    <mat-icon *ngIf="surveyForm.pristine; else saveSurvey">fact_check</mat-icon>
+                    <ng-template #saveSurvey>
+                        <button *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" type="button" mat-raised-button color="primary" (click)="updateEnrollmentSurvey()">Guardar
+                            Encuesta</button>
+                    </ng-template>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section [formGroup]="surveyForm">
+                <h4>Marque los campos que apliquen:</h4>
+                <p *ngFor="let question of survey">
+                    <mat-checkbox *ngIf="question.type=='boolean'" formControlName="{{question.name}}">
+                        {{question.msg}}</mat-checkbox>
+                </p>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel [formGroup]="patientForm">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Información de Estado
+                </mat-panel-title>
+                <mat-panel-description>
+                    Contiene el estado del paciente dentro de la sección colorrectal.
+                    <mat-icon *ngIf="patientForm.pristine; else savePatient">person_outline</mat-icon>
+                    <ng-template #savePatient>
+                        <button *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" mat-raised-button color="primary" (click)="updatePatient()">Guardar Cmabios</button>
+                    </ng-template>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="state">
+                        <mat-option value="Activo">Activo</mat-option>
+                        <mat-option value="Inactivo">Inactivo</mat-option>
+                        <mat-option value="Derivado">Derivado</mat-option>
+                        <mat-option value="Rechazado">Rechazado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Detección Cancer</mat-label>
+                    <input matInput [matDatepicker]="cancerPicker" formControlName="cancerDetectionDate">
+                    <mat-datepicker-toggle matSuffix [for]="cancerPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #cancerPicker></mat-datepicker>
+                </mat-form-field>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Exámenes
+                </mat-panel-title>
+                <mat-panel-description>
+                    Contiene los resultados obtenidos a través de Coloncheck y Colonoscopía.
+                    <mat-icon>rule</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <h4 class="card-sub-division">Coloncheck's</h4>
+            <mat-divider class="card-divider"></mat-divider>
+            <p>Nuevo Coloncheck</p>
+            <section [formGroup]="coloncheckForm" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
+                <td style="vertical-align: top;">
+                    <p [class.error-text]="coloncheckForm.get('testResult')?.hasError('required') && coloncheckForm.get('testResult')?.touched">
+                        Indique resultado:</p>
+                    <mat-radio-group aria-label="Resultado" formControlName="testResult">
+                        <mat-radio-button value="0">Negativo</mat-radio-button>
+                        <mat-radio-button value="1">Positivo</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fecha del exámen</mat-label>
+                        <input matInput [matDatepicker]="checkDate" formControlName="testDate">
+                        <mat-datepicker-toggle matSuffix [for]="checkDate"></mat-datepicker-toggle>
+                        <mat-datepicker #checkDate></mat-datepicker>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click)="addColoncheck()">Agregar</button>
+                </td>
+            </section>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="coloncheckList" #coloncheckTable="matTable">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let exam"> {{exam.idColoncheck}} </td>
+                    </ng-container>
+
+                    <!-- Date Column -->
+                    <ng-container matColumnDef="testDate">
+                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{formatDate(exam.testDate)}} </td>
+                    </ng-container>
+
+                    <!-- Exam Column -->
+                    <ng-container matColumnDef="testResult">
+                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{checkColoncheckResult(exam.testResult)}} </td>
+                    </ng-container>
+
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let exam"> <button type="button" mat-icon-button color="primary" (click)="deleteColoncheck(exam)">
+                                <mat-icon>delete</mat-icon>
+                            </button> </td>
+                    </ng-container>
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">{{ NO_TABLE_DATA }}</td>
+                    </tr>
+                    <tr mat-header-row *matHeaderRowDef="coloncheckFields"></tr>
+                    <tr mat-row *matRowDef="let row; columns: coloncheckFields;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of coloncheck" #checkPaginator="matPaginator"></mat-paginator>
+            </div>
+            <br>
+            <h4 class="card-sub-division">Colonoscopías</h4>
+            <mat-divider class="card-divider"></mat-divider>
+            <div [formGroup]="colonoscopyForm" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
+                <section>
+                    <p>Nueva Colonoscopía</p><br>
+                    <td style="vertical-align: top;">
+                        <p [class.error-text]="colonoscopyForm.get('testResult')?.hasError('required') && colonoscopyForm.get('testResult')?.touched">
+                            Indique Resultado:</p>
+                        <mat-radio-group aria-label="Resultado" formControlName="testResult" (change)="showFindings($event.value)">
+                            <mat-radio-button [value]="false">Sin Hallazgos</mat-radio-button>
+                            <mat-radio-button [value]="true">Con Hallazgos</mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Fecha del exámen</mat-label>
+                            <input matInput [matDatepicker]="scopyDate" formControlName="testDate">
+                            <mat-datepicker-toggle matSuffix [for]="scopyDate"></mat-datepicker-toggle>
+                            <mat-datepicker #scopyDate></mat-datepicker>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" (click)="addColonoscopy()">Agregar</button>
+                    </td>
+                </section>
+                <section *ngIf="hasFindings">
+                    <p [class.error-text]="colonoscopyForm.hasError('findingRequired')&& colonoscopyForm.get('polyps')?.touched && colonoscopyForm.get('neoplasticLesion')?.touched">
+                        Indique los hallazgos</p>
+                    <p>
+                        <mat-checkbox formControlName="polyps">Pólipos</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="neoplasticLesion">Lesión Neoplásica</mat-checkbox>
+                    </p>
+                </section>
+            </div>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="colonoscopyList" #colonoscopyTable="matTable">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let exam"> {{exam.idColonoscopy}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="testDate">
+                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{formatDate(exam.testDate)}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="testResult">
+                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{checkColonoscopyResult(exam.testResult)}} </td>
+                    </ng-container>
+
+                    <!-- Polyps -->
+                    <ng-container matColumnDef="polyps">
+                        <th mat-header-cell *matHeaderCellDef> Pólipos </th>
+                        <td mat-cell *matCellDef="let exam"> <span>
+                                <mat-icon *ngIf="exam.polyps">check</mat-icon>
+                            </span></td>
+                    </ng-container>
+
+                    <!-- Cancer Risk -->
+                    <ng-container matColumnDef="neoplasticLesion">
+                        <th mat-header-cell *matHeaderCellDef> Lesión Neoplásica </th>
+                        <td mat-cell *matCellDef="let exam"> <span>
+                                <mat-icon *ngIf="exam.neoplasticLesion">check</mat-icon>
+                            </span> </td>
+                    </ng-container>
+
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let exam"> <button type="button" mat-icon-button color="primary" (click)="deleteColonoscopy(exam)">
+                                <mat-icon>delete</mat-icon>
+                            </button> </td>
+                    </ng-container>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">{{ NO_TABLE_DATA }}</td>
+                    </tr>
+                    <tr mat-header-row *matHeaderRowDef="colonoscopyFields"></tr>
+                    <tr mat-row *matRowDef="let row; columns: colonoscopyFields;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of colonoscopía" #colonoscopyPaginator="matPaginator"></mat-paginator>
+            </div><br>
+            <h4 class="card-sub-division">Biopsias</h4>
+            <mat-divider class="card-divider"></mat-divider>
+            <div [formGroup]="biopsyForm" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
+                <section>
+                    <p>Nueva Biopsia</p><br>
+                    <p>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Fecha del exámen</mat-label>
+                            <input matInput [matDatepicker]="bioDate" formControlName="biopsyDate">
+                            <mat-datepicker-toggle matSuffix [for]="bioDate"></mat-datepicker-toggle>
+                            <mat-datepicker #bioDate></mat-datepicker>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" (click)="addBiopsy()">Agregar</button>
+                    </p>
+                    <div class="full-width">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Describa el resultado:</mat-label>
+                            <textarea matInput placeholder="El paciente..." rows="3" formControlName="result"></textarea>
+                        </mat-form-field>
+                    </div>
+                </section>
+            </div>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="biopsyList" #colonoscopyTable="matTable">
+                    <ng-container matColumnDef="idBiopsy">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let exam"> {{exam.idBiopsy}} </td>
+                    </ng-container>
+
+                    <!-- Date Column -->
+                    <ng-container matColumnDef="biopsyDate">
+                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{formatDate(exam.biopsyDate)}} </td>
+                    </ng-container>
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let exam"> <button type="button" mat-icon-button color="primary" (click)="deleteBiopsy(exam)">
+                                <mat-icon>delete</mat-icon>
+                            </button> </td>
+                    </ng-container>
+
+                    <!-- Result Column -->
+                    <ng-container matColumnDef="result">
+                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <td mat-cell *matCellDef="let exam"> {{exam.result}} </td>
+                    </ng-container>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">{{ NO_TABLE_DATA }}</td>
+                    </tr>
+                    <tr mat-header-row *matHeaderRowDef="biopsyFields"></tr>
+                    <tr mat-row *matRowDef="let row; columns: biopsyFields;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of biopsias" #biopsyPaginator="matPaginator"></mat-paginator>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<mat-divider></mat-divider>
+<!-- risk survey section -->
+<div class="container">
+
+    <h2>Encuesta de Riesgos</h2>
+    <div class="action-buttons">
+        <button mat-raised-button *ngIf="!isOpen; else close" (click)="openAll()">Expandir todos los campos</button>
+        <ng-template #close>
+            <button mat-raised-button (click)="closeAll()">Cerrar todos los campos</button>
+        </ng-template>
+        <span *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
+            <div @slideInOut *ngIf="pageForm.dirty" class="editor" (@slideInOut.start)="isEditableChange.emit(patientForm.dirty)">
+                <button mat-raised-button color="primary" matTooltip="Guardar encuesta de riesgos" (click)="updateSurveyRisk()">Guardar Cambios</button>
+                <button mat-raised-button (click)="cancelSurveyRiskChanges()">Cancelar</button>
+            </div>
+        </span>
+    </div>
+
+    <mat-accordion class="headers-align" #accordionB="matAccordion" multi>
+        <mat-expansion-panel [formGroup]="basic" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes Generales
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>badge</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Peso</mat-label>
+                    <input type="number" matInput formControlName="weight">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Altura</mat-label>
+                    <input type="number" matInput formControlName="height">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>IMC</mat-label>
+                    <input type="number" matInput formControlName="imc">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Circ. Abdominal</mat-label>
+                    <input type="number" matInput formControlName="cAbdominal">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Presión Sistólica</mat-label>
+                    <input type="number" matInput formControlName="paSystolic">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Presión Diástolica</mat-label>
+                    <input type="number" matInput formControlName="paDiastolic">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="regularMedications" (change)="!$event.checked?basic.get('reasonMedicines')?.reset():null">Toma Medicamentos
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="basic.get('regularMedications')?.value">
+                    <mat-label>Razón</mat-label>
+                    <input type="text" matInput formControlName="reasonMedicines">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="anticoagulants" (change)="!$event.checked?basic.get('wichAnticoagulants')?.reset():null">Toma Anticoagulantes
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="basic.get('anticoagulants')?.value">
+                    <mat-label>Cuáles</mat-label>
+                    <input type="text" matInput formControlName="wichAnticoagulants">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="colonoscopyRejection" (ngModelChange)="updateRejectionConditionals($event)">Rechaza colonoscopía</mat-checkbox>
+                <mat-checkbox formControlName="colonoscopyRejectionSignature" *ngIf="basic.get('colonoscopyRejection')?.value">Firma rechazo</mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="signConsent" (ngModelChange)="$event? basic.get('colonoscopyRejection')?.disable():basic.get('colonoscopyRejection')?.enable()">
+                    Firma consentimiento colonoscopía</mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="instructiveTsdo">Recibe instructivo TSDO</mat-checkbox>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel [formGroup]="pathologies" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes Médicos
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>health_and_safety</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-checkbox formControlName="arterialHypertension">Hipertensión arterial</mat-checkbox><br>
+                <mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox><br>
+                <mat-checkbox formControlName="epilepsy">Epilepsia</mat-checkbox><br>
+                <mat-checkbox fomrControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
+                <mat-checkbox formControlName="hypoHyperThyroidism">Hipo/Hipertiroidismo</mat-checkbox><br>
+                <mat-checkbox formControlName="operated" (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna vez
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('operated')?.value">
+                    <mat-label>Razón</mat-label>
+                    <input type="text" formControlName="operationReason" matInput>
+                </mat-form-field><br>
+            </section>
+
+            <section>
+                <mat-checkbox formControlName="cancer" (change)="resetCancerConditionals($event.checked)">Ha tenido cáncer
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value">
+                    <mat-label>Cuál</mat-label>
+                    <input type="text" formControlName="typeCancer" matInput (ngModelChange)="!$event?pathologies.get('cancerAge')?.reset():null">
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
+                    <mat-label>Edad</mat-label>
+                    <input type="number" formControlName="cancerAge" matInput>
+                </mat-form-field>
+            </section>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel [formGroup]="habits" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Hábitos
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>directions_run</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-checkbox formControlName="smokes" (change)="resetSmokerConditional($event.checked)">Fuma
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Cantidad</mat-label>
+                    <input type="number" formControlName="numberCigarettes" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Años Fumando</mat-label>
+                    <input type="number" formControlName="yearsSmoking" matInput>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox formControlName="eatCerealFiber">Consume diariamente cereales/fibras</mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="drinkAlcohol" (change)="!$event.checked?habits.get('quantityAlcohol')?.reset():null">Conusme alcohol
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value">
+                    <mat-label>Cuánto</mat-label>
+                    <input type="number" formControlName="quantityAlcohol" matInput>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox formControlName="physicalActivity">Realiza ACtividad Física (al menos caminar 20 min diarios)
+                </mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="threeFruits">Consume a lo menos 3 porciones de frutas y verduras al día
+                </mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="friedFoods">Consume semanalmente 2 o mas alimentos fritos</mat-checkbox>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes de Cáncer en Familia
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>group_add</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section [formGroup]="familyMemberForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Familiar con Cáncer</mat-label>
+                    <mat-select formControlName="familyMember" required>
+                        <mat-option *ngFor="let member of familyOptions" [value]="member">{{member}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Edad de detección</mat-label>
+                    <input type="number" formControlName="age" matInput required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cancer</mat-label>
+                    <input formControlName="cancer" type="text" matInput required>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="addFamilyMemberCancer()">Agregar</button>
+            </section>
+            <mat-list role="list">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="familyMemberList" #familyTable="matTable" class="mat-elevation-z8">
+                        <ng-container matColumnDef="member">
+                            <th mat-header-cell *matHeaderCellDef> Familiar </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.familyMember}}
+                            </td>
+                        </ng-container>
+
+                        <!-- Cancer Column -->
+                        <ng-container matColumnDef="cancer">
+                            <th mat-header-cell *matHeaderCellDef> Cáncer </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.cancer}} </td>
+                        </ng-container>
+
+                        <!-- Age Column -->
+                        <ng-container matColumnDef="age">
+                            <th mat-header-cell *matHeaderCellDef> Edad </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.age}} </td>
+                        </ng-container>
+                        <!-- Delete Column -->
+                        <ng-container matColumnDef="delete">
+                            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                            <td mat-cell *matCellDef="let cancer"> <button type="button" mat-icon-button color="primary" (click)="removeMember(cancer)">
+                                    <mat-icon>delete</mat-icon>
+                                </button> </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="familyMemberCancerFields"></tr>
+                        <tr mat-row *matRowDef="let row; columns: familyMemberCancerFields;"></tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of familiares" #familyPaginator="matPaginator"></mat-paginator>
+                </div>
+            </mat-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

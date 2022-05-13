@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 57px;
+}
+
+.successSnack {
+    background-color: #673ab7;
+    color: white;
+}
+
+.error-text {
+    color: #f44336;
+}

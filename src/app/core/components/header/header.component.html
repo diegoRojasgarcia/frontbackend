@@ -1,0 +1,46 @@
+<mat-toolbar color="primary" class="sticky-main-header">
+
+    <button mat-icon-button class="icon" (click)="openSidenav()" aria-label="Side menu.">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span>PRECOS</span> -->
+    <button mat-icon-button class="logo-btn" (click)="toHome()">
+        <img mat-card-image class="logo-img" src="assets/images/completo.png" alt="logo" (click)="toHome()">
+    </button>
+    <div class="spacer"></div>
+    <a href="login" (click)="logOut()">Cerrar Sesión</a>
+</mat-toolbar>
+
+<mat-drawer-container [ngClass]="[navStyle]" (backdropClick)="closeSidenav()">
+    <mat-drawer #sidenav class="sidenav" mode="over">
+        <img class="menu-logo" mat-card-image src="assets/images/manos.png" alt="logo">
+        <div class="menu-title">MENU</div>
+        <button mat-icon-button (click)="closeSidenav()">
+            <mat-icon>close</mat-icon>
+        </button>
+        <mat-action-list>
+            <button mat-list-item class="menu-btn" (click)="toHome()">
+                <mat-icon class="menu-option-icon">home</mat-icon> HOME
+            </button>
+            <button mat-list-item class="menu-btn" (click)="seeUserProfile()">
+                <mat-icon class="menu-option-icon">perm_identity</mat-icon> PERFIL
+            </button>
+            <button mat-list-item class="menu-btn" (click)="toUsersAdministration()">
+                <mat-icon class="menu-option-icon">manage_accounts </mat-icon> ADMINISTRACIÓN
+            </button>
+            <mat-divider></mat-divider>
+            <div mat-subheader class="menu-btn">Menú Cáncer</div>
+            <span *appSpeciality="SPECIALITIES.CBP"> 
+                <button mat-list-item class="menu-btn" (click)="toCBP()"><mat-icon class="menu-option-icon">home</mat-icon> BRONCOPULMONAR </button>
+            </span>
+            <span *appSpeciality="SPECIALITIES.CCR">
+                <button mat-list-item class="menu-btn" (click)="toCCR()">
+                    <mat-icon class="menu-option-icon">home</mat-icon> COLORRECTAL
+                </button>
+            </span>
+        </mat-action-list>
+    </mat-drawer>
+
+</mat-drawer-container>
+
+<!-- <br> -->

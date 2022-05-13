@@ -1,0 +1,61 @@
+<app-title [pageTitle]="'Menú Principal'" [pageSubtitle]="'PREVENTIVE CANCER ONLINE SYSTEM'">
+</app-title>
+<div class="menu-container">
+    <mat-grid-list #grid [cols]="cols" rowHeight="2:1">
+
+        <mat-grid-tile (click)="seeUserProfile()">
+            <div class="container">
+                <div class="row">
+                    <mat-icon>perm_identity</mat-icon>
+                </div>
+                <div class="row">
+                    <p class="name"><strong>Perfil</strong> </p>
+                </div>
+                <div class="row">
+                    <p class="details">Actualizar datos personales y contraseña.</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile (click)="toUsersAdministration()" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.USER_MANAGEMENT">
+            <div class="container">
+                <div class="row">
+                    <mat-icon>manage_accounts</mat-icon>
+                </div>
+                <div class="row">
+                    <p class="name"><strong>Administración de Usuarios</strong> </p>
+                </div>
+                <div class="row">
+                    <p class="details">Agregar, editar y eliminar usuarios del sistema.</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile (click)="toCBP()" *appSpeciality="SPECIALITIES.CBP">
+            <div class="container">
+                <div class="row">
+                    <mat-icon></mat-icon>
+                </div>
+                <div class="row">
+                    <p class="name"><strong>{{CBP}}</strong> </p>
+                </div>
+                <div class="row">
+                    <p class="details">Módulo CBP</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile (click)="toCCR()" *appSpeciality="SPECIALITIES.CCR">
+            <div class="container">
+                <div class="row">
+                    <mat-icon></mat-icon>
+                </div>
+                <div class="row">
+                    <p class="name"><strong>{{CCR}}</strong> </p>
+                </div>
+                <div class="row">
+                    <p class="details">Módulo CCR</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

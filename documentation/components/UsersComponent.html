@@ -1,0 +1,1329 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  UsersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/users-management/pages/users/users.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-users</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./users.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./users.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#privileges" >privileges</a>
+                            </li>
+                            <li>
+                                <a href="#professions" >professions</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                <a href="#table" >table</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addUser" >addUser</a>
+                            </li>
+                            <li>
+                                <a href="#editUser" >editUser</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetSearch" >resetSearch</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                <a href="#searchProfession" >searchProfession</a>
+                            </li>
+                            <li>
+                                <a href="#updateUserAccess" >updateUserAccess</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addUser"></a>
+                    <span class="name">
+                        <span ><b>addUser</b></span>
+                        <a href="#addUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editUser"></a>
+                    <span class="name">
+                        <span ><b>editUser</b></span>
+                        <a href="#editUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editUser(row: <a href="../interfaces/UserModel.html" target="_self">UserModel</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="../interfaces/UserModel.html" target="_self" >UserModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetSearch"></a>
+                    <span class="name">
+                        <span ><b>resetSearch</b></span>
+                        <a href="#resetSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetSearch()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>search()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchProfession"></a>
+                    <span class="name">
+                        <span ><b>searchProfession</b></span>
+                        <a href="#searchProfession"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchProfession(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserAccess"></a>
+                    <span class="name">
+                        <span ><b>updateUserAccess</b></span>
+                        <a href="#updateUserAccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateUserAccess(row: <a href="../interfaces/UserModel.html" target="_self">UserModel</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="../interfaces/UserModel.html" target="_self" >UserModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/UserModel.html" target="_self" >MatTableDataSource&lt;UserModel&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;rut&#x27;, &#x27;name&#x27;, &#x27;foundation&#x27;, &#x27;profession&#x27;, &#x27;edit&#x27;, &#x27;delete&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="privileges"></a>
+                    <span class="name">
+                        <span ><b>privileges</b></span>
+                        <a href="#privileges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Privilege.html" target="_self" >Privilege[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="professions"></a>
+                    <span class="name">
+                        <span ><b>professions</b></span>
+                        <a href="#professions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Profession.html" target="_self" >Profession[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="table"></a>
+                    <span class="name">
+                        <span ><b>table</b></span>
+                        <a href="#table"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/UserModel.html" target="_self" >MatTable&lt;UserModel&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatTable)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/features/users-management/pages/users/users.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, Input, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatDialog, MatDialogConfig } from &#x27;@angular/material/dialog&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTable, MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { finalize, tap } from &#x27;rxjs/operators&#x27;;
+import { Privilege } from &#x27;src/app/features/users-management/models/privilege&#x27;;
+import { Profession } from &#x27;src/app/features/users-management/models/profession&#x27;;
+import { UserModel } from &#x27;src/app/features/users-management/models/user.model&#x27;;
+import { UsersService } from &#x27;src/app/features/users-management/services/users/users.service&#x27;;
+import { ConfirmDialogComponent } from &#x27;../../../../shared/components/confirm-dialog/confirm-dialog.component&#x27;;
+import { EditUserComponent } from &#x27;../../../../shared/components/edit-user/edit-user.component&#x27;;
+
+
+
+@Component({
+  selector: &#x27;app-users&#x27;,
+  templateUrl: &#x27;./users.component.html&#x27;,
+  styleUrls: [&#x27;./users.component.css&#x27;],
+})
+export class UsersComponent implements AfterViewInit {
+  displayedColumns: string[] &#x3D; [&#x27;rut&#x27;, &#x27;name&#x27;, &#x27;foundation&#x27;, &#x27;profession&#x27;, &#x27;edit&#x27;, &#x27;delete&#x27;];
+  dataSource!: MatTableDataSource&lt;UserModel&gt;;
+  professions: Profession[] &#x3D; []
+  privileges: Privilege[] &#x3D; []
+  @Input() value: string &#x3D; &quot;&quot;;
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  @ViewChild(MatSort)
+  sort!: MatSort;
+
+  @ViewChild(MatTable)
+  table!: MatTable&lt;UserModel&gt;;
+
+  isLoading: boolean &#x3D; true;
+
+  constructor(private dialog: MatDialog, private usersService: UsersService) { }
+
+  // Ater init life-cycle logic
+  ngAfterViewInit() {
+    this.usersService.getProfessions().subscribe(res &#x3D;&gt; {
+      this.professions &#x3D; res.data
+    })
+    this.usersService.getPrivileges().subscribe(res &#x3D;&gt; {
+      this.privileges &#x3D; res.data;
+    })
+    this.usersService.getUsers().subscribe(
+      res &#x3D;&gt; {
+        this.dataSource &#x3D; new MatTableDataSource&lt;UserModel&gt;(res.data);
+        this.dataSource.paginator &#x3D; this.paginator;
+        this.dataSource.sort &#x3D; this.sort;
+        this.isLoading &#x3D; false;
+      }
+    );
+
+  }
+
+  //search on data table function 
+  search(): void {
+    this.dataSource.filter &#x3D; this.value.trim().toLowerCase();
+  }
+
+  resetSearch(): void {
+    this.value &#x3D; &quot;&quot;
+    this.search();
+  }
+
+  //reset search input
+  addUser() {
+
+    const dialogConfig &#x3D; new MatDialogConfig();
+
+    dialogConfig.disableClose &#x3D; true;
+    dialogConfig.autoFocus &#x3D; true;
+
+    dialogConfig.data &#x3D; {
+      title: &quot;Agregar Nuevo Usuario&quot;,
+      professions: this.professions,
+      privileges: this.privileges
+    }
+    const dialogRef &#x3D; this.dialog.open(EditUserComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(res &#x3D;&gt; {
+      if (res) {
+        const dataRef &#x3D; this.dataSource.data;
+        dataRef.unshift(res);
+        this.dataSource.data &#x3D; dataRef;
+        this.dataSource.paginator?.firstPage();
+      }
+    })
+  }
+  editUser(row: UserModel) {
+
+    const dialogConfig &#x3D; new MatDialogConfig();
+    delete row.password
+    dialogConfig.disableClose &#x3D; true;
+    dialogConfig.autoFocus &#x3D; true;
+    dialogConfig.data &#x3D; {
+      title: &quot;Editar Usuario&quot;,
+      user: row,
+      professions: this.professions,
+      privileges: this.privileges
+    }
+    const diaRef &#x3D; this.dialog.open(EditUserComponent, dialogConfig);
+    diaRef.afterClosed().subscribe(result &#x3D;&gt; {
+      if (result) {
+        const dataRef &#x3D; this.dataSource.data.filter(user &#x3D;&gt; {
+          return user.idUser !&#x3D; result.idUser;
+        })
+        dataRef.unshift(result);
+        this.dataSource.data &#x3D; dataRef;
+        this.dataSource.paginator?.firstPage();
+      }
+
+    })
+  }
+  updateUserAccess(row: UserModel): void {
+    const dialogConfig &#x3D; new MatDialogConfig();
+    let action &#x3D; &quot;&quot;
+    if (row.access)
+      action &#x3D; &quot;Bloquear&quot;;
+    else
+      action &#x3D; &quot;Desbloquear&quot;
+
+    dialogConfig.disableClose &#x3D; true;
+    dialogConfig.autoFocus &#x3D; true;
+    dialogConfig.data &#x3D; {
+      title: action + &quot; Usuario&quot;,
+      action: action,
+      msg: &quot;¿Seguro que desea &quot; + action + &quot; del sistema a &quot; + row.name + &quot;?&quot;
+    }
+    const diaRef &#x3D; this.dialog.open(ConfirmDialogComponent, dialogConfig);
+    diaRef.afterClosed().subscribe(res &#x3D;&gt; {
+      if (res.response) {
+        this.isLoading &#x3D; true;
+        row.access &#x3D; !row.access
+        this.usersService.editUser(row).pipe(
+          tap(undefined,error &#x3D;&gt; {
+            row.access &#x3D; !row.access;
+            console.log(error)
+          }),
+          finalize(() &#x3D;&gt; {
+            this.isLoading &#x3D; false;
+          })).subscribe()
+      }
+    })
+  }
+  searchProfession(id: number): string | undefined {
+    return this.professions.find(profession &#x3D;&gt; profession.idProfession &#x3D;&#x3D; id)?.name;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-title [pageTitle]&#x3D;&quot;&#x27;USUARIOS&#x27;&quot;&gt;&lt;/app-title&gt;
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;mat-toolbar class&#x3D;&quot;action-toolbar&quot;&gt;
+        &lt;!-- Search function --&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+            &lt;mat-label&gt;Buscar en usuarios&lt;/mat-label&gt;
+            &lt;input matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;value&quot; (keyup)&#x3D;&quot;search()&quot;&gt;
+            &lt;button *ngIf&#x3D;&quot;value&quot; matSuffix mat-icon-button aria-label&#x3D;&quot;Clear&quot; (click)&#x3D;&quot;resetSearch()&quot;&gt;
+                &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+            &lt;/button&gt;
+        &lt;/mat-form-field&gt;
+        &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
+        &lt;button mat-fab color&#x3D;&quot;primary&quot; aria-label&#x3D;&quot;Add user button&quot; class&#x3D;&quot;add-btn&quot; (click)&#x3D;&quot;addUser()&quot;&gt;
+            &lt;mat-icon&gt;person_add&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    &lt;/mat-toolbar&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+&lt;div class&#x3D;&quot;menu-container&quot;&gt;
+    &lt;mat-spinner diameter&#x3D;&quot;20&quot; *ngIf&#x3D;&quot;isLoading&quot;&gt;&lt;/mat-spinner&gt;
+    &lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+        &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+
+            &lt;!-- RUT Column --&gt;
+            &lt;ng-container matColumnDef&#x3D;&quot;rut&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef&gt; RUT &lt;/th&gt;
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let user&quot;&gt; {{user.rut}} &lt;/td&gt;
+            &lt;/ng-container&gt;
+
+            &lt;!-- Name Column --&gt;
+            &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Nombre &lt;/th&gt;
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let user&quot;&gt; {{user.name}} &lt;/td&gt;
+            &lt;/ng-container&gt;
+
+            &lt;!-- Member Column --&gt;
+            &lt;ng-container matColumnDef&#x3D;&quot;foundation&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Fundación &lt;/th&gt;
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let user&quot;&gt;
+                    &lt;mat-icon *ngIf&#x3D;&quot;user.foundation&quot;&gt;check&lt;/mat-icon&gt;
+                &lt;/td&gt;
+            &lt;/ng-container&gt;
+
+            &lt;!-- Profession Column --&gt;
+            &lt;ng-container matColumnDef&#x3D;&quot;profession&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Profesión &lt;/th&gt;
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let user&quot;&gt; {{searchProfession(user.profession)}} &lt;/td&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;edit&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef&gt; Editar &lt;/th&gt;
+
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+                    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;editUser(row)&quot;&gt;&lt;mat-icon&gt;edit&lt;/mat-icon&gt;&lt;/button&gt;
+                &lt;/td&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;delete&quot;&gt;
+                &lt;th mat-header-cell *matHeaderCellDef&gt; Bloquear Acceso &lt;/th&gt;
+
+                &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+                    &lt;button *ngIf&#x3D;&quot;row.access&quot; mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;updateUserAccess(row)&quot;&gt;&lt;mat-icon&gt;lock_open&lt;/mat-icon&gt;&lt;/button&gt;
+                    &lt;button *ngIf&#x3D;&quot;!row.access&quot; mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;updateUserAccess(row)&quot;&gt;&lt;mat-icon&gt;lock&lt;/mat-icon&gt;&lt;/button&gt;
+                &lt;/td&gt;
+
+            &lt;/ng-container&gt;
+            &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot; class&#x3D;&quot;center-header&quot;&gt;&lt;/tr&gt;
+            &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+
+        &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 20]&quot; showFirstLastButtons aria-label&#x3D;&quot; Seleccione alguna página.&quot;&gt;
+        &lt;/mat-paginator&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;mat-divider&gt;&lt;/mat-divider&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./users.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+    font-family: &#x27;Barlow&#x27;, sans-serif;
+    /* margin: 5%; */
+}
+
+.menu-container {
+    padding: 30px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+h1 {
+    margin-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+mat-toolbar {
+    background-color: transparent;
+    font-size: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+div.mat-sort-header-container {
+    text-align: center !important;
+}
+
+.action-toolbar {
+    padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+
+.add-btn {
+    margin-bottom: 20px;
+}
+
+
+/* la mayda me quiere hacer una pregunta */</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-title [pageTitle]="\'USUARIOS\'"></app-title><div class="container">    <mat-toolbar class="action-toolbar">        <!-- Search function -->        <mat-form-field appearance="fill">            <mat-label>Buscar en usuarios</mat-label>            <input matInput type="text" [(ngModel)]="value" (keyup)="search()">            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetSearch()">                <mat-icon>close</mat-icon>            </button>        </mat-form-field>        <div class="spacer"></div>        <button mat-fab color="primary" aria-label="Add user button" class="add-btn" (click)="addUser()">            <mat-icon>person_add</mat-icon>        </button>    </mat-toolbar></div><br><div class="menu-container">    <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>    <div class="mat-elevation-z8">        <table mat-table [dataSource]="dataSource" matSort>            <!-- RUT Column -->            <ng-container matColumnDef="rut">                <th mat-header-cell *matHeaderCellDef> RUT </th>                <td mat-cell *matCellDef="let user"> {{user.rut}} </td>            </ng-container>            <!-- Name Column -->            <ng-container matColumnDef="name">                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>                <td mat-cell *matCellDef="let user"> {{user.name}} </td>            </ng-container>            <!-- Member Column -->            <ng-container matColumnDef="foundation">                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fundación </th>                <td mat-cell *matCellDef="let user">                    <mat-icon *ngIf="user.foundation">check</mat-icon>                </td>            </ng-container>            <!-- Profession Column -->            <ng-container matColumnDef="profession">                <th mat-header-cell *matHeaderCellDef mat-sort-header> Profesión </th>                <td mat-cell *matCellDef="let user"> {{searchProfession(user.profession)}} </td>            </ng-container>            <ng-container matColumnDef="edit">                <th mat-header-cell *matHeaderCellDef> Editar </th>                <td mat-cell *matCellDef="let row">                    <button mat-icon-button color="primary" (click)="editUser(row)"><mat-icon>edit</mat-icon></button>                </td>            </ng-container>            <ng-container matColumnDef="delete">                <th mat-header-cell *matHeaderCellDef> Bloquear Acceso </th>                <td mat-cell *matCellDef="let row">                    <button *ngIf="row.access" mat-icon-button color="primary" (click)="updateUserAccess(row)"><mat-icon>lock_open</mat-icon></button>                    <button *ngIf="!row.access" mat-icon-button color="primary" (click)="updateUserAccess(row)"><mat-icon>lock</mat-icon></button>                </td>            </ng-container>            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="center-header"></tr>            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        </table>        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label=" Seleccione alguna página.">        </mat-paginator>    </div></div><br><mat-divider></mat-divider></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CBPMainComponent', 'selector': 'app-cbp-main'},{'name': 'CBPPatientComponent', 'selector': 'app-cbp-patient'},{'name': 'CBPPatientListComponent', 'selector': 'app-cbp-patient-list'},{'name': 'CBPTrackingComponent', 'selector': 'app-cbp-tracking'},{'name': 'CCRAppointmentDialogComponent', 'selector': 'app-ccr-appointment-dialog'},{'name': 'CCRMainComponent', 'selector': 'app-colon-rectal-tabs'},{'name': 'CCRPatientComponent', 'selector': 'app-ccr-patient'},{'name': 'CCRPatientListComponent', 'selector': 'app-ccr-patient-list'},{'name': 'ColonRectalSummaryComponent', 'selector': 'app-ccr-summary'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoggedInLayoutComponent', 'selector': 'app-logged-in-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PatientProfileComponent', 'selector': 'app-patient-profile'},{'name': 'PatientRegisterComponent', 'selector': 'app-patient-register'},{'name': 'SchedulerComponent', 'selector': 'app-scheduler'},{'name': 'TitleComponent', 'selector': 'app-title'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [{'name': 'PermissionDirective', 'selector': '[appPermission]'},{'name': 'SpecialityDirective', 'selector': '[appSpeciality]'}];
+    var ACTUAL_COMPONENT = {'name': 'UsersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsersComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

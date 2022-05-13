@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #673ab7;
+}
+
+.login-card {
+    max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.content-center ::ng-deep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+mat-icon.mat-card-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+}
+
+.mat-form-field {
+    max-width: 260px;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

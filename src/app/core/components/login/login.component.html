@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card class="login-card">
+        <mat-card-header class="content-center">
+            <mat-icon mat-card-avatar>account_circle</mat-icon>
+            <mat-card-title>PRECOS</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/images/logo_rectangular.png" style="padding: 2%; width: 100%;" alt="logo">
+        <mat-card-content>
+            <fieldset [formGroup]="loginForm" (keyup.enter)="submit()">
+                <mat-form-field appearance="fill" (change)="formatRut()">
+                    <mat-label>RUT</mat-label>
+                    <input matInput [formControl]="rutControl">
+                    <mat-error *ngIf="rutControl.hasError('invalidRut') && !rutControl.hasError('required')">
+                        Por favor ingresar un RUT válido.
+                    </mat-error>
+                    <mat-error *ngIf="rutControl.hasError('required')">
+                        Campo <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input [type]="hide ? 'password' : 'text'" matInput required [formControl]="passwordFormControl">
+                    <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Campo <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </fieldset>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="submit()">ENTRAR</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

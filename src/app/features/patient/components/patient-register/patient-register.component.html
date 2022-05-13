@@ -1,0 +1,267 @@
+<div class="stepper-container">
+    <app-title [pageTitle]="'Nuevo Paciente'"></app-title>
+    <mat-stepper linear #stepper>
+        <mat-step [stepControl]="patientData" [editable]="false">
+            <div *ngIf="!isEditable">
+                <span class="warn-text">El paciente ya se encuentra en nuestros registros. Por favor,
+                    <strong>PROCEDA AL SIGUIENTE PASO</strong> si desea agregar datos en la sección {{cancer}} de la
+                    plataforma. Si desea modificar datos,
+                    diríjase al perfil del paciente en el cáncer correspondiente.</span>
+                <br>
+                <button mat-raised-button color="primary" (click)="resetSteps()">Intentar con otro paciente</button>
+                <button mat-raised-button class="next-btn" color="primary" matStepperNext>Siguiente</button>
+            </div>
+
+            <fieldset [formGroup]="patientData" class="step-form" [disabled]="!isEditable">
+                <ng-template matStepLabel>Datos personales</ng-template>
+                <h4>Generales</h4>
+                <mat-divider></mat-divider>
+                <div class="block">
+                    <table cellspacing="0">
+
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Nombres *</mat-label>
+                                <input matInput formControlName="name" placeholder="Ingrese ambos nombres">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Apellido paterno *</mat-label>
+                                <input matInput formControlName="lastName" placeholder="Primer apellido">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Apellido materno</mat-label>
+                                <input matInput formControlName="lastName2" placeholder="Segundo apellido">
+                            </mat-form-field>
+                        </td>
+                    </table>
+                    <table>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Nacionalidad *</mat-label>
+                                <mat-select formControlName="nationality">
+                                    <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
+                                        {{nationality}}</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>RUT *</mat-label>
+                                <input matInput formControlName="rut" placeholder="RUT/DNI" (change)="lookupPatient()" autofocus>
+                                <mat-hint>{{hint}}</mat-hint>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Fecha de nacimiento *</mat-label>
+                                <input matInput [matDatepicker]="birthday" formControlName="birthday">
+                                <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+                                <mat-datepicker #birthday></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                    </table>
+                    <table cellspacing="0">
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Estado Civil</mat-label>
+                                <mat-select formControlName="maritalState">
+                                    <mat-option *ngFor="let state of mStates" [value]="state">{{state}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                    </table>
+                </div>
+                <h4>Sexo *</h4>
+                <mat-divider></mat-divider>
+                <table class="block">
+                    <td>
+                        <p *ngIf="showError" [class.error-text]="patientData.get('sex')?.hasError('required')">Seleccione una opción:</p>
+                        <mat-radio-group aria-label="Seleccione una opción" formControlName="sex">
+                            <mat-radio-button value="M">Masculino</mat-radio-button>
+                            <mat-radio-button value="F">Femenino</mat-radio-button>
+                            <mat-radio-button value="N/A">Otro / Prefiere no informar</mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </table>
+                <br>
+                <h4>Dirección</h4>
+                <mat-divider></mat-divider>
+                <div class="block">
+                    <table cellspacing="0">
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Región *</mat-label>
+                                <mat-select formControlName="region" (selectionChange)="getCommunes()">
+                                    <mat-option *ngFor="let region of regions" [value]="region.codigo">{{region.nombre}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label *ngIf="!communesLoading">Comuna *</mat-label>
+                                <mat-label *ngIf="communesLoading">
+                                    <span class="select-placeholder-container">Cargando...
+                                        <mat-spinner diameter="20"></mat-spinner>
+                                    </span>
+                                </mat-label>
+                                <mat-select formControlName="commune">
+                                    <mat-option *ngIf="!communes.length && !communesLoading" disabled>Primero seleccione una región.</mat-option>
+                                    <mat-option *ngFor="let commune of communes" [value]="commune.codigo">
+                                        {{commune.nombre}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Dirección *</mat-label>
+                                <input matInput formControlName="address" placeholder="Dirección #num">
+                            </mat-form-field>
+                        </td>
+                    </table>
+                    <section>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Villa/población</mat-label>
+                                <input matInput formControlName="village" placeholder="Nombre villa/población">
+                            </mat-form-field>
+                        </td>
+                        <td class="radio-cell">
+                            <div class="radio-selector">
+                                <mat-label [class.error-text]="showError && patientData.get('residenceTime')?.hasError('required')">Tiempo de residencia en la región *</mat-label> <br>
+                                <mat-radio-group aria-label="Seleccione una opción" formControlName="residenceTime" (change)="checkOptionalRegion($event.value)">
+                                    <mat-radio-button [value]="false">Menos de 5 años</mat-radio-button>
+                                    <mat-radio-button [value]="true">Más de 5 años</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </td>
+                        <td>
+                            <mat-form-field *ngIf="showOptionalRegion" appearance="fill">
+                                <mat-label>Indique la región anterior.</mat-label>
+                                <mat-select formControlName="previousRegion">
+                                    <mat-option *ngFor="let region of regions" [value]="region.codigo">{{region.nombre}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="showOptionalRegion && patientData.hasError('regionReq')">{{requiredField}}</mat-error>
+                        </td>
+                    </section>
+                    <section cellspacing="0">
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Cesfam</mat-label>
+                                <mat-select formControlName="cesfam">
+                                    <mat-option *ngFor="let cesfam of cesfamList" [value]="cesfam">{{cesfam}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Centro</mat-label>
+                                <mat-select formControlName="medicalFacility">
+                                    <mat-option value="Antofagasta">Antofagasta</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+
+                    </section>
+                </div>
+                <h4>Contacto</h4>
+                <mat-divider></mat-divider>
+                <div class="block">
+                    <table cellspacing="0">
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Celular *</mat-label>
+                                <span matPrefix>+56 &nbsp;</span>
+                                <input matInput type="tel" formControlName="cellphone" placeholder="987654321">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Teléfono de emergencia</mat-label>
+                                <span matPrefix>+56 &nbsp;</span>
+                                <input matInput type="tel" formControlName="emergencyPhone" placeholder="987654321">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Correo</mat-label>
+                                <input matInput formControlName="mail" placeholder="ejemplo@dominio.com">
+                            </mat-form-field>
+                        </td>
+                    </table>
+
+                </div>
+                <h4>Otros</h4>
+                <mat-divider></mat-divider>
+                <table class="block">
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>FONASA *</mat-label>
+                            <mat-select formControlName="fonasa">
+                                <mat-option *ngFor="let f of fonasa" [value]="f">{{f}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+
+                </table>
+                <br>
+                <br>
+                <table class="block">
+                    <section>
+                        <mat-checkbox [class.error-text]="showError && !patientData.get('inAgeRange')?.value" formControlName="inAgeRange">El paciente tiene entre {{ageRange}} años.*</mat-checkbox><br>
+                        <mat-checkbox [class.error-text]="showError && !patientData.get('dataAgreement')?.value" formControlName="dataAgreement">El paciente está de acuerdo en que se usen sus datos personales solo con fines de estudios médicos. *</mat-checkbox><br>
+                        <mat-checkbox [class.error-text]="showError && !patientData.get('volunteerAgreement')?.value" formControlName="volunteerAgreement">El paciente firmó el acuerdo de participación voluntaria en el programa {{cancer.toLowerCase()}} de la Fundación Vivir sin Cáncer. *
+                        </mat-checkbox>
+                        <mat-error *ngIf="showError && !patientData.valid">(*) Campos requeridos.</mat-error>
+                    </section>
+                </table>
+            </fieldset>
+            <div>
+                <button mat-raised-button class="next-btn" color="primary" (click)="submitPatient()">Siguiente</button>
+            </div>
+        </mat-step>
+        <!-- initial records -->
+        <mat-step [stepControl]="enrollmentSurvey" [editable]="false">
+            <form [formGroup]="enrollmentSurvey">
+                <ng-template matStepLabel>Encuesta Screening</ng-template>
+
+                <!-- displat questions by type -->
+                <section *ngIf="!!survey.length; else noSurvey">
+                    <h4>Marque los campos que apliquen:</h4>
+                    <p *ngFor="let question of survey">
+                        <mat-checkbox *ngIf="question.type=='boolean'" ([ngModel])="true" formControlName="{{question.name}}">{{question.msg}}</mat-checkbox>
+                    </p>
+                </section>
+                <ng-template #noSurvey>
+                    <section>
+                        <h4>Esperando encuesta ...</h4>
+                    </section>
+                </ng-template>
+                <br>
+                <br>
+                <div>
+                    <button mat-raised-button color="primary" (click)="resetSteps()">Cancelar y volver</button>
+                    <button mat-raised-button class="next-btn" color="primary" (click)="submitEnrollment()">Siguiente</button><br>
+                    <mat-hint>Los datos previamente guardados se mantendrán</mat-hint>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [editable]="false">
+            <ng-template matStepLabel>Resultados</ng-template>
+            <p>{{final}}</p>
+            <div>
+                <button mat-raised-button class="next-btn" type="submit" color="primary" (click)="resetSteps()">Terminar
+                    y volver al inicio</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>

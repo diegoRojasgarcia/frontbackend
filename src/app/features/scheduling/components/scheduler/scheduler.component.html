@@ -1,0 +1,22 @@
+<div class="container">
+    <app-title [pageTitle]="'Agendamiento de Pacientes '+cancer"></app-title>
+    <div class="page-container">
+        <br>
+        <div class="header-toolbar">
+            <div>
+                <button mat-raised-button color="primary" (click)="prevYear()"><mat-icon>keyboard_double_arrow_left</mat-icon></button>
+                <button mat-raised-button color="primary" (click)="prev()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" matTooltip="Hoy" (click)="today()"><mat-icon>calendar_today</mat-icon></button>
+                <button mat-raised-button color="primary" matTooltip="Mes" (click)="viewMonth()" [disabled]="currentView ==='dayGridMonth'"><mat-icon>calendar_view_month</mat-icon></button>
+                <button mat-raised-button color="primary" matTooltip="Semana" (click)="viewWeek()" [disabled]="currentView ==='timeGridWeek'"><mat-icon>calendar_view_week</mat-icon></button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" (click)="next()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                <button mat-raised-button color="primary" (click)="nextYear()"><mat-icon>keyboard_double_arrow_right</mat-icon></button>
+            </div>
+        </div>
+        <full-calendar #scheduler [options]="calendarOptions"></full-calendar>
+    </div>
+</div>

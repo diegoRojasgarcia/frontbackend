@@ -1,0 +1,10 @@
+.container {
+    display: block;
+    max-height: 88vh;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.block {
+    max-height: 100%;
+}

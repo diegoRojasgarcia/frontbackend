@@ -1,0 +1,41 @@
+<mat-tab-group [(selectedIndex)]="selectedIndex">
+    <mat-tab label="Seguimiento TAC" [disabled]="lock">
+        <ng-template matTabContent>
+            <app-cbp-tracking (openProfile)="openPatientProfile($event)"></app-cbp-tracking>
+        </ng-template>
+    </mat-tab>
+    <mat-tab [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.SCHEDULING">
+        <ng-template matTabLabel>
+            <div>Agendamiento</div>
+            <button mat-icon-button (click)="refreshCalendar()" *ngIf="selectedIndex === 1"><mat-icon>refresh</mat-icon></button>
+        </ng-template>
+        <ng-template matTabContent>
+            <app-scheduler [cancer]="currentCancer" [(events)]="events" (timeRangeChange)="loadEnrollmentAppointments($event)" (editEvent)="editEnrollmentAppointment($event)" (eventChange)="updateEvent($event)" (scheduleEvent)="addEnrollmentAppointment($event)" [schedulerEnd]="currentSchedulerEnd"></app-scheduler>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Enrolamiento Paciente" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.ENROLLMENT">
+        <ng-template matTabContent>
+            <app-patient-register [cancer]="currentCancer" [cancerKey]="currentCancerKey.toLowerCase()" [survey]="currentSurvey" [ageRange]="currentAgeRange" (patientSubmit)="addPatient($event)" (surveySubmit)="addEnrollmentSurvey($event)" (openProfile)="openPatientProfile($event)"></app-patient-register>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Lista de Pacientes" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
+        <ng-template matTabContent>
+            <app-cbp-patient-list (openProfile)="openPatientProfile($event)"></app-cbp-patient-list>
+        </ng-template>
+    </mat-tab>
+    <mat-tab *ngFor="let patient of patientTabs">
+        <ng-template matTabLabel>
+            <div>{{patient.name}}</div>
+            <button mat-icon-button (click)="closeProfile()"><mat-icon>close</mat-icon></button>
+        </ng-template>
+        <ng-template matTabContent>
+            <div class="container">
+                <div class="block">
+                    <app-patient-profile [patientId]="patient.patientId" [(isEditable)]="lock"></app-patient-profile>
+                    <app-cbp-patient [patientId]="patient.patientId"></app-cbp-patient>
+                </div>
+            </div>
+        </ng-template>
+    </mat-tab>
+
+</mat-tab-group>

@@ -1,0 +1,99 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icon {
+    padding: 0 9px;
+}
+
+.logo-btn {
+    display: flex;
+    width: 105px;
+    height: auto;
+}
+
+.logo-img {
+    width: 100%;
+    margin: 0;
+}
+
+.menu-logo {
+    max-width: 150px;
+    width: 100%;
+}
+
+a {
+    font-family: 'Barlow', sans-serif;
+    color: white;
+}
+
+.sidenav-container {
+    top: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    background-color: transparent;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.sidenav-container-opened {
+    top: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav {
+    margin-top: 0;
+    padding-top: 30px;
+    width: 30vw;
+    min-width: 230px;
+    max-width: 400px;
+    background-color: #673ab7;
+    color: white;
+    text-align: center;
+}
+
+.menu-title {
+    margin: 15px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 40px;
+}
+
+.menu-btn {
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2vmax;
+}
+
+.menu-option-icon {
+    margin-right: 8%;
+    font-size: 2vmax;
+}
+
+.sticky-main-header {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
+
+.mat-divider {
+    width: 60%;
+    margin-top: 5px;
+    border-top-color: white;
+}

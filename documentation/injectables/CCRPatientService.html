@@ -1,0 +1,2126 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>precos-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">precos-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >CCRPatientService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#api" >api</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addColonCheck" >addColonCheck</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addColonoscopy" >addColonoscopy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addFamilyBackgroundRiskSurvey" >addFamilyBackgroundRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addFamilyCancerRiskSurvey" >addFamilyCancerRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addGeneralRiskSurvey" >addGeneralRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addHabitsRiskSurvey" >addHabitsRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addPathologiesRiskSurvey" >addPathologiesRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllCCRPatients" >getAllCCRPatients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllEnrollmentSurveys" >getAllEnrollmentSurveys</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getColoncheckList" >getColoncheckList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getColonoscopyList" >getColonoscopyList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFamilyBackgroundRiskSurvey" >getFamilyBackgroundRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFamilyCancerRiskSurvey" >getFamilyCancerRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getGeneralRiskSurvey" >getGeneralRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getHabitsRiskSurvey" >getHabitsRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPathologiesRiskSurvey" >getPathologiesRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPatientEnrollmentSurvey" >getPatientEnrollmentSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registerEnrollmentSurvey" >registerEnrollmentSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateEnrollmentSurvey" >updateEnrollmentSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateFamilyBackgroundRiskSurvey" >updateFamilyBackgroundRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateFamilyCancerRiskSurvey" >updateFamilyCancerRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateGeneralRiskSurvey" >updateGeneralRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateHabitsRiskSurvey" >updateHabitsRiskSurvey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updatePathologiesRiskSurvey" >updatePathologiesRiskSurvey</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addColonCheck"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addColonCheck</b></span>
+                        <a href="#addColonCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addColonCheck(data: <a href="../interfaces/Coloncheck.html" target="_self">Coloncheck</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/Coloncheck.html" target="_self" >Coloncheck</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addColonoscopy"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addColonoscopy</b></span>
+                        <a href="#addColonoscopy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addColonoscopy(data: <a href="../interfaces/Colonoscopy.html" target="_self">Colonoscopy</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/Colonoscopy.html" target="_self" >Colonoscopy</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFamilyBackgroundRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addFamilyBackgroundRiskSurvey</b></span>
+                        <a href="#addFamilyBackgroundRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addFamilyBackgroundRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamily.html" target="_self">CCRRiskSurveyFamily</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamily.html" target="_self" >CCRRiskSurveyFamily</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFamilyCancerRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addFamilyCancerRiskSurvey</b></span>
+                        <a href="#addFamilyCancerRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addFamilyCancerRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self">CCRRiskSurveyFamilyCancer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self" >CCRRiskSurveyFamilyCancer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addGeneralRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addGeneralRiskSurvey</b></span>
+                        <a href="#addGeneralRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addGeneralRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyGeneral.html" target="_self">CCRRiskSurveyGeneral</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyGeneral.html" target="_self" >CCRRiskSurveyGeneral</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addHabitsRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addHabitsRiskSurvey</b></span>
+                        <a href="#addHabitsRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addHabitsRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyHabits.html" target="_self">CCRRiskSurveyHabits</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyHabits.html" target="_self" >CCRRiskSurveyHabits</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPathologiesRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>addPathologiesRiskSurvey</b></span>
+                        <a href="#addPathologiesRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addPathologiesRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyPathologies.html" target="_self">CCRRiskSurveyPathologies</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyPathologies.html" target="_self" >CCRRiskSurveyPathologies</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllCCRPatients"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAllCCRPatients</b></span>
+                        <a href="#getAllCCRPatients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllCCRPatients()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRPatient[]&gt;&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllEnrollmentSurveys"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAllEnrollmentSurveys</b></span>
+                        <a href="#getAllEnrollmentSurveys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllEnrollmentSurveys()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColoncheckList"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getColoncheckList</b></span>
+                        <a href="#getColoncheckList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getColoncheckList(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;Coloncheck[]&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColonoscopyList"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getColonoscopyList</b></span>
+                        <a href="#getColonoscopyList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getColonoscopyList(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;Colonoscopy[]&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFamilyBackgroundRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getFamilyBackgroundRiskSurvey</b></span>
+                        <a href="#getFamilyBackgroundRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFamilyBackgroundRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamily.html" target="_self">CCRRiskSurveyFamily</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamily.html" target="_self" >CCRRiskSurveyFamily</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyFamily&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFamilyCancerRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getFamilyCancerRiskSurvey</b></span>
+                        <a href="#getFamilyCancerRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFamilyCancerRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self">CCRRiskSurveyFamilyCancer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self" >CCRRiskSurveyFamilyCancer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyFamilyCancer&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGeneralRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getGeneralRiskSurvey</b></span>
+                        <a href="#getGeneralRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getGeneralRiskSurvey(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyGeneral&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHabitsRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getHabitsRiskSurvey</b></span>
+                        <a href="#getHabitsRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHabitsRiskSurvey(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyHabits&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPathologiesRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getPathologiesRiskSurvey</b></span>
+                        <a href="#getPathologiesRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPathologiesRiskSurvey(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyPathologies&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPatientEnrollmentSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getPatientEnrollmentSurvey</b></span>
+                        <a href="#getPatientEnrollmentSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPatientEnrollmentSurvey(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerEnrollmentSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>registerEnrollmentSurvey</b></span>
+                        <a href="#registerEnrollmentSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerEnrollmentSurvey(data: <a href="../interfaces/CCREnrollmentSurvey.html" target="_self">CCREnrollmentSurvey</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCREnrollmentSurvey.html" target="_self" >CCREnrollmentSurvey</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEnrollmentSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateEnrollmentSurvey</b></span>
+                        <a href="#updateEnrollmentSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateEnrollmentSurvey(data: <a href="../interfaces/CCREnrollmentSurvey.html" target="_self">CCREnrollmentSurvey</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCREnrollmentSurvey.html" target="_self" >CCREnrollmentSurvey</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFamilyBackgroundRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateFamilyBackgroundRiskSurvey</b></span>
+                        <a href="#updateFamilyBackgroundRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFamilyBackgroundRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamily.html" target="_self">CCRRiskSurveyFamily</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamily.html" target="_self" >CCRRiskSurveyFamily</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFamilyCancerRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateFamilyCancerRiskSurvey</b></span>
+                        <a href="#updateFamilyCancerRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFamilyCancerRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self">CCRRiskSurveyFamilyCancer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyFamilyCancer.html" target="_self" >CCRRiskSurveyFamilyCancer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGeneralRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateGeneralRiskSurvey</b></span>
+                        <a href="#updateGeneralRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateGeneralRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyGeneral.html" target="_self">CCRRiskSurveyGeneral</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyGeneral.html" target="_self" >CCRRiskSurveyGeneral</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateHabitsRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateHabitsRiskSurvey</b></span>
+                        <a href="#updateHabitsRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateHabitsRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyHabits.html" target="_self">CCRRiskSurveyHabits</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyHabits.html" target="_self" >CCRRiskSurveyHabits</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePathologiesRiskSurvey"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updatePathologiesRiskSurvey</b></span>
+                        <a href="#updatePathologiesRiskSurvey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePathologiesRiskSurvey(data: <a href="../interfaces/CCRRiskSurveyPathologies.html" target="_self">CCRRiskSurveyPathologies</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CCRRiskSurveyPathologies.html" target="_self" >CCRRiskSurveyPathologies</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CustomHttpResponse.html" target="_self" >Observable&lt;CustomHttpResponse&lt;any&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="api"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>api</b></span>
+                        <a href="#api"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.ccrPatientsApi</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { CCRConstants } from &#x27;src/app/core/constants/ccr.constants&#x27;;
+import { CCREnrollmentSurvey } from &#x27;src/app/features/colon-rectal/models/ccr-enrollment-survey&#x27;;
+import { CCRPatient } from &#x27;src/app/features/colon-rectal/models/ccr-patient&#x27;;
+import { CCRRiskSurveyFamily, CCRRiskSurveyFamilyCancer, CCRRiskSurveyGeneral, CCRRiskSurveyHabits, CCRRiskSurveyPathologies } from &#x27;src/app/features/colon-rectal/models/ccr-risk-survey&#x27;;
+import { Coloncheck } from &#x27;src/app/features/colon-rectal/models/coloncheck&#x27;;
+import { Colonoscopy } from &#x27;src/app/features/colon-rectal/models/colonoscopy&#x27;;
+import { CustomHttpResponse } from &#x27;src/app/core/models/http-response&#x27;;
+import { Patient } from &#x27;src/app/features/patient/models/patient&#x27;;
+import { ScreeningSurveyQuestion } from &#x27;src/app/core/models/ScreeningSurveyQuestion&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class CCRPatientService {
+  private api &#x3D; environment.ccrPatientsApi;
+
+  constructor(private http: HttpClient) { }
+
+  //enrollment survey
+  public registerEnrollmentSurvey(data: CCREnrollmentSurvey): Observable&lt;CustomHttpResponse&lt;any&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api + CCRConstants.addEnrollmentSurveyEndpoint, data);
+  }
+
+  public updateEnrollmentSurvey(data: CCREnrollmentSurvey): Observable&lt;CustomHttpResponse&lt;any&gt;&gt; {
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api + CCRConstants.updateEnrollmentSurveyEndpoint, data);
+  }
+
+  public getAllEnrollmentSurveys(): Observable&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt; {
+    return this.http.get&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt;(this.api + CCRConstants.getAllEnrollmentSurveyEndpoint)
+  }
+
+  public getPatientEnrollmentSurvey(id: number): Observable&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;CCREnrollmentSurvey[]&gt;&gt;(this.api + CCRConstants.getPatientEnrollmentSurveyEndpoint, { idPatient: id });
+  }
+
+  //exams
+  public addColonCheck(data: Coloncheck): Observable&lt;CustomHttpResponse&lt;any&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api + CCRConstants.addColoncheckEndpoint, data)
+  }
+
+  public getColoncheckList(id: number): Observable&lt;CustomHttpResponse&lt;Coloncheck[]&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;Coloncheck[]&gt;&gt;(this.api + CCRConstants.getColoncheckListEndpoint, { idPatient: id })
+  }
+
+  public addColonoscopy(data: Colonoscopy): Observable&lt;CustomHttpResponse&lt;any&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api + CCRConstants.addColonoscopyEndpoint, data);
+  }
+
+  public getColonoscopyList(id: number): Observable&lt;CustomHttpResponse&lt;Colonoscopy[]&gt;&gt; {
+    return this.http.post&lt;CustomHttpResponse&lt;Colonoscopy[]&gt;&gt;(this.api + CCRConstants.getColonoscopyListEndpoint, { idPatient: id });
+  }
+
+  //CCR Patients
+  public getAllCCRPatients(): Observable&lt;CustomHttpResponse&lt;CCRPatient[]&gt;&gt; {
+    return this.http.get&lt;CustomHttpResponse&lt;CCRPatient[]&gt;&gt;(this.api + CCRConstants.getAllCCRPatientsEndpoint);
+  }
+
+  //patient risk survey
+  //general
+  public addGeneralRiskSurvey(data:CCRRiskSurveyGeneral):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyGeneralsEndpoint, data);
+  }
+  public updateGeneralRiskSurvey(data:CCRRiskSurveyGeneral):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyGeneralsEndpoint, data);
+  }
+  public getGeneralRiskSurvey(id:number):Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyGeneral&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;CCRRiskSurveyGeneral&gt;&gt;(this.api+CCRConstants.addRiskSurveyGeneralsEndpoint, {idPatient:id});
+  }
+
+  //pathologies
+  public addPathologiesRiskSurvey(data:CCRRiskSurveyPathologies):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyPathologiesEndpoint, data);
+  }
+  public updatePathologiesRiskSurvey(data:CCRRiskSurveyPathologies):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.updateRiskSurveyPathologiesEndpoint, data);
+  }
+  public getPathologiesRiskSurvey(id:number):Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyPathologies&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;CCRRiskSurveyPathologies&gt;&gt;(this.api+CCRConstants.getRiskSurveyPathologiesEndpoint, {idPatient:id});
+  }
+
+  //habits
+  public addHabitsRiskSurvey(data:CCRRiskSurveyHabits):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyHabitsEndpoint, data);
+  }
+  public updateHabitsRiskSurvey(data:CCRRiskSurveyHabits):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.updateRiskSurveyHabitsEndpoint, data);
+  }
+  public getHabitsRiskSurvey(id:number):Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyHabits&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;CCRRiskSurveyHabits&gt;&gt;(this.api+CCRConstants.getRiskSurveyHabitsEndpoint, {idPatient:id});
+  }
+
+  //family background
+  public addFamilyBackgroundRiskSurvey(data:CCRRiskSurveyFamily):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyFamilyBackgroundEndpoint, data);
+  }
+  public updateFamilyBackgroundRiskSurvey(data:CCRRiskSurveyFamily):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.updateRiskSurveyFamilyBackgroundEndpoint, data);
+  }
+  public getFamilyBackgroundRiskSurvey(data:CCRRiskSurveyFamily):Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyFamily&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;CCRRiskSurveyFamily&gt;&gt;(this.api+CCRConstants.getRiskSurveyFamilyBackgroundEndpoint, data);
+  }
+
+  //family cancer
+  public addFamilyCancerRiskSurvey(data:CCRRiskSurveyFamilyCancer):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.addRiskSurveyFamilyCancerEndpoint, data);
+  }
+  public updateFamilyCancerRiskSurvey(data:CCRRiskSurveyFamilyCancer):Observable&lt;CustomHttpResponse&lt;any&gt;&gt;{
+    return this.http.put&lt;CustomHttpResponse&lt;any&gt;&gt;(this.api+CCRConstants.updateRiskSurveyFamilyCancerEndpoint, data);
+  }
+  public getFamilyCancerRiskSurvey(data:CCRRiskSurveyFamilyCancer):Observable&lt;CustomHttpResponse&lt;CCRRiskSurveyFamilyCancer&gt;&gt;{
+    return this.http.post&lt;CustomHttpResponse&lt;CCRRiskSurveyFamilyCancer&gt;&gt;(this.api+CCRConstants.getRiskSurveyFamilyCancerEndpoint, data);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CCRPatientService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
