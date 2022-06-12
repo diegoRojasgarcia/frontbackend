@@ -16,6 +16,10 @@ h1 {
     padding-bottom: 20px;
 }
 
+.example-full-width {
+    width: 100%;
+  }
+
 .editor {
     position: fixed;
     top: 20%;

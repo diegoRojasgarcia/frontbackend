@@ -8,7 +8,6 @@ import { DateTimeService } from 'src/app/core/services/date-time/date-time.servi
 import { ValidationService } from 'src/app/core/services/validation/validation.service';
 
 
-
 @Component({
   selector: 'app-ccr-appointment-dialog',
   templateUrl: './ccr-appointment-dialog.component.html',
@@ -112,8 +111,6 @@ export class CCRAppointmentDialogComponent implements OnInit {
     this.showPatient = true;
     if (value && typeof value != "string")
       this.patientForm.setValue(value);
-
-
   }
   hidePatientForm(event: boolean | string): void {
     if (event) {

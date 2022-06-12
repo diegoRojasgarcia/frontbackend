@@ -25,6 +25,13 @@
             <app-ccr-patient-list (openProfile)="openPatientProfile($event)"></app-ccr-patient-list>
         </ng-template>
     </mat-tab>
+
+    <mat-tab label="Reportabilidad" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
+        <ng-template matTabContent>
+            <app-ccr-reports></app-ccr-reports>
+        </ng-template>
+    </mat-tab>
+
     <mat-tab *ngFor="let patient of patientTabs">
         <ng-template mat-tab-label>
             <div>{{patient.name}}</div>

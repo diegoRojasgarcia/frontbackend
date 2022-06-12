@@ -1,5 +1,21 @@
 <div class="stepper-container">
     <app-title [pageTitle]="'Nuevo Paciente'"></app-title>
+
+   
+        <div class="action-toolbar" >
+
+            <!-- Search function -->
+            <mat-form-field appearance="fill">
+                <mat-label>Buscar Paciente</mat-label>
+                <input matInput type="text" [(ngModel)]="value" (keyup)="search()">
+                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetSearch()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            
+        </div>
+            
+
     <mat-stepper linear #stepper>
         <mat-step [stepControl]="patientData" [editable]="false">
             <div *ngIf="!isEditable">
@@ -18,7 +34,6 @@
                 <mat-divider></mat-divider>
                 <div class="block">
                     <table cellspacing="0">
-
                         <td>
                             <mat-form-field appearance="fill">
                                 <mat-label>Nombres *</mat-label>
@@ -44,16 +59,15 @@
                                 <mat-label>Nacionalidad *</mat-label>
                                 <mat-select formControlName="nationality">
                                     <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
-                                        {{nationality}}</mat-option>
-
+                                        {{nationality}}
+                                    </mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
                         <td>
-                            <mat-form-field appearance="fill">
+                            <mat-form-field appearance="fill" (change)="formatRut()">
                                 <mat-label>RUT *</mat-label>
                                 <input matInput formControlName="rut" placeholder="RUT/DNI" (change)="lookupPatient()" autofocus>
-                                <mat-hint>{{hint}}</mat-hint>
                             </mat-form-field>
                         </td>
                         <td>

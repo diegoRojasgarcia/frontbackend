@@ -1,0 +1,76 @@
+<app-title [pageTitle]="'Reportes'"></app-title>
+
+<div class="menu-container">
+    <mat-grid-list #grid [cols]="cols" rowHeight="5:1">
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{checkcolonCountTrue}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{pcloncheck}} %</strong> </p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Colon-Check Positivos</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{cantfumadores}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{pfumadores}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Fumadores</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{ppolipos}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{pppolipos}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes con polipos</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{pneoplastic}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppneoplastic}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes con lesion Neoplastica</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{pcolonoscopy}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppcolonosocpy}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes con Colonoscopia realizada</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{pmayoranios}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppmayoranios}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes mayores de 55 años</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    
+</div>

@@ -82,6 +82,7 @@ mat-radio-group {
 .spacer,
 .spacer>span {
     /* float: right; */
+    margin: auto;
     display: flex;
     align-items: center;
     margin-right: 5px;
@@ -105,4 +106,14 @@ mat-radio-group {
     height: auto;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+@media only screen and (max-width:720px) {
+    .spacer,
+    .spacer>span  {
+        margin: auto;
+    }
+    .tab-top-toolbar {
+        margin: auto;
+    }
 }

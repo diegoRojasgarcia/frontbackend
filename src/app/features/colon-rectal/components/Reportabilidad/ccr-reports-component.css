@@ -1,0 +1,88 @@
+mat-grid-tile {
+    background: #EFEFEF;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+}
+
+mat-grid-tile:hover {
+    background: #B2B1B9;
+    cursor: pointer;
+}
+
+.mat-icon {
+    width: auto;
+    font-size: 7vw;
+    color: #673ab7;
+}
+
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.menu-container {
+    padding-left: 15%;
+    text-align: center;
+    justify-content: center;
+    max-width: 70%;
+}
+
+p.name {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2vw;
+}
+
+p.details {
+    font-size: large;
+    color: #595260;
+}
+
+h1 {
+    margin-top: 1%;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 3vw;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+}
+
+@media only screen and (max-width: 959.98px) {
+    mat-grid-tile {
+        display: flex;
+        /* height: 100%; */
+    }
+    h1 {
+        font-size: x-large;
+    }
+    .mat-icon {
+        width: auto;
+        font-size: 18vw;
+        color: #673ab7;
+    }
+    p.name {
+        font-size: 3vw;
+    }
+    p.details {
+        margin-top: 1%;
+        font-size: 2vw;
+    }
+    .menu-container {
+        padding-top: 3%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    p.name {
+        margin: auto;
+        font-size: 4vw;
+        margin-top: -5%;
+        margin-bottom: -1%;
+    }
+    p.details {
+        margin: auto;
+        font-size: 2vw;
+    }
+}

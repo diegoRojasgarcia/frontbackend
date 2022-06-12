@@ -7,6 +7,7 @@ export interface CBPPatient extends Patient {
     lungRads?:string;
     riskProfession?:boolean;
     tacCounter?:number;
+    motivorechazo:string;
 }
 
 export interface CBPPatientEnrollmentSchedule{

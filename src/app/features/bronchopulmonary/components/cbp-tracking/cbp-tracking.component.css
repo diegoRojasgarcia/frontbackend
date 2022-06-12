@@ -36,6 +36,11 @@ tr.example-element-row:not(.example-expanded-row):active {
     border-bottom-width: 0;
 }
 
+mat-divider {
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
 .example-element-detail {
     overflow: hidden;
     display: flex;

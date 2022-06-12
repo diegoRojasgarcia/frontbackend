@@ -9,11 +9,26 @@
     margin: 3%;
 }
 
+.buscador {
+    display: flex;
+    justify-content: right;
+    margin-right: 55px;
+}
+
+
+
 h1 {
     margin-top: 2%;
     text-align: center;
     font-size: 3vw;
     font-family: 'Barlow', sans-serif;
+}
+
+.action-toolbar {
+    padding: 30px;
+    padding-left: 55px;
+    padding-top: 50px;
+    padding-bottom: 0px;
 }
 
 td {
@@ -34,6 +49,7 @@ td {
 
 h4 {
     display: block;
+    margin-bottom: 10px;
 }
 
 mat-divider {
@@ -81,5 +97,9 @@ td>* {
 @media only screen and (max-width:1000px) {
     mat-stepper>::ng-deep .mat-horizontal-content-container {
         overflow-x: scroll !important;
+    }
+    mat-form-field {
+        width: 100px;
+        display: inline-block;
     }
 }

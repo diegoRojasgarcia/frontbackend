@@ -8,6 +8,11 @@ import { Subscription } from 'rxjs';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { CBPPatient } from 'src/app/features/bronchopulmonary/models/cbp-patient';
 import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cbp-patient/cbp-patient.service';
+import { CBPPatientReports } from '../../models/cbp-reports';
+import { Features, Permission } from 'src/app/features/users-management/models/privilege';
+import { XlsxExporterService, } from 'mat-table-exporter';
+import { Workbook } from 'exceljs';
+import * as fs from 'file-saver';
 
 @Component({
   selector: 'app-cbp-patient-list',
@@ -24,6 +29,7 @@ import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cb
 /** */
 export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
   private subs$ = new Subscription();
+  private NO_DATA = AppConstants.NO_DATA;
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -35,19 +41,22 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
   NO_TABLE_DATA: string = AppConstants.NO_TABLE_DATA;
 
   columnsJoin: ColumnInterface[] = [
-    { columnValue: 'name', columnName: 'Nombre Completo', cell: (row: CBPPatient) => row.name + " " + row.lastName + " " + (row.lastName2 ? row.lastName2 : '') },
-    { columnValue: 'age', columnName: 'Edad', cell: (row: CBPPatient) => row.age ? row.age : this.NO_VALUE },
+    { columnValue: 'name', columnName: 'Nombre', cell: (row: CBPPatient) => row.name + " " + row.lastName + " " + (row.lastName2 ? row.lastName2 : '') },
     { columnValue: 'work', columnName: 'Profesión de Riesgo', cell: (row: CBPPatient) => row.riskProfession },
     { columnValue: 'tacCounter', columnName: "Contador TAC", cell: (row: CBPPatient) => row.tacCounter ? row.tacCounter : this.NO_VALUE },
     { columnValue: 'state', columnName: 'Derivación', cell: (row: CBPPatient) => row.derivationStateNfm ? row.derivationStateNfm : this.NO_VALUE },
     { columnValue: 'rads', columnName: 'LUNG RADS', cell: (row: CBPPatient) => row.lungRads ? row.lungRads : this.NO_VALUE },
+    { columnValue: 'estado', columnName: 'Estado paciente', cell: (row: CBPPatient) => row.state },
     { columnValue: 'expand', columnName: '', cell: (row: CBPPatient) => undefined },
   ];
 
   columnsToDisplay: string[] = this.columnsJoin.map(e => e.columnValue)
 
+  PERMISSIONS = Permission;
+  FEATURES = Features;
 
   dataSource!: MatTableDataSource<CBPPatient>;
+  dataSourceReports!: MatTableDataSource<CBPPatientReports>
 
   @Input() filter!: string;
   @Input() filter1!: string;
@@ -65,6 +74,14 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
       this.dataSource = new MatTableDataSource(res.data);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
+    }, err => {
+      const data: CBPPatient[] = [];
+      this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
+      this.dataSource = new MatTableDataSource(data);
+    }))
+
+    this.subs$.add(this.cbpPatientService.getAllCBPPAtientsReports().subscribe(res => {
+      this.dataSourceReports = new MatTableDataSource(res.data);
     }, err => {
       const data: CBPPatient[] = [];
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
@@ -120,6 +137,60 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     this.dataSource.filter = this.filter?.toLowerCase().trim();
     if (this.dataSource.paginator)
       this.dataSource.paginator.firstPage()
+  }
+
+
+
+  exportExcel() {
+
+    let workbook = new Workbook();
+    let worksheet = workbook.addWorksheet('Pacientes Broncopulmonar');
+
+    //Add Row and formatting
+    let titleRow = worksheet.addRow(['']);
+    
+    worksheet.columns = [
+      { header: 'Nombre', key: 'name', width: 10 , },
+      { header: 'Apellido Paterno', key: 'lastname', width: 20, },
+      { header: 'Apellido Materno', key: 'lastname2', width: 20 },
+      { header: 'Rut', key: 'rut', width: 13 },
+      { header: 'Edad', key: 'edad', width: 6 },
+      { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
+      { header: 'Sexo', key: 'sex', width: 5},
+      { header: 'Cesfam', key: 'cesfam', width: 15},
+      { header: 'Direccion', key: 'address', width: 15},
+      { header: 'Telefono', key: 'cellphone', width: 13},
+      { header: 'Telefono e.', key: 'ecellphone', width: 12},
+      { header: 'Previcion', key: 'fonasa', width: 13},
+      { header: 'Derivacion', key: 'derivationstatenfm', width: 13},
+      { header: 'Fecha Biopsia', key: 'biopsydate', width: 15},
+    ];
+
+    this.dataSourceReports.data.forEach(e => {
+      let row = worksheet.addRow({ name: e.name,lastname: e.lastname, lastname2: e.lastname2, rut:e.rut, edad:e.edad, birthday:e.birthday, sex:e.sex, cesfam:e.cesfam, address:e.address, cellphone:e.cellphone, ecellphone:e.ecellphone, fonasa:e.fonasa,derivationstatenfm:e.derivationstatenfm, biopsydate:e.biopsydate }, "n");
+    });
+    titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }
+    worksheet.getCell('A1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('B1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('C1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('D1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('E1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('F1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('G1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('H1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('I1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('J1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('K1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('L1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('M1').alignment = { vertical: 'middle', horizontal: 'center' };
+    worksheet.getCell('N1').alignment = { vertical: 'middle', horizontal: 'center' };
+    
+
+
+    workbook.xlsx.writeBuffer().then((data) => {
+      let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      fs.saveAs(blob, 'ReportePacientesBroncopulmonar.xlsx');
+    })
   }
 
 }

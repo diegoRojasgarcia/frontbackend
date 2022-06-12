@@ -30,6 +30,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatMenuModule } from '@angular/material/menu'; 
 import { MatButtonModule } from '@angular/material/button';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableExporterModule,
     MatMenuModule,
     MatButtonModule,
-    
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: load, multi: true, deps: [HttpClient, AuthenticationService] },

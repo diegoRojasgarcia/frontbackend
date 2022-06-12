@@ -1,0 +1,31 @@
+import { Patient } from "../../patient/models/patient";
+
+export interface CCRPatientreports extends Patient{
+    id_patient?:number,
+    name?:string,
+    rut:string,
+    edad?:number,
+    birthday?:string,
+    sex?:string,
+    cellphone?:number,
+    address?:string,
+    previcion?:string,
+    peso?:number,
+    altura?:number,
+    imc?:number,
+    cmabdominal?:number,
+    smokes?:boolean,
+    ncigarettes?:number,
+    ysmoking?:number,
+    cancerdetectiondate?:Date,
+    testresultcoloncheck?:boolean,
+    lastcoloncheck?:Date,
+    cantcoloncheck?:number,
+    colonoscopy?:boolean,
+    polyps?:boolean,
+    neoplasticlesion?:boolean,
+    lastcolonoscopy?:Date,
+    cantcolonoscopy?:number,
+    lastbiopsy?:Date,
+    cantbiopsy?:number
+}

@@ -1,8 +1,10 @@
-import { Component, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatAccordion } from '@angular/material/expansion';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { CBPRiskSurveyFamilyCancer } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
 import { forkJoin, Observable, Subscription } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { AppConstants } from 'src/app/core/constants/app.constants';
@@ -14,17 +16,42 @@ import { CBPBiopsy, CBPBiopsyType, RADS, TAC } from 'src/app/features/bronchopul
 import { Features, Permission } from 'src/app/features/users-management/models/privilege';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { CBPPatientService } from '../../services/cbp-patient/cbp-patient.service';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { PatientService } from 'src/app/features/patient/services/patient.service';
 
 @Component({
   selector: 'app-cbp-patient',
   templateUrl: './cbp-patient.component.html',
-  styleUrls: ['./cbp-patient.component.css']
+  styleUrls: ['./cbp-patient.component.css'],
+  animations: [
+    trigger("slideInOut", [
+      transition(":enter", [
+        style({ opacity: 0, transform: "translateX(100%)" }), //apply default styles before animation starts
+        animate(
+          "750ms ease-in-out",
+          style({ opacity: 1, transform: "translateX(0)" })
+        )
+      ]),
+      transition(":leave", [
+        style({ opacity: 1, transform: "translateX(0)" }), //apply default styles before animation starts
+        animate(
+          "600ms ease-in-out",
+          style({ opacity: 0, transform: "translateX(100%)" })
+        )
+      ])
+    ])
+    
+  ]
 })
 export class CBPPatientComponent implements OnChanges, OnDestroy {
   private subs$ = new Subscription();
 
   @ViewChild('tacPaginator') tacPaginator!: MatPaginator;
   @ViewChild('bioPaginator') bioPaginator!: MatPaginator;
+
+  @ViewChild("accordionB") accordionB!: MatAccordion;
+  @ViewChild('familyPaginator') familyPaginator!: MatPaginator;
+  @ViewChild('familyTable', { static: true }) familyTable!: MatTable<CBPRiskSurveyFamilyCancer>
 
   private FORM_ERROR = AppConstants.FORM_ERROR;
   NO_TABLE_DATA: string = AppConstants.NO_TABLE_DATA
@@ -34,6 +61,9 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
   FEATURES = Features;
 
   @Input() patientId!: number;
+  isEditable: boolean = false;
+
+  @Output() isEditableChange: EventEmitter<boolean> = new EventEmitter()
 
   tacList!: MatTableDataSource<TAC>;
   tacColumns: string[] = ["idLdct", "nodule", "lungRads", "size", "actions", "delete"];
@@ -50,17 +80,37 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
   tacForm!: FormGroup;
   survey: ScreeningSurveyQuestion[] = [];
 
+
+  familyMemberList!: MatTableDataSource<CBPRiskSurveyFamilyCancer>;
+  familyMemberForm!: FormGroup;
+  //risk survey
+  basic!: FormGroup;
+  pathologies!: FormGroup;
+  habits!: FormGroup;
+  cancerFamily!: FormGroup;
+  pageForm!: FormGroup;
+
+  familyOptions: string[] = FAMILY_MEMBER;
+  undo: any;
+
   isTouched: boolean = false;
   examsFlag: boolean = false;
 
-  constructor(private admin: AdministrativeService, private cbpService: CBPPatientService, private confirm: MatDialog, private dtService: DateTimeService) {
+
+  isOpen: boolean = false;
+  riskFlag: boolean = false;
+
+  familyMemberCancerFields: string[] = ["member", "cancer", "age", 'delete'];
+
+  constructor(private admin: AdministrativeService, private cbpService: CBPPatientService, private confirm: MatDialog, private dtService: DateTimeService, private patientService: PatientService) {
     this.surveyForm = new FormGroup({})
     this.patientForm = new FormGroup({
       idCbp: new FormControl(null, Validators.required),
       idPatient: new FormControl(null, Validators.required),
-      derivationStateNfm: new FormControl(),
       state: new FormControl(null, Validators.required),
-      cancerDetectionDate: new FormControl()
+      derivationStateNfm: new FormControl(),
+      cancerDetectionDate: new FormControl(),
+      motivorechazo: new FormControl()
     })
   }
   
@@ -68,12 +118,15 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
     if (changes.patientId) {
       this.subs$.add(this.admin.getCBPSurvey().pipe(mergeMap(res => {
         res.data.forEach(q => this.surveyForm.addControl(q.name, new FormControl()))
-        this.surveyForm.addControl('idEnrollmentSurvey', new FormControl())
-        this.surveyForm.addControl('idPatient', new FormControl())
+        this.surveyForm.addControl('idPatient', new FormControl(this.patientId, Validators.required));
+        this.surveyForm.addControl('idEnrollmentSurvey', new FormControl(null, Validators.required));
         this.survey = res.data
         return this.cbpService.getEnrollmentSurvey(this.patientId)
-      })).subscribe(res => this.surveyForm.setValue(res.data[0]), err => this.surveyForm = new FormGroup({})))
+      })).subscribe(res => this.surveyForm.setValue(res.data[0])));
+
       this.subs$.add(this.cbpService.getCBPPatientById(this.patientId).subscribe(res => this.patientForm.setValue(res.data[0])))
+
+
       this.tacForm = new FormGroup({
         size: new FormControl(null, Validators.required),
         nodule: new FormControl(),
@@ -91,21 +144,103 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
         idBiopsy: new FormControl(),
         biopsyDate: new FormControl(null, Validators.required)
       })
+
+      this.familyMemberList = new MatTableDataSource<CBPRiskSurveyFamilyCancer>();
+      this.familyMemberForm = new FormGroup({
+        idPatient: new FormControl(this.patientId, Validators.required),
+        idRiskSurveyFamilyCancer: new FormControl(),
+        familyMember: new FormControl(null, Validators.required),
+        cancer: new FormControl(null, Validators.required),
+        age: new FormControl(null, Validators.required)
+      })
+
+
+      this.biopsyForm = new FormGroup({
+        idBiopsy: new FormControl(),
+        idPatient: new FormControl(this.patientId, Validators.required),
+        biopsyDate: new FormControl(null, Validators.required),
+        result: new FormControl(null, [Validators.required, Validators.minLength(20)])
+      })
+
+      this.basic = new FormGroup({
+        idPatient: new FormControl(this.patientId, Validators.required),
+        idRiskSurveyBd: new FormControl(),
+        cAbdominal: new FormControl(),
+        paSystolic: new FormControl(),
+        paDiastolic: new FormControl(),
+        weight: new FormControl(),
+        height: new FormControl(),
+        imc: new FormControl(),
+        regularMedications: new FormControl(),
+        reasonMedicines: new FormControl(),
+        anticoagulants: new FormControl(),
+        wichAnticoagulants: new FormControl(),
+        colonoscopyRejection: new FormControl(),
+        colonoscopyRejectionSignature: new FormControl(),
+        signConsent: new FormControl(),
+        instructiveTsdo: new FormControl(),
+      })
+      this.pathologies = new FormGroup({
+        idPatient: new FormControl(this.patientId, Validators.required),
+        idRiskSurveyPathologies: new FormControl(),
+        diabetes: new FormControl(),
+        epilepsy: new FormControl(),
+        operated: new FormControl(),
+        cancer: new FormControl(),
+        arterialHypertension: new FormControl(),
+        gastricUlcer: new FormControl(),
+        hypoHyperThyroidism: new FormControl(),
+        operationReason: new FormControl(),
+        typeCancer: new FormControl(),
+        cancerAge: new FormControl(),
+      })
+      this.habits = new FormGroup({
+        idPatient: new FormControl(this.patientId, Validators.required),
+        idRiskSurveyHabits: new FormControl(),
+        smokes: new FormControl(),
+        numberCigarettes: new FormControl(),
+        yearsSmoking: new FormControl(),
+        eatCerealFiber: new FormControl(),
+        drinkAlcohol: new FormControl(),
+        quantityAlcohol: new FormControl(),
+        physicalActivity: new FormControl(),
+        threeFruits: new FormControl(),
+        friedFoods: new FormControl()
+      })
+      this.pageForm = new FormGroup({
+        basic: this.basic,
+        habits: this.habits,
+        pathologies: this.pathologies
+      })
     }
   }
   ngOnDestroy(): void {
     this.subs$.unsubscribe()
   }
 
-  /**
-   * If valid, updates the patient state in the current cancer program.
-   */
-  public updatePatientState(): void {
+
+  updatePatient(): void {
     if (this.patientForm.valid)
       this.subs$.add(this.cbpService.updatePatient(this.patientForm.value).subscribe(() => this.patientForm.markAsPristine()))
     else {
-      this.patientForm.markAllAsTouched();
+      this.patientForm.markAllAsTouched()
       throw new AppError(this.FORM_ERROR);
+    }
+  }
+
+
+  resetSmokerConditional(value: boolean): void {
+    if (!value) {
+      this.habits.get('numberCigarettes')?.reset()
+      this.habits.get('yearsSmoking')?.reset()
+    }
+  }
+
+  
+  resetCancerConditionals(value: boolean): void {
+    if (!value) {
+      this.pathologies.get('typeCancer')?.reset()
+      this.pathologies.get('cancerAge')?.reset()
     }
   }
 
@@ -274,4 +409,127 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
     }
   }
 
+   //utility functions
+   openAll(): void {
+    this.isOpen = true;
+    this.loadAllRiskSurvey();
+    this.accordionB.openAll();
+  }
+
+  closeAll(): void {
+    this.isOpen = false;
+    this.accordionB.closeAll();
+  }
+
+  
+
+
+  loadAllRiskSurvey(): void {
+    if (!this.riskFlag)
+      this.subs$.add(this.cbpService.getCompleteRiskSurvey(this.patientId).subscribe(res => {
+        this.basic.setValue(res.general);
+        this.habits.setValue(res.habits);
+        this.pathologies.setValue(res.pathologies);
+        this.familyMemberList = new MatTableDataSource(res.family);
+        this.familyMemberList.paginator = this.familyPaginator;
+        this.undo = this.pageForm.getRawValue();
+        this.riskFlag = true;
+      }))
+  }
+
+  deletePatient(): void {
+    const config = new MatDialogConfig()
+    config.data = {
+      title: "Eliminar Paciente",
+      action: "Eliminar",
+      msg: "¿Seguro/a que desea eliminar al paciente ?, Se eliminaran todos sus datos",
+    }
+    const diaRef = this.confirm.open(ConfirmDialogComponent, config);
+
+    this.subs$.add(diaRef.afterClosed().pipe(mergeMap(res => {
+      if (res.response)
+        return this.patientService.deleteAllPatientByid(this.patientId);
+      else
+        return new Observable<false>();
+    })).subscribe(res => {
+      if (res) {
+        
+      }
+    }))
+
+  }
+
+
+  updateSurveyRisk(): void {
+    if (this.pageForm.valid) {
+      const update: Observable<any>[] = []
+      if (this.basic.dirty)
+        update.push(this.cbpService.updateGeneralRiskSurvey(this.basic.value))
+      if (this.pathologies.dirty)
+        update.push(this.cbpService.updatePathologiesRiskSurvey(this.pathologies.value))
+      if (this.habits.dirty)
+        update.push(this.cbpService.updateHabitsRiskSurvey(this.habits.value))
+      this.subs$.add(forkJoin(update).subscribe(res => {
+        this.undo = this.pageForm.value;
+        this.pageForm.markAsPristine();
+      }))
+    } else {
+      this.pageForm.markAllAsTouched();
+      throw new AppError(this.FORM_ERROR);
+    }
+  }
+
+  cancelSurveyRiskChanges(): void {
+    this.pageForm.setValue(this.undo)
+    this.pageForm.markAsPristine();
+  }
+
+
+  addFamilyMemberCancer(): void {
+    if (this.familyMemberForm.valid) {
+      this.subs$.add(this.cbpService.addFamilyCancerRiskSurvey(this.familyMemberForm.value).subscribe(res => {
+        this.familyMemberForm.get('idRiskSurveyFamilyCancer')?.setValue(res.data[0].idRiskSurveyFamilyCancer)
+        const dataRef = this.familyMemberList.data;
+        dataRef.push(this.familyMemberForm.value);
+        this.familyMemberList.data = dataRef;
+        this.familyTable.dataSource = this.familyMemberList;
+        this.familyMemberForm.reset();
+        this.familyMemberForm.get('idPatient')?.setValue(this.patientId)
+        this.familyMemberList.paginator?.lastPage()
+      }))
+
+    } else {
+      this.familyMemberForm.markAllAsTouched()
+      throw new AppError(this.FORM_ERROR);
+    }
+
+  }
+
+  removeMember(data: CBPRiskSurveyFamilyCancer): void {
+    const config = new MatDialogConfig();
+    config.maxWidth = "300px"
+    data.cancer = data.cancer.toLowerCase().replace('cáncer', '')
+    data.cancer = data.cancer.toLowerCase().replace('cancer', '')
+    config.data = {
+      title: 'Eliminar Familiar',
+      action: 'Eliminar',
+      msg: '¿Seguro que desea eliminar a ' + data.familyMember + ' con cáncer: ' + data.cancer + '?'
+    }
+    const diaRef = this.confirm.open(ConfirmDialogComponent, config)
+    this.subs$.add(diaRef.afterClosed().pipe(mergeMap(res => {
+      if (res.response)
+        return this.cbpService.deleteFamily(data.idRiskSurveyFamilyCancer)
+      else
+        return new Observable<false>();
+    })).subscribe(res => {
+      if (res) {
+        this.familyMemberList.data = this.familyMemberList.data.filter(d => d.idRiskSurveyFamilyCancer !== data.idRiskSurveyFamilyCancer)
+        this.familyMemberList.paginator?.firstPage();
+      }
+    }))
+  }
+
+
 }
+
+const FAMILY_MEMBER: string[] = ["Hijo/a", "Mamá", "Papá", "Hermano/a", "Abuelo/a", "Tío/a"]

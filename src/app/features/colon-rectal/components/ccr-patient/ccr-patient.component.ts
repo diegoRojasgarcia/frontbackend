@@ -8,6 +8,7 @@ import { Coloncheck } from 'src/app/features/colon-rectal/models/coloncheck';
 import { Colonoscopy } from 'src/app/features/colon-rectal/models/colonoscopy';
 import { Features, Permission } from 'src/app/features/users-management/models/privilege';
 import { CCRPatientService } from 'src/app/features/colon-rectal/services/ccr-patient/ccr-patient.service';
+import { PatientService } from 'src/app/features/patient/services/patient.service';
 import { DateTimeService } from 'src/app/core/services/date-time/date-time.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { AppError } from 'src/app/core/models/app-error';
@@ -16,10 +17,9 @@ import { AdministrativeService } from 'src/app/core/services/administrative/admi
 import { mergeMap } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
-import { forkJoin, Observable, Subscription } from 'rxjs';
+import { forkJoin, from, Observable, Subscription } from 'rxjs';
 import { CCRBiopsy } from '../../models/ccr-biopsy';
 import { trigger, transition, style, animate } from '@angular/animations';
-
 @Component({
   selector: 'app-ccr-patient',
   templateUrl: './ccr-patient.component.html',
@@ -90,6 +90,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
   familyOptions: string[] = FAMILY_MEMBER;
   undo: any;
 
+
   coloncheckResults: ExamResult[] = [
     { value: false, viewValue: "Negativo" },
     { value: true, viewValue: "Positivo" }
@@ -105,13 +106,14 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
   familyMemberCancerFields: string[] = ["member", "cancer", "age", 'delete'];
 
   riskFlag: boolean = false;
-  constructor(private ccrService: CCRPatientService, private dtService: DateTimeService, private admin: AdministrativeService, private confirm: MatDialog) {
+  constructor(private ccrService: CCRPatientService, private dtService: DateTimeService, private admin: AdministrativeService, private confirm: MatDialog, private patientService: PatientService) {
     this.surveyForm = new FormGroup({});
     this.patientForm = new FormGroup({
       idPatient: new FormControl(null, Validators.required),
       idCcr: new FormControl(null, Validators.required),
       state: new FormControl(null, Validators.required),
-      cancerDetectionDate: new FormControl()
+      cancerDetectionDate: new FormControl(),
+      motivorechazo: new FormControl()
     });
 
   }
@@ -362,6 +364,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
         dataRef.push(this.biopsyForm.value);
         this.biopsyList.data = dataRef;
         this.biopsyForm.reset();
+        this.biopsyForm.get('idPatient')?.setValue(this.patientId);
         this.biopsyList.paginator?.lastPage();
       }))
     else {
@@ -541,6 +544,23 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
       this.pageForm.markAllAsTouched();
       throw new AppError(this.FORM_ERROR);
     }
+  }
+
+  deletePatient(): void {
+    const config = new MatDialogConfig()
+    config.data = {
+      title: "Eliminar Paciente",
+      action: "Eliminar",
+      msg: "¿Seguro/a que desea eliminar al paciente ?, Se eliminaran todos sus datos",
+    }
+    const diaRef = this.confirm.open(ConfirmDialogComponent, config);
+    this.subs$.add(diaRef.afterClosed().pipe(mergeMap(res => {
+      if (res.response)
+        return this.patientService.deleteAllPatientByid(this.patientId)
+      else
+        return new Observable<false>();
+    })).subscribe(() => {
+    }))
   }
 
   /**

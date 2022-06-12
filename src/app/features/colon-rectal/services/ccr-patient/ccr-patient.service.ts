@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
 import { CCREnrollmentSurvey } from 'src/app/features/colon-rectal/models/ccr-enrollment-survey';
 import { CCRPatient } from 'src/app/features/colon-rectal/models/ccr-patient';
+import { CCRPatientreports } from '../../models/ccr-reports';
 import { CCRRiskSurveyFamily, CCRRiskSurveyFamilyCancer, CCRRiskSurveyGeneral, CCRRiskSurveyHabits, CCRRiskSurveyPathologies } from 'src/app/features/colon-rectal/models/ccr-risk-survey';
 import { Coloncheck } from 'src/app/features/colon-rectal/models/coloncheck';
 import { Colonoscopy } from 'src/app/features/colon-rectal/models/colonoscopy';
@@ -31,14 +32,15 @@ export class CCRPatientService {
     return this.http.get<CustomHttpResponse<CCRPatient[]>>(API + "GetListPatientCCR");
   }
 
-
   ////
-
-  public getAllCCRPatientsForReports(): Observable<CustomHttpResponse<CCRPatient[]>> {
-    return this.http.get<CustomHttpResponse<CCRPatient[]>>(API + "GetListPatinetCCRForExport");
+  public getAllCCRPatientsForReports(): Observable<CustomHttpResponse<CCRPatientreports[]>> {
+    return this.http.get<CustomHttpResponse<CCRPatientreports[]>>(API + "GetListPatientCCRForExport");
   }
 
-  ///7
+  public deleteAllPatientByid(patientId: number): Observable<CustomHttpResponse<undefined>> {
+    return this.http.delete<CustomHttpResponse<undefined>>(API + "deleteAllForPatient", { body: { idPatient: patientId} })
+  }
+  ///
 
   //enrollment survey
   public registerEnrollmentSurvey(data: CCREnrollmentSurvey): Observable<CustomHttpResponse<any>> {
@@ -197,6 +199,7 @@ export class CCRPatientService {
     return this.http.put<CustomHttpResponse<any>>(API + "UpdateScheduleContactTracking", { id_patient: patientId, contact: value }, { params: params })
   }
 }
+
 interface RiskFork {
   general: CCRRiskSurveyGeneral,
   pathologies: CCRRiskSurveyPathologies,

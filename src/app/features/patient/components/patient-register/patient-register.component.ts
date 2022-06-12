@@ -42,22 +42,21 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
   communesLoading: boolean = false;
   showOptionalRegion: boolean = false;
   showError: boolean = false;
-
   hint: string = "Verifique si existen datos antes de empezar";
   final: string | undefined = "Esperando respuesta del servidor...";
   requiredField: string = AppConstants.ERROR_REQUIRED;
   patientData: FormGroup;
   patientRUT: FormControl;
   residenceTime: FormControl;
-
   enrollmentSurvey: FormGroup;
-
   regions: Region[] = [];
   communes: Region[] = [];
   cesfamList: string[] = [];
   nationalities: string[] = [];
   fonasa: string[] = [];
   mStates: string[] = [];
+
+  @Input() value: string = "";
 
   constructor(private patientService: PatientService, private admin: AdministrativeService, private confirmDialog: MatDialog, private valSvc: ValidationService) {
     this.patientRUT = new FormControl(null, [Validators.required]);
@@ -88,7 +87,6 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
         volunteerAgreement: new FormControl(null, [Validators.requiredTrue])
       }, [valSvc.validatePrevRegion()])
     this.enrollmentSurvey = new FormGroup({})
-
 
   }
   ngOnDestroy(): void {
@@ -123,7 +121,55 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
    * </ul>
    * 
    */
+
+
+  //search on data table function 
+  search(): void {
+    const rut = this.value;
+    if (!!rut)
+      this.subs$.add(this.patientService.getPatientCancerByRUT(rut).pipe(mergeMap(res => {
+        const patientCancer = res.data[0];
+        if (patientCancer && this.checkPatientInCancer(patientCancer)) {
+          this.patientId = patientCancer.idPatient
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.hasBackdrop = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.maxWidth = '400px';
+          dialogConfig.data = {
+            title: "Paciente ya registrado",
+            action: "Ir al perfil",
+            msg: "El paciente ya se encuentra registrado en la sección " + this.cancer + " de la plataforma.\n" +
+              "Si desea modificar/agregar datos, por favor dirigirse al perfil del paciente."
+          }
+          const diaRef = this.confirmDialog.open(ConfirmDialogComponent, dialogConfig);
+          return diaRef.afterClosed()
+        }
+        else if (patientCancer) {
+          this.patientId = patientCancer.idPatient
+          return this.patientService.getPatient(this.patientId)
+        } else
+          return new Observable<true>();
+      })).subscribe(res => {
+        if (res.response)
+          this.openProfile.emit(this.patientId)
+        else if (res.data) {
+          this.isEditable = false;
+          const patient = res.data[0];
+          this.setPatientData(patient);
+          this.disableForm();
+        }
+        else
+          this.resetSteps();
+      }))
+  }
+
+  resetSearch(): void {
+    this.value = ""
+    this.search();
+  }
+
   public lookupPatient() {
+    //const rut = this.patientRUT.value;
     const rut = this.patientRUT.value;
     if (!!rut)
       this.subs$.add(this.patientService.getPatientCancerByRUT(rut).pipe(mergeMap(res => {
@@ -162,6 +208,18 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
       }))
   }
 
+ 
+
+
+  formatRut():void{
+    const ctrlRef =this.patientData.get('rut');
+    ctrlRef?.setValue(this.valSvc.formatRut(ctrlRef.value));
+
+    const ctrlRefdos =this.patientData.get('patientRUT');
+    ctrlRefdos?.setValue(this.valSvc.formatRut(ctrlRefdos.value));
+
+  }
+
   /**
    * If conditions are met, emits new patient data to be handle by parent component, or skip to the next step.
    */
@@ -174,7 +232,6 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
       if (!this.patientData.valid)
         this.showError = true
     }
-
   }
 
   /**

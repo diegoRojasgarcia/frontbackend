@@ -36,4 +36,14 @@ export class PatientService {
   public getPatientCancerByRUT(patientRut: string): Observable<CustomHttpResponse<CancerCheck[]>> {
     return this.http.post<CustomHttpResponse<CancerCheck[]>>(API + "GetPatientsCancerByRut", { rut: patientRut })
   }
+
+  public deletePatientByid(patientRut: string): Observable<CustomHttpResponse<CancerCheck[]>> {
+    return this.http.post<CustomHttpResponse<CancerCheck[]>>(API + "deleteAllForPatient", { id: patientRut })
+  }
+
+  public deleteAllPatientByid(patientId: number): Observable<CustomHttpResponse<undefined>> {
+    return this.http.delete<CustomHttpResponse<undefined>>(API + "deleteAllForPatient", { body: { idPatient: patientId} })
+  }
+
+
 }

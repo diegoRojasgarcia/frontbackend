@@ -30,10 +30,10 @@
                     Información de Estado
                 </mat-panel-title>
                 <mat-panel-description>
-                    Contiene el estado del paciente dentro de la sección broncopulmonar.
+                    Contiene el estado del paciente dentro de la sección Broncopulmonar.
                     <mat-icon *ngIf="patientForm.pristine; else savePatient">person_outline</mat-icon>
                     <ng-template #savePatient>
-                        <button type="button" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" mat-raised-button color="primary" (click)="updatePatientState()">Guardar Cambios</button>
+                        <button *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" mat-raised-button color="primary" (click)="updatePatient()">Guardar Cambios</button>
                     </ng-template>
                 </mat-panel-description>
             </mat-expansion-panel-header>
@@ -65,6 +65,22 @@
                     <mat-datepicker #cancerPicker></mat-datepicker>
                 </mat-form-field>
             </section>
+
+            <section *ngIf="patientForm.pristine; else motivoestado">
+
+            </section>
+            <ng-template #motivoestado>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Describa el motivo de estado</mat-label>
+                    <input matInput #message maxlength="256" placeholder="El paciente..." formControlName="motivorechazo">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                  </mat-form-field>
+                
+                    
+            </ng-template>
+
+
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="loadExams()">
             <mat-expansion-panel-header>
@@ -232,6 +248,247 @@
                 <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of Biopsia" #bioPaginator="matPaginator"></mat-paginator>
             </div>
         </mat-expansion-panel>
-
     </mat-accordion>
 </div>
+
+<!-- risk survey section -->
+<div class="container">
+
+    <h2>Encuesta de Riesgos</h2>
+
+    <div class="action-buttons">
+        <span *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
+            <div @slideInOut *ngIf="pageForm.dirty" class="editor"
+                (@slideInOut.start)="isEditableChange.emit(patientForm.dirty)">
+                <button mat-raised-button color="primary" matTooltip="Guardar encuesta de riesgos"
+                    (click)="updateSurveyRisk()">Guardar Cambios</button>
+                <button mat-raised-button (click)="cancelSurveyRiskChanges()">Cancelar</button>
+            </div>
+        </span>
+    </div>
+
+    <mat-accordion class="headers-align" #accordionB="matAccordion" multi>
+        <mat-expansion-panel [formGroup]="basic" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes Generales
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>badge</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Peso</mat-label>
+                    <input type="number" matInput formControlName="weight">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Altura</mat-label>
+                    <input type="number" matInput formControlName="height">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>IMC</mat-label>
+                    <input type="number" matInput formControlName="imc">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-form-field appearance="fill">
+                    <mat-label>Circ. Abdominal</mat-label>
+                    <input type="number" matInput formControlName="cAbdominal">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Presión Sistólica</mat-label>
+                    <input type="number" matInput formControlName="paSystolic">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Presión Diástolica</mat-label>
+                    <input type="number" matInput formControlName="paDiastolic">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="regularMedications"
+                    (change)="!$event.checked?basic.get('reasonMedicines')?.reset():null">Toma Medicamentos
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="basic.get('regularMedications')?.value">
+                    <mat-label>Razón</mat-label>
+                    <input type="text" matInput formControlName="reasonMedicines">
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox class="checkbox-margin" formControlName="anticoagulants"
+                    (change)="!$event.checked?basic.get('wichAnticoagulants')?.reset():null">Toma Anticoagulantes
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="basic.get('anticoagulants')?.value">
+                    <mat-label>Cuáles</mat-label>
+                    <input type="text" matInput formControlName="wichAnticoagulants">
+                </mat-form-field>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel [formGroup]="pathologies" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes Médicos
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>health_and_safety</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-checkbox formControlName="arterialHypertension">Hipertensión arterial</mat-checkbox><br>
+                <mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox><br>
+                <mat-checkbox formControlName="epilepsy">Epilepsia</mat-checkbox><br>
+                <mat-checkbox fomrControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
+                <mat-checkbox formControlName="hypoHyperThyroidism">Hipo/Hipertiroidismo</mat-checkbox><br>
+                <mat-checkbox formControlName="operated"
+                    (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna
+                    vez
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('operated')?.value">
+                    <mat-label>Razón</mat-label>
+                    <input type="text" formControlName="operationReason" matInput>
+                </mat-form-field><br>
+            </section>
+
+            <section>
+                <mat-checkbox formControlName="cancer" (change)="resetCancerConditionals($event.checked)">Ha tenido
+                    cáncer
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value">
+                    <mat-label>Cuál</mat-label>
+                    <input type="text" formControlName="typeCancer" matInput
+                        (ngModelChange)="!$event?pathologies.get('cancerAge')?.reset():null">
+                </mat-form-field>
+                <mat-form-field appearance="fill"
+                    *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
+                    <mat-label>Edad</mat-label>
+                    <input type="number" formControlName="cancerAge" matInput>
+                </mat-form-field>
+            </section>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel [formGroup]="habits" (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Hábitos
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>directions_run</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section>
+                <mat-checkbox formControlName="smokes" (change)="resetSmokerConditional($event.checked)">Fuma
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Cantidad</mat-label>
+                    <input type="number" formControlName="numberCigarettes" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Años Fumando</mat-label>
+                    <input type="number" formControlName="yearsSmoking" matInput>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox formControlName="eatCerealFiber">Consume diariamente cereales/fibras</mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="drinkAlcohol"
+                    (change)="!$event.checked?habits.get('quantityAlcohol')?.reset():null">Consume alcohol
+                </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value">
+                    <mat-label>Cuánto</mat-label>
+                    <input type="number" formControlName="quantityAlcohol" matInput>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox formControlName="physicalActivity">Realiza ACtividad Física (al menos caminar 20 min
+                    diarios)
+                </mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="threeFruits">Consume a lo menos 3 porciones de frutas y verduras al día
+                </mat-checkbox>
+            </section>
+            <section>
+                <mat-checkbox formControlName="friedFoods">Consume semanalmente 2 o mas alimentos fritos</mat-checkbox>
+            </section>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="loadAllRiskSurvey()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Antecedentes de Cáncer en Familia
+                </mat-panel-title>
+                <mat-panel-description>
+                    Datos adicionales registrados a través de la encuesta de riesgo.
+                    <mat-icon>group_add</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section [formGroup]="familyMemberForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Familiar con Cáncer</mat-label>
+                    <mat-select formControlName="familyMember" required>
+                        <mat-option *ngFor="let member of familyOptions" [value]="member">{{member}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Edad de detección</mat-label>
+                    <input type="number" formControlName="age" matInput required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cancer</mat-label>
+                    <input formControlName="cancer" type="text" matInput required>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="addFamilyMemberCancer()">Agregar</button>
+            </section>
+            <mat-list role="list">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="familyMemberList" #familyTable="matTable" class="mat-elevation-z8">
+                        <ng-container matColumnDef="member">
+                            <th mat-header-cell *matHeaderCellDef> Familiar </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.familyMember}}
+                            </td>
+                        </ng-container>
+
+                        <!-- Cancer Column -->
+                        <ng-container matColumnDef="cancer">
+                            <th mat-header-cell *matHeaderCellDef> Cáncer </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.cancer}} </td>
+                        </ng-container>
+
+                        <!-- Age Column -->
+                        <ng-container matColumnDef="age">
+                            <th mat-header-cell *matHeaderCellDef> Edad </th>
+                            <td mat-cell *matCellDef="let cancer"> {{cancer.age}} </td>
+                        </ng-container>
+                        <!-- Delete Column -->
+                        <ng-container matColumnDef="delete">
+                            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                            <td mat-cell *matCellDef="let cancer"> <button type="button" mat-icon-button color="primary"
+                                    (click)="removeMember(cancer)">
+                                    <mat-icon>delete</mat-icon>
+                                </button> </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="familyMemberCancerFields"></tr>
+                        <tr mat-row *matRowDef="let row; columns: familyMemberCancerFields;"></tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of familiares"
+                        #familyPaginator="matPaginator"></mat-paginator>
+                </div>
+            </mat-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+
+</div>
+
+<div class="container-delete">
+    <button type="button" mat-icon-button color="primary" (click)="deletePatient()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
+
+<mat-divider></mat-divider>

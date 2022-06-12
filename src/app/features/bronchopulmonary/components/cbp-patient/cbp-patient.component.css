@@ -2,6 +2,11 @@
     margin: 5%;
 }
 
+.container-delete{
+    display: flex;
+    margin: 5%;
+}
+
 .action-buttons {
     padding-bottom: 20px;
 }
@@ -10,6 +15,10 @@
 .headers-align .mat-expansion-panel-header-description {
     flex-basis: 0;
 }
+
+.example-full-width {
+    width: 100%;
+  }
 
 .headers-align .mat-expansion-panel-header-description {
     justify-content: space-between;

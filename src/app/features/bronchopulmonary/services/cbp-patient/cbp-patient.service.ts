@@ -7,6 +7,10 @@ import { CBPPatient } from 'src/app/features/bronchopulmonary/models/cbp-patient
 import { CustomHttpResponse } from 'src/app/core/models/http-response';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { TACTrackingPatient } from '../../models/cbp-tracking';
+import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
+import { forkJoin } from 'rxjs';
+import { CBPRiskSurveyFamily, CBPRiskSurveyFamilyCancer, CBPRiskSurveyGeneral, CBPRiskSurveyHabits, CBPRiskSurveyPathologies } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
+import { map } from 'rxjs/operators';
 
 const API = AppConstants.CBP_PATIENT_API
 
@@ -30,6 +34,10 @@ export class CBPPatientService {
 
   getAllCBPPAtients(): Observable<CustomHttpResponse<CBPPatient[]>> {
     return this.http.get<CustomHttpResponse<CBPPatient[]>>(API + "GetListPatientCBP")
+  }
+
+  getAllCBPPAtientsReports(): Observable<CustomHttpResponse<CBPPatientReports[]>> {
+    return this.http.get<CustomHttpResponse<CBPPatientReports[]>>(API + "GetListPatientCBPReports")
   }
 
   getCBPPatientById(patientId: number): Observable<CustomHttpResponse<CBPPatient[]>> {
@@ -76,7 +84,85 @@ export class CBPPatientService {
     return this.http.put<CustomHttpResponse<any>>(API + "UpdateContactLungRads", { id_patient: patientId, contact: value });
   }
 
-  updatePatient(data: CBPPatient): Observable<CustomHttpResponse<any>>{
+  public updatePatient(data: CBPPatient): Observable<CustomHttpResponse<any>>{
     return this.http.put<CustomHttpResponse<any>>(API+"UpdatePatientCBP", data);
   }
+
+  //patient risk survey
+  //general
+  public addGeneralRiskSurvey(data: CBPRiskSurveyGeneral): Observable<CustomHttpResponse<any>> {
+    return this.http.post<CustomHttpResponse<any>>(API + "RegisterRiskSurveyBasic", data);
+  }
+  public updateGeneralRiskSurvey(data: CBPRiskSurveyGeneral): Observable<CustomHttpResponse<any>> {
+    return this.http.put<CustomHttpResponse<any>>(API + "UpdateRiskSurveyBasic", data);
+  }
+  public getGeneralRiskSurvey(id: number): Observable<CustomHttpResponse<CBPRiskSurveyGeneral[]>> {
+    return this.http.post<CustomHttpResponse<CBPRiskSurveyGeneral[]>>(API + "GetRiskSurveyBasicById", { idPatient: id })
+  }
+
+  //pathologies
+  public addPathologiesRiskSurvey(data: CBPRiskSurveyPathologies): Observable<CustomHttpResponse<any>> {
+    return this.http.post<CustomHttpResponse<any>>(API + "RegisterRiskSurveyPathologies", data);
+  }
+  public updatePathologiesRiskSurvey(data: CBPRiskSurveyPathologies): Observable<CustomHttpResponse<any>> {
+    return this.http.put<CustomHttpResponse<any>>(API + "UpdateRiskSurveyPathologies", data);
+  }
+  public getPathologiesRiskSurvey(id: number): Observable<CustomHttpResponse<CBPRiskSurveyPathologies[]>> {
+    return this.http.post<CustomHttpResponse<CBPRiskSurveyPathologies[]>>(API + "GetRiskSurveyPathologiesById", { idPatient: id });
+  }
+
+  //Habits
+  public addHabitsRiskSurvey(data: CBPRiskSurveyHabits): Observable<CustomHttpResponse<any>> {
+    return this.http.post<CustomHttpResponse<any>>(API + "RegisterRiskSurveyHabits", data);
+  }
+  public updateHabitsRiskSurvey(data: CBPRiskSurveyHabits): Observable<CustomHttpResponse<any>> {
+    return this.http.put<CustomHttpResponse<any>>(API + "UpdateRiskSurveyHabits", data);
+  }
+  public getHabitsRiskSurvey(id: number): Observable<CustomHttpResponse<CBPRiskSurveyHabits[]>> {
+    return this.http.post<CustomHttpResponse<CBPRiskSurveyHabits[]>>(API + "GetRiskSurveyHabitsById", { idPatient: id });
+  }
+
+  //Family cancer
+  //family cancer
+  public addFamilyCancerRiskSurvey(data: CBPRiskSurveyFamilyCancer): Observable<CustomHttpResponse<any>> {
+    return this.http.post<CustomHttpResponse<any>>(API + "RegisterRiskSurveyFamilyCancer", data);
+  }
+
+  public updateFamilyCancerRiskSurvey(data: CBPRiskSurveyFamilyCancer): Observable<CustomHttpResponse<any>> {
+    return this.http.put<CustomHttpResponse<any>>(API + "UpdateRiskSurveyFamilyCancer", data);
+  }
+
+  public getFamilyCancerRiskSurvey(patientId: number): Observable<CustomHttpResponse<CBPRiskSurveyFamilyCancer[]>> {
+    return this.http.post<CustomHttpResponse<CBPRiskSurveyFamilyCancer[]>>(API + "GetRiskSurveyFamilyCancerById", { idPatient: patientId });
+  }
+
+  public deleteFamily(familyId: number): Observable<CustomHttpResponse<any>> {
+    return this.http.delete<CustomHttpResponse<any>>(API + "familyDelete", { body: { idRiskSurveyFamilyCancer: familyId } })
+  }
+
+   // Complete survey
+   public getCompleteRiskSurvey(patientId: number): Observable<RiskFork> {
+    return forkJoin([
+      this.getGeneralRiskSurvey(patientId),
+      this.getHabitsRiskSurvey(patientId),
+      this.getPathologiesRiskSurvey(patientId),
+      this.getFamilyCancerRiskSurvey(patientId)
+    ]).pipe(map(res => {
+      return {
+        general: res[0].data[0],
+        habits: res[1].data[0],
+        pathologies: res[2].data[0],
+        family: res[3].data
+      }
+    }))
+  }
+
+
+}
+
+interface RiskFork {
+  general: CBPRiskSurveyGeneral,
+  pathologies: CBPRiskSurveyPathologies,
+  habits: CBPRiskSurveyHabits,
+  family: CBPRiskSurveyFamilyCancer[];
 }

@@ -51,13 +51,16 @@
                                 <mat-icon mat-list-icon color="primary">event</mat-icon>
                                 {{formatViewDate(element.ldctDate)}}
                             </mat-list-item>
+                            
                         </mat-list>
+                        <div class="mat-divider"></div>
                         <div class="go-to-profile">
                             <span>Ver ficha paciente</span>
                             <button mat-icon-button aria-label="Go to profile link button" (click)="handleProfile(element.idPatient)">
                                 <mat-icon>open_in_new</mat-icon>
                             </button>
                         </div>
+                        
                     </div>
                 </td>
             </ng-container>

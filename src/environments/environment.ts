@@ -3,14 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  authApi: "http://localhost:3000/auth/",
-  usersApi:"http://localhost:3000/api/",
-  patientsApi:"http://localhost:3000/api/",
-  ccrPatientsApi:"http://localhost:3000/api/",
-  ccrSchedulingApi:"http://localhost:3000/api/",
-  cbpPatientsApi:"http://localhost:3000/api/",
-  administrativeApi:"http://localhost:3000/api/"
+  production: true,
+  authApi: "https://precosbackend.herokuapp.com/auth/",
+  usersApi:"https://precosbackend.herokuapp.com/api/",
+  patientsApi:"https://precosbackend.herokuapp.com/api/",
+  ccrPatientsApi:"https://precosbackend.herokuapp.com/api/",
+  ccrSchedulingApi:"https://precosbackend.herokuapp.com/api/",
+  cbpPatientsApi:"https://precosbackend.herokuapp.com/api/",
+  administrativeApi:"https://precosbackend.herokuapp.com/api/"
 };
 
 /*

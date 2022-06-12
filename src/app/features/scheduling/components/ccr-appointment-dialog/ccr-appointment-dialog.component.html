@@ -32,7 +32,7 @@
         </mat-form-field>
     </div>
     <div @collapseForm *ngIf="panelOpen && showPatient" [formGroup]="patientForm" (@collapseForm.done)="hidePatientForm($event.toState)">
-        <mat-form-field appearance="fill" (change)="formatRut()">
+        <mat-form-field appearance="fill">
             <mat-label>RUT</mat-label>
             <input matInput formControlName="rut">
         </mat-form-field>

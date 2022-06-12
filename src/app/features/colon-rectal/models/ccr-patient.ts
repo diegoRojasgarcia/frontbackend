@@ -6,4 +6,5 @@ export interface CCRPatient extends Patient {
     colonoscopyResult:boolean;
     neoplasticLesion:boolean;
     polyps:boolean;
+    motivorechazo:string;
 }
