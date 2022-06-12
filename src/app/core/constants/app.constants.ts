@@ -39,14 +39,14 @@ export class AppConstants {
     public static getCBPEnrollmentSurvey: string = "GetSurveyCBP";
 
     // API's
-    public static CBP_PATIENT_API: string = "http://localhost:3000/cbpAPI/";
-    public static CBP_SCHEDULING_API: string = "http://localhost:3000/cbpSchedulingAPI/";
-    public static CCR_PATIENT_API: string = "http://localhost:3000/ccrAPI/";
-    public static CCR_SCHEDULING_API: string = "http://localhost:3000/ccrSchedulingAPI/";
-    public static PATIENT_API: string = "http://localhost:3000/patientAPI/";
-    public static AUTH_API: string = "http://localhost:3000/api/";
-    public static ADMIN_API: string = "http://localhost:3000/administrativeAPI/";
-    public static USERS_API: string = "http://localhost:3000/userAPI/";
+    public static CBP_PATIENT_API: string = "https://precosbackend.herokuapp.com/cbpAPI/";
+    public static CBP_SCHEDULING_API: string = "https://precosbackend.herokuapp.com/cbpSchedulingAPI/";
+    public static CCR_PATIENT_API: string = "https://precosbackend.herokuapp.com/ccrAPI/";
+    public static CCR_SCHEDULING_API: string = "https://precosbackend.herokuapp.com/ccrSchedulingAPI/";
+    public static PATIENT_API: string = "https://precosbackend.herokuapp.com/patientAPI/";
+    public static AUTH_API: string = "https://precosbackend.herokuapp.com/api/";
+    public static ADMIN_API: string = "https://precosbackend.herokuapp.com/administrativeAPI/";
+    public static USERS_API: string = "https://precosbackend.herokuapp.com/userAPI/";
 
     // CANCER
     public static CBP_NAME: string = "Broncopulmonar";
