@@ -1,7 +1,7 @@
 import { Patient } from "../../patient/models/patient";
 
-export interface CCRPatientreports extends Patient{
-    id_patient?:number,
+export interface CCRPatientreports extends Patient {
+    id_patient?:string,
     name?:string,
     rut:string,
     edad?:number,

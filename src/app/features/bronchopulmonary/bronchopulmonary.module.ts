@@ -11,6 +11,8 @@ import { CBPPatientListComponent } from 'src/app/features/bronchopulmonary/compo
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CBPPatientService } from './services/cbp-patient/cbp-patient.service';
 import { CBPSchedulingService } from './services/cbp-scheduling/cbp-scheduling.service';
+import { PatientCBPReports } from './components/Reportabilidad/cbp-reports-component';
+
 
 
 @NgModule({
@@ -18,14 +20,15 @@ import { CBPSchedulingService } from './services/cbp-scheduling/cbp-scheduling.s
     CBPMainComponent,
     CBPPatientComponent,
     CBPTrackingComponent,
-    CBPPatientListComponent
+    CBPPatientListComponent,
+    PatientCBPReports
   ],
   imports: [
     CommonModule,
     BronchopulmonaryRoutingModule,
     SchedulingModule,
     PatientModule,
-    SharedModule
+    SharedModule,
   ],
   providers:[
     CBPPatientService,

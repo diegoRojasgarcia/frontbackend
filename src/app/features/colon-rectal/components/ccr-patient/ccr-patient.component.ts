@@ -20,6 +20,8 @@ import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog
 import { forkJoin, from, Observable, Subscription } from 'rxjs';
 import { CCRBiopsy } from '../../models/ccr-biopsy';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Router } from '@angular/router';
+import { MatDrawer } from '@angular/material/sidenav';
 @Component({
   selector: 'app-ccr-patient',
   templateUrl: './ccr-patient.component.html',
@@ -49,6 +51,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
   FORM_ERROR: string = AppConstants.FORM_ERROR;
   FEATURES = Features
   PERMISSIONS = Permission
+
 
   @Input() patientId!: number;
   isEditable: boolean = false;
@@ -106,7 +109,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
   familyMemberCancerFields: string[] = ["member", "cancer", "age", 'delete'];
 
   riskFlag: boolean = false;
-  constructor(private ccrService: CCRPatientService, private dtService: DateTimeService, private admin: AdministrativeService, private confirm: MatDialog, private patientService: PatientService) {
+  constructor(private router: Router,private ccrService: CCRPatientService, private dtService: DateTimeService, private admin: AdministrativeService, private confirm: MatDialog, private patientService: PatientService, private Router: Router) {
     this.surveyForm = new FormGroup({});
     this.patientForm = new FormGroup({
       idPatient: new FormControl(null, Validators.required),
@@ -546,6 +549,8 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
     }
   }
 
+
+
   deletePatient(): void {
     const config = new MatDialogConfig()
     config.data = {
@@ -560,6 +565,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
       else
         return new Observable<false>();
     })).subscribe(() => {
+      this.router.navigate(["/"]);
     }))
   }
 

@@ -10,10 +10,8 @@ import { CBPPatient } from 'src/app/features/bronchopulmonary/models/cbp-patient
 import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cbp-patient/cbp-patient.service';
 import { CBPPatientReports } from '../../models/cbp-reports';
 import { Features, Permission } from 'src/app/features/users-management/models/privilege';
-import { XlsxExporterService, } from 'mat-table-exporter';
 import { Workbook } from 'exceljs';
 import * as fs from 'file-saver';
-
 @Component({
   selector: 'app-cbp-patient-list',
   templateUrl: './cbp-patient-list.component.html',
@@ -85,7 +83,6 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     }, err => {
       const data: CBPPatient[] = [];
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
-      this.dataSource = new MatTableDataSource(data);
     }))
   }
   /**
@@ -93,13 +90,11 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
    * 
    * Emits the patient id of the user selected.
    * 
-   * @param {number} patientId 
+   *
    */
   handleProfile(patientId: number): void {
     this.openProfile.emit(patientId);
   }
-
-
 
   /**
    * Silly function for typeof.
@@ -139,8 +134,6 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
       this.dataSource.paginator.firstPage()
   }
 
-
-
   exportExcel() {
 
     let workbook = new Workbook();
@@ -150,25 +143,25 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     let titleRow = worksheet.addRow(['']);
     
     worksheet.columns = [
-      { header: 'Nombre', key: 'name', width: 10 , },
+      { header: 'Nombre', key: 'name', width: 20 , },
       { header: 'Apellido Paterno', key: 'lastname', width: 20, },
       { header: 'Apellido Materno', key: 'lastname2', width: 20 },
       { header: 'Rut', key: 'rut', width: 13 },
       { header: 'Edad', key: 'edad', width: 6 },
-      { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
       { header: 'Sexo', key: 'sex', width: 5},
+      { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
       { header: 'Cesfam', key: 'cesfam', width: 15},
       { header: 'Direccion', key: 'address', width: 15},
       { header: 'Telefono', key: 'cellphone', width: 13},
       { header: 'Telefono e.', key: 'ecellphone', width: 12},
       { header: 'Previcion', key: 'fonasa', width: 13},
-      { header: 'Derivacion', key: 'derivationstatenfm', width: 13},
-      { header: 'Fecha Biopsia', key: 'biopsydate', width: 15},
+      { header: 'Derivacion', key: 'derivationstatenfm', width: 13}
     ];
 
     this.dataSourceReports.data.forEach(e => {
       let row = worksheet.addRow({ name: e.name,lastname: e.lastname, lastname2: e.lastname2, rut:e.rut, edad:e.edad, birthday:e.birthday, sex:e.sex, cesfam:e.cesfam, address:e.address, cellphone:e.cellphone, ecellphone:e.ecellphone, fonasa:e.fonasa,derivationstatenfm:e.derivationstatenfm, biopsydate:e.biopsydate }, "n");
     });
+
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }
     worksheet.getCell('A1').alignment = { vertical: 'middle', horizontal: 'center' };
     worksheet.getCell('B1').alignment = { vertical: 'middle', horizontal: 'center' };
@@ -185,8 +178,6 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     worksheet.getCell('M1').alignment = { vertical: 'middle', horizontal: 'center' };
     worksheet.getCell('N1').alignment = { vertical: 'middle', horizontal: 'center' };
     
-
-
     workbook.xlsx.writeBuffer().then((data) => {
       let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       fs.saveAs(blob, 'ReportePacientesBroncopulmonar.xlsx');

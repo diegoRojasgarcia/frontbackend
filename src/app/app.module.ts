@@ -10,6 +10,7 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './core/components/login/login.component';
 
+
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthInterceptor } from './core/interceptors/auth-interceptor/auth-interceptor.interceptor';
@@ -29,6 +30,8 @@ import { OverlayInterceptor } from './core/interceptors/overlay/overlay.intercep
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatMenuModule } from '@angular/material/menu'; 
 import { MatButtonModule } from '@angular/material/button';
+
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -53,6 +56,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableExporterModule,
     MatMenuModule,
     MatButtonModule,
+    NgChartsModule
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: load, multi: true, deps: [HttpClient, AuthenticationService] },

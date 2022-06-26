@@ -18,11 +18,18 @@
             <app-patient-register [cancer]="currentCancer" [cancerKey]="currentCancerKey.toLowerCase()" [survey]="currentSurvey" [ageRange]="currentAgeRange" (patientSubmit)="addPatient($event)" (surveySubmit)="addEnrollmentSurvey($event)" (openProfile)="openPatientProfile($event)"></app-patient-register>
         </ng-template>
     </mat-tab>
-    <mat-tab label="Lista de Pacientes" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
+    <mat-tab label="Pacientes" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
         <ng-template matTabContent>
             <app-cbp-patient-list (openProfile)="openPatientProfile($event)"></app-cbp-patient-list>
         </ng-template>
     </mat-tab>
+
+    <mat-tab label="Reportabilidad" [disabled]="lock" *appPermission="[PERMISSIONS.ADMIN, PERMISSIONS.VIEW]; feature FEATURES.PATIENT_FILES">
+        <ng-template matTabContent>
+            <app-cbp-reports></app-cbp-reports>
+        </ng-template>
+    </mat-tab>
+
     <mat-tab *ngFor="let patient of patientTabs">
         <ng-template matTabLabel>
             <div>{{patient.name}}</div>
@@ -31,8 +38,8 @@
         <ng-template matTabContent>
             <div class="container">
                 <div class="block">
-                    <app-patient-profile [patientId]="patient.patientId" [(isEditable)]="lock"></app-patient-profile>
-                    <app-cbp-patient [patientId]="patient.patientId"></app-cbp-patient>
+                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock"></app-patient-profile>
+                    <app-cbp-patient #cbpProfile [patientId]="patient.patientId"></app-cbp-patient>
                 </div>
             </div>
         </ng-template>

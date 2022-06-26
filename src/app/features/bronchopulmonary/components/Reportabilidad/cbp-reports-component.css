@@ -4,8 +4,10 @@ mat-grid-tile {
     text-align: center;
 }
 
-mat-grid-tile:hover {
-    background: #B2B1B9;
+#divChart{
+    display: block;
+    width: 200px;
+    height: 200px;
 }
 
 .mat-icon {
@@ -20,7 +22,6 @@ mat-grid-tile:hover {
 }
 
 .menu-container {
-    margin-top: 90px;
     padding-left: 15%;
     text-align: center;
     justify-content: center;

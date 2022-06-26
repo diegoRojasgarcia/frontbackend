@@ -11,12 +11,8 @@ import { DateTimeService } from 'src/app/core/services/date-time/date-time.servi
 import { Subscription } from 'rxjs';
 import { XlsxExporterService, } from 'mat-table-exporter';
 import { Features, Permission } from 'src/app/features/users-management/models/privilege';
-import * as XLSX from 'xlsx'
 import * as fs from 'file-saver';
 import { Workbook } from 'exceljs';
-import { EEXIST } from 'constants';
-const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-const EXCEL_EXTENSION = '.xlsx';
 
 @Component({
   selector: 'app-ccr-patient-list',
@@ -43,7 +39,6 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     { columnName: 'ESTADO', columnValue: 'state', cell: (element: CCRPatient): string => element.state ?? this.NO_DATA },
     { columnName: '', columnValue: 'expand', cell: (element: CCRPatient) => undefined },
   ];
-
 
   columnsToDisplay = this.columnsJoin.map(c => c.columnValue)
 
@@ -154,12 +149,13 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     let worksheet = workbook.addWorksheet('Pacientes Colorectal');
 
     //Add Row and formatting
-    let titleRow = worksheet.addRow(['Hooolaaaa']);
+    let titleRow = worksheet.addRow(['']);
     
     worksheet.columns = [
-      { header: 'Nombre', key: 'name', width: 20 , outlineLevel:0},
-      { header: 'Apellido Paterno', key: 'lastnaamee', width: 20, },
-      { header: 'Apellido Materno', key: 'lastnaame2', width: 20 },
+      { header: 'id', key: 'id_patient', width: 6},
+      { header: 'Nombre', key: 'name', width: 20},
+      { header: 'Apellido Paterno', key: 'lastname', width: 20, },
+      { header: 'Apellido Materno', key: 'lastname2', width: 20 },
       { header: 'Rut', key: 'rut', width: 15 },
       { header: 'Edad', key: 'edad', width: 6 },
       { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
@@ -186,9 +182,9 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
       { header: 'Ultima Biopsia', key: 'lastbiopsy', width: 20},
       { header: 'Cantidad biopsias', key: 'cantbiopsy', width: 20 },
     ];
-
+    
     this.dataSourcereports.data.forEach(e => {
-      let row = worksheet.addRow({ name: e.name,lastnaamee: e.lastName, lastnaame2: e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,address:e.address,previcion:e.previcion,peso:e.peso,altura:e.altura,imc:e.imc, cmabdominal:e.cmabdominal,smokes: e.smokes, ncigarettes:e.ncigarettes,ysmoking:e.ysmoking , cancerdetectiondate: e.cancerdetectiondate, testresultcoloncheck:e.testresultcoloncheck, lastcoloncheck:e.lastcoloncheck,cantcoloncheck:e.cantcoloncheck,colonoscopy:e.colonoscopy, polyps:e.polyps,neoplasticlesion: e.neoplasticlesion,lastcolonoscopy:e.lastcolonoscopy,cantcolonoscopy: e.cantcolonoscopy, lastbiopsy: e.lastbiopsy, cantbiopsy:e.cantbiopsy}, "n");
+      let row = worksheet.addRow({id_patient:e.idPatient,name: e.name,lastname: e.lastName, lastname2: e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,address:e.address,previcion:e.previcion,peso:e.peso,altura:e.altura,imc:e.imc, cmabdominal:e.cmabdominal,smokes: e.smokes, ncigarettes:e.ncigarettes,ysmoking:e.ysmoking , cancerdetectiondate: e.cancerdetectiondate, testresultcoloncheck:e.testresultcoloncheck, lastcoloncheck:e.lastcoloncheck,cantcoloncheck:e.cantcoloncheck,colonoscopy:e.colonoscopy, polyps:e.polyps,neoplasticlesion: e.neoplasticlesion,lastcolonoscopy:e.lastcolonoscopy,cantcolonoscopy: e.cantcolonoscopy, lastbiopsy: e.lastbiopsy, cantbiopsy:e.cantbiopsy}, "n");
     });
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }
     worksheet.getCell('B1').alignment = { vertical: 'middle', horizontal: 'center' };
@@ -199,7 +195,6 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
       fs.saveAs(blob, 'ReportePacientes.xlsx');
     })
   }
-
 }
 
 

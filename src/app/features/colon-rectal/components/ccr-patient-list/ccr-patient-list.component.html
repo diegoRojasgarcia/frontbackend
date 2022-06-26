@@ -221,7 +221,7 @@
             <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menuu="matMenu">
-            <button *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" mat-menu-item (click)="exportExcel()" class="btn btn-success btn-sm">Excel</button>
+            <button *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.PATIENT_FILES" mat-menu-item (click)="exportExcel()" class="btn btn-success btn-sm">Generar Reporte</button>
         </mat-menu>
 
         <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons aria-label=" Seleccione alguna página.">

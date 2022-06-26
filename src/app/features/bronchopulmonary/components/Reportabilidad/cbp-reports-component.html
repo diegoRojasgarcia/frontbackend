@@ -1,0 +1,39 @@
+<app-title [pageTitle]="'Reportes'"></app-title>
+
+<div class="menu-container">
+    <mat-grid-list #grid [cols]="cols" rowHeight="5:1">
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{cantpacient}}</p>
+                </div>
+                <div class="row">
+                    <p class="details">Cantidad Pacientes</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="divChart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="divChart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="divChart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    
+</div>

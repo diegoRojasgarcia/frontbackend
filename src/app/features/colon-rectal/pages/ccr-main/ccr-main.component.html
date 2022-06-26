@@ -42,8 +42,7 @@
         <ng-template matTabContent>
             <div class="container">
                 <div class="block">
-                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock">
-                    </app-patient-profile>
+                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock"> </app-patient-profile>
                     <app-ccr-patient #ccrProfile [patientId]="patient.patientId"></app-ccr-patient>
                 </div>
             </div>
