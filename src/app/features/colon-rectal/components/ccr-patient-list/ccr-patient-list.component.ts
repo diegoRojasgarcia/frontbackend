@@ -153,6 +153,7 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     
     worksheet.columns = [
       { header: 'id', key: 'id_patient', width: 6},
+      { header: 'Estado', key: 'estadopacienteccr', width: 10},
       { header: 'Nombre', key: 'name', width: 20},
       { header: 'Apellido Paterno', key: 'lastname', width: 20, },
       { header: 'Apellido Materno', key: 'lastname2', width: 20 },
@@ -184,7 +185,7 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     ];
     
     this.dataSourcereports.data.forEach(e => {
-      let row = worksheet.addRow({id_patient:e.idPatient,name: e.name,lastname: e.lastName, lastname2: e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,address:e.address,previcion:e.previcion,peso:e.peso,altura:e.altura,imc:e.imc, cmabdominal:e.cmabdominal,smokes: e.smokes, ncigarettes:e.ncigarettes,ysmoking:e.ysmoking , cancerdetectiondate: e.cancerdetectiondate, testresultcoloncheck:e.testresultcoloncheck, lastcoloncheck:e.lastcoloncheck,cantcoloncheck:e.cantcoloncheck,colonoscopy:e.colonoscopy, polyps:e.polyps,neoplasticlesion: e.neoplasticlesion,lastcolonoscopy:e.lastcolonoscopy,cantcolonoscopy: e.cantcolonoscopy, lastbiopsy: e.lastbiopsy, cantbiopsy:e.cantbiopsy}, "n");
+      let row = worksheet.addRow({id_patient:e.idPatient,estadopacienteccr:e.estadopacienteccr,name: e.name,lastname: e.lastName, lastname2: e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,address:e.address,previcion:e.previcion,peso:e.peso,altura:e.altura,imc:e.imc, cmabdominal:e.cmabdominal,smokes: e.smokes, ncigarettes:e.ncigarettes,ysmoking:e.ysmoking , cancerdetectiondate: e.cancerdetectiondate, testresultcoloncheck:e.testresultcoloncheck, lastcoloncheck:e.lastcoloncheck,cantcoloncheck:e.cantcoloncheck,colonoscopy:e.colonoscopy, polyps:e.polyps,neoplasticlesion: e.neoplasticlesion,lastcolonoscopy:e.lastcolonoscopy,cantcolonoscopy: e.cantcolonoscopy, lastbiopsy: e.lastbiopsy, cantbiopsy:e.cantbiopsy}, "n");
     });
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }
     worksheet.getCell('B1').alignment = { vertical: 'middle', horizontal: 'center' };

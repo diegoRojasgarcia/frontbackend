@@ -143,6 +143,8 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     let titleRow = worksheet.addRow(['']);
     
     worksheet.columns = [
+      { header: 'id Paciente', key: 'idpatientcbp', width: 15, },
+      { header: 'Estado', key: 'estadocbp', width: 20 , },
       { header: 'Nombre', key: 'name', width: 20 , },
       { header: 'Apellido Paterno', key: 'lastname', width: 20, },
       { header: 'Apellido Materno', key: 'lastname2', width: 20 },
@@ -151,7 +153,6 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
       { header: 'Sexo', key: 'sex', width: 5},
       { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
       { header: 'Cesfam', key: 'cesfam', width: 15},
-      { header: 'Direccion', key: 'address', width: 15},
       { header: 'Telefono', key: 'cellphone', width: 13},
       { header: 'Telefono e.', key: 'ecellphone', width: 12},
       { header: 'Previcion', key: 'fonasa', width: 13},
@@ -159,7 +160,7 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     ];
 
     this.dataSourceReports.data.forEach(e => {
-      let row = worksheet.addRow({ name: e.name,lastname: e.lastname, lastname2: e.lastname2, rut:e.rut, edad:e.edad, birthday:e.birthday, sex:e.sex, cesfam:e.cesfam, address:e.address, cellphone:e.cellphone, ecellphone:e.ecellphone, fonasa:e.fonasa,derivationstatenfm:e.derivationstatenfm, biopsydate:e.biopsydate }, "n");
+      let row = worksheet.addRow({ idpatientcbp:e.idpatientcbp,estadocbp: e.estadocbp,name: e.name,lastname: e.lastname, lastname2: e.lastname2, rut:e.rut, edad:e.edad, birthday:e.birthday, sex:e.sex, cesfam:e.cesfam, cellphone:e.cellphone, ecellphone:e.emergencycellphone, fonasa:e.fonasa,derivationstatenfm:e.derivacion }, "n");
     });
 
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }

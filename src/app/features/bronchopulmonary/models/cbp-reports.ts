@@ -1,21 +1,28 @@
 import { Patient } from "../../patient/models/patient";
 
-export interface CBPPatientReports extends Patient {
-    idpatient?:number;
-    name?: string;
-    lastname : string;
-    lastname2?:string;
-    edad?:number;
+export interface CBPPatientReports {
+    idpatientcbp?:number;
+    estadocbp?:string
     rut:string;
-    birthday?:string;
+    name?: string;
+    lastname? : string;
+    lastname2?:string;
+    mail?:string;
     sex?: string;
-    cesfam?: string;
-    address?: string;
+    edad?:number;
+    birthday?:string;
     cellphone?: number;
-    ecellphone?: number;
+    emergencycellphone?: number;
     fonasa?: string;
-    derivationstatenfm?: string;
-    cancerdetectiondate?: Date;
-    type?: string;
-    biopsydate?: Date;
+    cesfam?: string;
+    derivacion?: string;
+    weight?:number;
+    hegith?:number;
+    imc?:number;
+    cabdominal?:number;
+    padiastolic?:number;
+    pasystolic?:number;
+    smokes?:boolean;
+    numbercigarettes?:number;
+    ysmoking:number;
 }

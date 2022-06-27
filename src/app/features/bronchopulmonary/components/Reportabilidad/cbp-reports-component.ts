@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
-
 @Component({
   selector: 'app-cbp-reports',
   templateUrl: './cbp-reports-component.html',
@@ -20,6 +19,8 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
   NO_TABLE_DATA = AppConstants.NO_TABLE_DATA
   private NO_DATA = AppConstants.NO_DATA;
   cantpacient!:number;
+  cantfumadores!:number;
+  pfumadores!:number;
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
   cols = 2;
@@ -58,7 +59,6 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
         }
       }
     }));
-
   }
 
   ngOnDestroy(): void {
@@ -69,6 +69,8 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
     this.sub$.add(this.patientService.getAllCBPPAtientsReports().subscribe(res => {
       const dataSourcereports = res.data;
       this.cantpacient = dataSourcereports.length;
+      this.cantfumadores = dataSourcereports.filter(d => d.smokes).length;
+      this.pfumadores = Math.round((this.cantfumadores/this.cantpacient)*100);
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
