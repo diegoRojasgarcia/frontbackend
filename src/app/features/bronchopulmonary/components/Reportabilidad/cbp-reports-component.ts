@@ -21,6 +21,11 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
   cantpacient!:number;
   cantfumadores!:number;
   pfumadores!:number;
+  pmayoranios!:number;
+  ppmayoranios!:number;
+  pestadorechazado!:number;
+  pestadoinactivos!:number;
+  ppestadorechazado!:number;
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
   cols = 2;
@@ -71,6 +76,12 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.cantpacient = dataSourcereports.length;
       this.cantfumadores = dataSourcereports.filter(d => d.smokes).length;
       this.pfumadores = Math.round((this.cantfumadores/this.cantpacient)*100);
+      this.pmayoranios = dataSourcereports.filter(d => d.edad == 56).length
+      this.ppmayoranios = Math.round((this.pmayoranios/this.cantpacient)*100);
+      this.pestadorechazado = dataSourcereports.filter(d => d.estadocbp == 'Rechazado').length
+      this.pestadoinactivos = dataSourcereports.filter(d => d.estadocbp == 'Inactivo').length
+      this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
+      
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;

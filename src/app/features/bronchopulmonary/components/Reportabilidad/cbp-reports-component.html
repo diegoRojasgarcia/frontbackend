@@ -5,34 +5,48 @@
         <mat-grid-tile >
             <div class="container">
                 <div class="row">
-                    <p class="details">{{cantpacient}}</p>
+                    <p class="details"></p>
+                    <p class="name"><strong>{{cantpacient}}</strong></p>
                 </div>
                 <div class="row">
-                    <p class="details">Cantidad Pacientes</p>
+                    <p class="details">Pacientes Modulo Broncopulmonar</p>
                 </div>
             </div>
         </mat-grid-tile>
         <mat-grid-tile >
             <div class="container">
-                <div class="divChart">
-                    <canvas id="myChart"></canvas>
+                <div class="row">
+                    <p class="details">{{pestadorechazado}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppestadorechazado}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Rechazados / Inactivos</p>
                 </div>
             </div>
         </mat-grid-tile>
         <mat-grid-tile >
             <div class="container">
-                <div class="divChart">
-                    <canvas id="myChart"></canvas>
+                <div class="row">
+                    <p class="details">{{cantfumadores}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{pfumadores}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Fumadores</p>
                 </div>
             </div>
         </mat-grid-tile>
         <mat-grid-tile >
             <div class="container">
-                <div class="divChart">
-                    <canvas id="myChart"></canvas>
+                <div class="row">
+                    <p class="details">{{pmayoranios}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppmayoranios}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes mayores de 55 años</p>
                 </div>
             </div>
         </mat-grid-tile>
+       
     </mat-grid-list>
 
     

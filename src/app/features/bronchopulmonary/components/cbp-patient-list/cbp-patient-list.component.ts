@@ -145,22 +145,32 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     worksheet.columns = [
       { header: 'id Paciente', key: 'idpatientcbp', width: 15, },
       { header: 'Estado', key: 'estadocbp', width: 20 , },
+      { header: 'Rut', key: 'rut', width: 13 },
       { header: 'Nombre', key: 'name', width: 20 , },
       { header: 'Apellido Paterno', key: 'lastname', width: 20, },
       { header: 'Apellido Materno', key: 'lastname2', width: 20 },
-      { header: 'Rut', key: 'rut', width: 13 },
-      { header: 'Edad', key: 'edad', width: 6 },
+      { header: 'Mail', key: 'mail', width: 13 },
       { header: 'Sexo', key: 'sex', width: 5},
+      { header: 'Edad', key: 'edad', width: 6 },
       { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
-      { header: 'Cesfam', key: 'cesfam', width: 15},
       { header: 'Telefono', key: 'cellphone', width: 13},
-      { header: 'Telefono e.', key: 'ecellphone', width: 12},
+      { header: 'Telefono e.', key: 'emergencycellphone', width: 12},
       { header: 'Previcion', key: 'fonasa', width: 13},
-      { header: 'Derivacion', key: 'derivationstatenfm', width: 13}
+      { header: 'Cesfam', key: 'cesfam', width: 15},
+      { header: 'Derivacion', key: 'derivacion', width: 13},
+      { header: 'Peso', key: 'weight', width: 13},
+      { header: 'Altura', key: 'hegith', width: 13},
+      { header: 'Imc', key: 'imc', width: 13},
+      { header: 'C. Abdominal', key: 'cabdominal', width: 13},
+      { header: 'P. Diastólica', key: 'padiastolic', width: 13},
+      { header: 'P. Sistólica', key: 'pasystolic', width: 13},
+      { header: 'Fumador', key: 'smokes', width: 13},
+      { header: 'Años fumandor', key: 'ysmoking', width: 13},
+      { header: 'N. Cigarros', key: 'numbercigarettes', width: 13},
     ];
 
     this.dataSourceReports.data.forEach(e => {
-      let row = worksheet.addRow({ idpatientcbp:e.idpatientcbp,estadocbp: e.estadocbp,name: e.name,lastname: e.lastname, lastname2: e.lastname2, rut:e.rut, edad:e.edad, birthday:e.birthday, sex:e.sex, cesfam:e.cesfam, cellphone:e.cellphone, ecellphone:e.emergencycellphone, fonasa:e.fonasa,derivationstatenfm:e.derivacion }, "n");
+      let row = worksheet.addRow({ idpatientcbp:e.idpatientcbp,estadocbp: e.estadocbp,name: e.name,lastname: e.lastname, lastname2: e.lastname2,rut:e.rut, mail:e.mail,sex:e.sex, edad:e.edad,  birthday:e.birthday, cellphone:e.cellphone,emergencycellphone:e.emergencycellphone, fonasa:e.fonasa, cesfam:e.cesfam, derivacion:e.derivacion, weight:e.weight, height:e.hegith, imc:e.imc,cabdominal:e.cabdominal,padiastolic:e.padiastolic,pasistolic:e.pasystolic, smokes:e.smokes,ysmoking:e.ysmoking,numbercigarettes:e.numbercigarettes  }, "n");
     });
 
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }

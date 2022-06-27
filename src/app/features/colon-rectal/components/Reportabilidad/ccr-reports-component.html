@@ -5,6 +5,28 @@
         <mat-grid-tile >
             <div class="container">
                 <div class="row">
+                    <p class="details"></p>
+                    <p class="name"><strong>{{cantpacient}}</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Modulo Colorectal</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{pestadorechazado}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{ppestadorechazado}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Rechazados / Inactivos</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
                     <p class="details">{{checkcolonCountTrue}} / {{cantpacient}}</p>
                     <p class="name"><strong>{{pcloncheck}} %</strong> </p>
                 </div>
@@ -70,6 +92,7 @@
                 </div>
             </div>
         </mat-grid-tile>
+        
     </mat-grid-list>
 
     

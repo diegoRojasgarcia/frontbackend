@@ -4,9 +4,6 @@ mat-grid-tile {
     text-align: center;
 }
 
-mat-grid-tile:hover {
-    background: #B2B1B9;
-}
 
 .mat-icon {
     width: auto;
