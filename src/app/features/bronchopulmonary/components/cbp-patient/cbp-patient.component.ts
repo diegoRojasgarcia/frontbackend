@@ -154,14 +154,6 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
         age: new FormControl(null, Validators.required)
       })
 
-
-      this.biopsyForm = new FormGroup({
-        idBiopsy: new FormControl(),
-        idPatient: new FormControl(this.patientId, Validators.required),
-        biopsyDate: new FormControl(null, Validators.required),
-        result: new FormControl(null, [Validators.required, Validators.minLength(20)])
-      })
-
       this.basic = new FormGroup({
         idPatient: new FormControl(this.patientId, Validators.required),
         idRiskSurveyBd: new FormControl(),

@@ -34,6 +34,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgChartsModule } from 'ng2-charts';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatTableExporterModule,
     MatMenuModule,
     MatButtonModule,
-    NgChartsModule
+    NgChartsModule,
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: load, multi: true, deps: [HttpClient, AuthenticationService] },

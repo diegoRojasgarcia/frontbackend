@@ -9,7 +9,7 @@ import { AppConstants } from 'src/app/core/constants/app.constants';
 import { TACTrackingPatient } from '../../models/cbp-tracking';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
 import { forkJoin } from 'rxjs';
-import { CBPRiskSurveyFamily, CBPRiskSurveyFamilyCancer, CBPRiskSurveyGeneral, CBPRiskSurveyHabits, CBPRiskSurveyPathologies } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
+import { CBPRiskSurveyFamilyCancer, CBPRiskSurveyGeneral, CBPRiskSurveyHabits, CBPRiskSurveyPathologies } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
 import { map } from 'rxjs/operators';
 
 const API = AppConstants.CBP_PATIENT_API
@@ -38,6 +38,10 @@ export class CBPPatientService {
 
   getAllCBPPAtientsReports(): Observable<CustomHttpResponse<CBPPatientReports[]>> {
     return this.http.get<CustomHttpResponse<CBPPatientReports[]>>(API + "GetListPatientCBPReports")
+  }
+
+  getAllCBPPAtientsStadistics(): Observable<CustomHttpResponse<CBPPatientReports[]>> {
+    return this.http.get<CustomHttpResponse<CBPPatientReports[]>>(API + "GetListPatientCBPStatistics")
   }
 
   getCBPPatientById(patientId: number): Observable<CustomHttpResponse<CBPPatient[]>> {

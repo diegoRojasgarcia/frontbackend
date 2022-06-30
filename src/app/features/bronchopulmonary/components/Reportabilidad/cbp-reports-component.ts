@@ -4,6 +4,7 @@ import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cb
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { Subscription } from 'rxjs';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports';
+import { cbpStatistics } from 'src/app/features/bronchopulmonary/models/cbp-statistics';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
@@ -14,8 +15,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export class PatientCBPReports implements AfterViewInit, OnDestroy {
 
+
   private sub$ = new Subscription()
   dataSourcereports!: MatTableDataSource<CBPPatientReports>;
+  dataSourcestatistics!: MatTableDataSource<cbpStatistics>;
   NO_TABLE_DATA = AppConstants.NO_TABLE_DATA
   private NO_DATA = AppConstants.NO_DATA;
   cantpacient!:number;
@@ -81,14 +84,22 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.pestadorechazado = dataSourcereports.filter(d => d.estadocbp == 'Rechazado').length
       this.pestadoinactivos = dataSourcereports.filter(d => d.estadocbp == 'Inactivo').length
       this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
-      
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
     }))
 
-    
+    this.sub$.add(this.patientService.getAllCBPPAtientsStadistics().subscribe(res => {
+      const dataSourcestatistics = res.data;
+      this.cantpacient = dataSourcestatistics.length;
+    }, err => {
+      this.dataSourcestatistics = new MatTableDataSource();
+      this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
+    }))
+
   }
+
+
 
     
 }
