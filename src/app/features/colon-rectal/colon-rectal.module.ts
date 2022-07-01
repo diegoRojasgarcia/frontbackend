@@ -16,9 +16,6 @@ import { CCRPatientService } from './services/ccr-patient/ccr-patient.service';
 import { CCRSchedulingService } from './services/ccr-scheduling/ccr-schedule.service';
 
 
-
-
-
 @NgModule({
   declarations: [
     ColonRectalSummaryComponent,

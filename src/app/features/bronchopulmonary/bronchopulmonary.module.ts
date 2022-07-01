@@ -13,8 +13,6 @@ import { CBPPatientService } from './services/cbp-patient/cbp-patient.service';
 import { CBPSchedulingService } from './services/cbp-scheduling/cbp-scheduling.service';
 import { PatientCBPReports } from './components/Reportabilidad/cbp-reports-component';
 
-
-
 @NgModule({
   declarations: [
     CBPMainComponent,

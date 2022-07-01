@@ -1,6 +1,35 @@
 export interface cbpStatistics {
-
-    
-
-    
+    idpatient?:number;
+    state?: string;
+    rut?:string;
+    name?:string;
+    lastname?:string;
+    lastname2?:string;
+    sex?: string;
+    edad?:number;
+    birthday?:number;
+    cellphone?:number;
+    ephone?:number;
+    mail?:string;
+    fonasa?: string;
+    cesfan?:string;
+    address?:string;
+    village?:string;
+    derivacion?:string;
+    weight?:number;
+    height?:number;
+    imc?:number;
+    cabdomen?:number;
+    pasystolic?:number;
+    padiastolic?:number;
+    smokes?:boolean;
+    drinkalcohol?:boolean;
+    diabetes?:boolean;
+    epilepsy?:boolean;
+    gastricul?:boolean;
+    hypo?:boolean;
+    lrads?:string;
+    nodule?:string; 
+    size?:number;
+    lastbiopsy?:Date;
 }

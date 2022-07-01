@@ -189,6 +189,7 @@
                 <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Muestra page of TAC" #tacPaginator="matPaginator"></mat-paginator>
             </div>
             <mat-divider></mat-divider>
+            
             <h4>Biopsias</h4>
             <section [formGroup]="biopsyForm" *appPermission="[PERMISSIONS.ADMIN]; feature FEATURES.EXAMS">
                 <p>Nueva Biopsia</p>
