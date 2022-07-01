@@ -12,7 +12,7 @@ export interface cbpStatistics {
     ephone?:number;
     mail?:string;
     fonasa?: string;
-    cesfan?:string;
+    cesfam?:string;
     address?:string;
     village?:string;
     derivacion?:string;

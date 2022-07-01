@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { CBPPatient } from 'src/app/features/bronchopulmonary/models/cbp-patient';
 import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cbp-patient/cbp-patient.service';
-import { CBPPatientReports } from '../../models/cbp-reports';
+import { cbpStatistics } from 'src/app/features/bronchopulmonary/models/cbp-statistics';
 import { Features, Permission } from 'src/app/features/users-management/models/privilege';
 import { Workbook } from 'exceljs';
 import * as fs from 'file-saver';
@@ -54,7 +54,7 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
   FEATURES = Features;
 
   dataSource!: MatTableDataSource<CBPPatient>;
-  dataSourceReports!: MatTableDataSource<CBPPatientReports>
+  dataSourceReports!: MatTableDataSource<cbpStatistics>
 
   @Input() filter!: string;
   @Input() filter1!: string;
@@ -78,7 +78,7 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
       this.dataSource = new MatTableDataSource(data);
     }))
 
-    this.subs$.add(this.cbpPatientService.getAllCBPPAtientsReports().subscribe(res => {
+    this.subs$.add(this.cbpPatientService.getAllCBPPAtientsStadistics().subscribe(res => {
       this.dataSourceReports = new MatTableDataSource(res.data);
     }, err => {
       const data: CBPPatient[] = [];
@@ -143,34 +143,43 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
     let titleRow = worksheet.addRow(['']);
     
     worksheet.columns = [
-      { header: 'id Paciente', key: 'idpatientcbp', width: 15, },
-      { header: 'Estado', key: 'estadocbp', width: 20 , },
+      { header: 'id Paciente', key: 'idpatient', width: 15, },
+      { header: 'Estado', key: 'state', width: 20 , },
       { header: 'Rut', key: 'rut', width: 13 },
       { header: 'Nombre', key: 'name', width: 20 , },
       { header: 'Apellido Paterno', key: 'lastname', width: 20, },
       { header: 'Apellido Materno', key: 'lastname2', width: 20 },
-      { header: 'Mail', key: 'mail', width: 13 },
       { header: 'Sexo', key: 'sex', width: 5},
       { header: 'Edad', key: 'edad', width: 6 },
       { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
       { header: 'Telefono', key: 'cellphone', width: 13},
-      { header: 'Telefono e.', key: 'emergencycellphone', width: 12},
+      { header: 'Telefono e.', key: 'ephone', width: 12},
+      { header: 'Mail', key: 'mail', width: 13 },
       { header: 'Previcion', key: 'fonasa', width: 13},
       { header: 'Cesfam', key: 'cesfam', width: 15},
+      { header: 'Direccion', key: 'address', width: 15},
+      { header: 'Villa', key: 'village', width: 15},
       { header: 'Derivacion', key: 'derivacion', width: 13},
       { header: 'Peso', key: 'weight', width: 13},
       { header: 'Altura', key: 'hegith', width: 13},
       { header: 'Imc', key: 'imc', width: 13},
-      { header: 'C. Abdominal', key: 'cabdominal', width: 13},
-      { header: 'P. Diastólica', key: 'padiastolic', width: 13},
+      { header: 'C. Abdominal', key: 'cabdomen', width: 13},
       { header: 'P. Sistólica', key: 'pasystolic', width: 13},
+      { header: 'P. Diastólica', key: 'padiastolic', width: 13},
       { header: 'Fumador', key: 'smokes', width: 13},
-      { header: 'Años fumandor', key: 'ysmoking', width: 13},
-      { header: 'N. Cigarros', key: 'numbercigarettes', width: 13},
+      { header: 'Alcohol', key: 'drinkalcohol', width: 13},
+      { header: 'Diabetes', key: 'diabetes', width: 13},
+      { header: 'Epilepsia', key: 'epilepsy', width: 13},
+      { header: 'Ulcera', key: 'gastricul', width: 13},
+      { header: 'Hipotiroidismo', key: 'hypo', width: 13},
+      { header: 'LRads', key: 'lrads', width: 13},
+      { header: 'Nodulo', key: 'nodule', width: 13},
+      { header: 'Tamaño', key: 'size', width: 13},
+      { header: 'Biopsia', key: 'lastbiopsy', width: 13},
     ];
 
     this.dataSourceReports.data.forEach(e => {
-      let row = worksheet.addRow({ idpatientcbp:e.idpatientcbp,estadocbp: e.estadocbp,name: e.name,lastname: e.lastname, lastname2: e.lastname2,rut:e.rut, mail:e.mail,sex:e.sex, edad:e.edad,  birthday:e.birthday, cellphone:e.cellphone,emergencycellphone:e.emergencycellphone, fonasa:e.fonasa, cesfam:e.cesfam, derivacion:e.derivacion, weight:e.weight, height:e.hegith, imc:e.imc,cabdominal:e.cabdominal,padiastolic:e.padiastolic,pasistolic:e.pasystolic, smokes:e.smokes,ysmoking:e.ysmoking,numbercigarettes:e.numbercigarettes  }, "n");
+      let row = worksheet.addRow({ idpatient:e.idpatient, state:e.state,rut:e.rut,name:e.name,lastname:e.lastname,lastname2:e.lastname2,sex:e.sex,edad:e.edad,birthday:e.birthday,cellphone:e.cellphone, ephone:e.ephone,mail:e.mail,fonasa:e.fonasa, cesfam:e.cesfam,address:e.address,village:e.village, derivacion:e.derivacion,weight:e.weight, height:e.height, imc:e.imc, cabdomen:e.cabdomen, pasystolic:e.pasystolic, padiastolic:e.padiastolic, smokes:e.smokes, drinkalcohol:e.drinkalcohol, diabetes:e.diabetes,epilepsy:e.epilepsy, gastricul:e.gastricul,  hypo:e.hypo, lrads:e.lrads, nodule:e.nodule, size:e.size,lastbiopsy:e.lastbiopsy  }, "n");
     });
 
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }

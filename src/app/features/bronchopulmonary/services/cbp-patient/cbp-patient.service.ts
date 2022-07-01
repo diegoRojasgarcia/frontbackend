@@ -5,6 +5,7 @@ import { CBPEnrollmentSurvey } from 'src/app/features/bronchopulmonary/models/cb
 import { CBPBiopsy, CBPBiopsyType, TAC } from 'src/app/features/bronchopulmonary/models/cbp-exams';
 import { CBPPatient } from 'src/app/features/bronchopulmonary/models/cbp-patient';
 import { CustomHttpResponse } from 'src/app/core/models/http-response';
+import { cbpStatistics } from 'src/app/features/bronchopulmonary/models/cbp-statistics';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { TACTrackingPatient } from '../../models/cbp-tracking';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
@@ -40,8 +41,8 @@ export class CBPPatientService {
     return this.http.get<CustomHttpResponse<CBPPatientReports[]>>(API + "GetListPatientCBPReports")
   }
 
-  getAllCBPPAtientsStadistics(): Observable<CustomHttpResponse<CBPPatientReports[]>> {
-    return this.http.get<CustomHttpResponse<CBPPatientReports[]>>(API + "GetListPatientCBPStatistics")
+  getAllCBPPAtientsStadistics(): Observable<CustomHttpResponse<cbpStatistics[]>> {
+    return this.http.get<CustomHttpResponse<cbpStatistics[]>>(API + "GetListPatientCBPStatistics")
   }
 
   getCBPPatientById(patientId: number): Observable<CustomHttpResponse<CBPPatient[]>> {
