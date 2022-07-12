@@ -10,6 +10,17 @@ h1 {
     margin-top: -0.1%;
 }
 
+.example-form {
+    width: 100%;
+  }
+  
+
+  .example {
+    width: 100%;
+  }
+  
+
+
 .action-buttons {
     display: flex;
     justify-content: space-between;

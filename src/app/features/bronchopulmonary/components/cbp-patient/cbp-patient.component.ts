@@ -185,6 +185,7 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
         operationReason: new FormControl(),
         typeCancer: new FormControl(),
         cancerAge: new FormControl(),
+        otro: new FormControl(),
       })
       this.habits = new FormGroup({
         idPatient: new FormControl(this.patientId, Validators.required),
@@ -233,6 +234,12 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
     if (!value) {
       this.pathologies.get('typeCancer')?.reset()
       this.pathologies.get('cancerAge')?.reset()
+    }
+  }
+
+  resetOtros(value: boolean): void {
+    if (!value) {
+      this.pathologies.get('otro')?.reset()
     }
   }
 

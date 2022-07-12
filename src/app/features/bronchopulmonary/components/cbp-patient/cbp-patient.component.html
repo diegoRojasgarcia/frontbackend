@@ -326,6 +326,8 @@
                 </mat-form-field>
             </section>
         </mat-expansion-panel>
+
+
         <mat-expansion-panel [formGroup]="pathologies" (opened)="loadAllRiskSurvey()">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -340,15 +342,16 @@
                 <mat-checkbox formControlName="arterialHypertension">Hipertensión arterial</mat-checkbox><br>
                 <mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox><br>
                 <mat-checkbox formControlName="epilepsy">Epilepsia</mat-checkbox><br>
-                <mat-checkbox formControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
+                <mat-checkbox fomrControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
                 <mat-checkbox formControlName="hypoHyperThyroidism">Hipo/Hipertiroidismo</mat-checkbox><br>
                 <mat-checkbox formControlName="operated"
                     (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna
                     vez
                 </mat-checkbox>
-                <mat-form-field appearance="fill" *ngIf="pathologies.get('operated')?.value">
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('operated')?.value">
                     <mat-label>Razón</mat-label>
-                    <input type="text" formControlName="operationReason" matInput>
+                    <input type="text" formControlName="operationReason" matInput #message maxlength="256">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                 </mat-form-field><br>
             </section>
 
@@ -356,11 +359,12 @@
                 <mat-checkbox formControlName="cancer" (change)="resetCancerConditionals($event.checked)">Ha tenido
                     cáncer
                 </mat-checkbox>
-                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value">
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('cancer')?.value">
                     <mat-label>Cuál</mat-label>
-                    <input type="text" formControlName="typeCancer" matInput
+                    <input type="text" formControlName="typeCancer" matInput #message maxlength="256"
                         (ngModelChange)="!$event?pathologies.get('cancerAge')?.reset():null">
-                </mat-form-field>
+                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field><br>
                 <mat-form-field appearance="fill"
                     *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
                     <mat-label>Edad</mat-label>
@@ -368,7 +372,18 @@
                 </mat-form-field>
             </section>
 
+            <mat-checkbox formControlName="otro"
+                    (change)="!$event.checked?pathologies.get('otro')?.reset():null">Otro
+                </mat-checkbox>
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('otro')?.value">
+                    <mat-label>Razón</mat-label>
+                    <input type="text" formControlName="otro" matInput #message maxlength="256">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field><br>
+
         </mat-expansion-panel>
+
+
         <mat-expansion-panel [formGroup]="habits" (opened)="loadAllRiskSurvey()">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -382,8 +397,8 @@
             <section>
                 <mat-checkbox formControlName="smokes" (change)="resetSmokerConditional($event.checked)">Fuma
                 </mat-checkbox>
-                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
-                    <mat-label>Cantidad</mat-label>
+                <mat-form-field  appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Unidades/día</mat-label>
                     <input type="number" formControlName="numberCigarettes" matInput>
                 </mat-form-field>
                 <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
@@ -404,8 +419,7 @@
                 </mat-form-field>
             </section>
             <section>
-                <mat-checkbox formControlName="physicalActivity">Realiza ACtividad Física (al menos caminar 20 min
-                    diarios)
+                <mat-checkbox formControlName="physicalActivity">Realiza Actividad Física
                 </mat-checkbox>
             </section>
             <section>
