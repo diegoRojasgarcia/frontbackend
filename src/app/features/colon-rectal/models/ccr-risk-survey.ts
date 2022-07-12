@@ -21,7 +21,7 @@ export interface CCRRiskSurveyPathologies {
     arterialHypertension: boolean;
     diabetes: boolean;
     epilepsy: boolean;
-    gastriculcer: boolean;
+    gastricUlcer: boolean;
     hypoHyperThyroidism: boolean;
     operated: boolean;
     operationReason?: string;

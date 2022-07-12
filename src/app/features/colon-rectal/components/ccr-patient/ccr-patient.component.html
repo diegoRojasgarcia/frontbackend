@@ -413,16 +413,15 @@
                 <mat-checkbox formControlName="arterialHypertension">Hipertensión arterial</mat-checkbox><br>
                 <mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox><br>
                 <mat-checkbox formControlName="epilepsy">Epilepsia</mat-checkbox><br>
-                <mat-checkbox formControlName="gastriculcer">Úlcera Gástrica</mat-checkbox><br>
+                <mat-checkbox formControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
                 <mat-checkbox formControlName="hypoHyperThyroidism">Hipo/Hipertiroidismo</mat-checkbox><br>
                 <mat-checkbox formControlName="operated"
                     (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna
                     vez
                 </mat-checkbox>
-                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('operated')?.value">
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('operated')?.value">
                     <mat-label>Razón</mat-label>
-                    <input type="text" formControlName="operationReason" matInput #message maxlength="256">
-                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                    <input type="text" formControlName="operationReason" matInput>
                 </mat-form-field><br>
             </section>
 
@@ -430,12 +429,11 @@
                 <mat-checkbox formControlName="cancer" (change)="resetCancerConditionals($event.checked)">Ha tenido
                     cáncer
                 </mat-checkbox>
-                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('cancer')?.value">
+                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value">
                     <mat-label>Cuál</mat-label>
-                    <input type="text" formControlName="typeCancer" matInput #message maxlength="256"
+                    <input type="text" formControlName="typeCancer" matInput
                         (ngModelChange)="!$event?pathologies.get('cancerAge')?.reset():null">
-                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-                </mat-form-field><br>
+                </mat-form-field>
                 <mat-form-field appearance="fill"
                     *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
                     <mat-label>Edad</mat-label>
@@ -443,7 +441,6 @@
                 </mat-form-field>
             </section>
 
-            
         </mat-expansion-panel>
 
 

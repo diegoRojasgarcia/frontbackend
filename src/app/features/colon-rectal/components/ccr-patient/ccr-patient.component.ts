@@ -210,11 +210,11 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
         operated: new FormControl(),
         cancer: new FormControl(),
         arterialHypertension: new FormControl(),
-        gastriculcer: new FormControl(),
+        gastricUlcer: new FormControl(),
         hypoHyperThyroidism: new FormControl(),
         operationReason: new FormControl(),
         typeCancer: new FormControl(),
-        cancerAge: new FormControl()
+        cancerAge: new FormControl(),
       })
       this.habits = new FormGroup({
         idPatient: new FormControl(this.patientId, Validators.required),
