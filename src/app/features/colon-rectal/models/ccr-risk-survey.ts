@@ -32,7 +32,7 @@ export interface CCRRiskSurveyPathologies {
     crohn: boolean;
     ulcerativeColitis: boolean;
     moreThanOneSymptom: boolean;
-    other?:string,
+    other?:string;
     optionsother:boolean;
 }
 
