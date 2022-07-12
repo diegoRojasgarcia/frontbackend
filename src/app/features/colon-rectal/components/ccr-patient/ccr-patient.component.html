@@ -443,10 +443,10 @@
                 </mat-form-field>
             </section>
 
-            <mat-checkbox formControlName="optionsother"
+            <mat-checkbox formControlName="otro"
                     (change)="!$event.checked?pathologies.get('otro')?.reset():null">Otro
                 </mat-checkbox>
-                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('optionsother')?.value">
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('otro')?.value">
                     <mat-label>Razón</mat-label>
                     <input type="text" formControlName="otro" matInput #message maxlength="256">
                     <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
