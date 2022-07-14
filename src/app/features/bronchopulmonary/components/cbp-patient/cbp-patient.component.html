@@ -342,7 +342,7 @@
                 <mat-checkbox formControlName="arterialHypertension">Hipertensión arterial</mat-checkbox><br>
                 <mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox><br>
                 <mat-checkbox formControlName="epilepsy">Epilepsia</mat-checkbox><br>
-                <mat-checkbox fomrControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
+                <mat-checkbox formControlName="gastricUlcer">Úlcera Gástrica</mat-checkbox><br>
                 <mat-checkbox formControlName="hypoHyperThyroidism">Hipo/Hipertiroidismo</mat-checkbox><br>
                 <mat-checkbox formControlName="operated"
                     (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna
@@ -372,15 +372,12 @@
                 </mat-form-field>
             </section>
 
-            <mat-checkbox formControlName="otro"
-                    (change)="!$event.checked?pathologies.get('otro')?.reset():null">Otro
-                </mat-checkbox>
+            <mat-checkbox formControlName="otro" (change)="!$event.checked?pathologies.get('otroreason')?.reset():null">Otro</mat-checkbox>
                 <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('otro')?.value">
-                    <mat-label>Razón</mat-label>
-                    <input type="text" formControlName="otro" matInput #message maxlength="256">
+                    <mat-label></mat-label>
+                    <input type="text" formControlName="otroreason" matInput #message maxlength="256">
                     <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                 </mat-form-field><br>
-
         </mat-expansion-panel>
 
 
@@ -414,7 +411,7 @@
                     (change)="!$event.checked?habits.get('quantityAlcohol')?.reset():null">Consume alcohol
                 </mat-checkbox>
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value">
-                    <mat-label>Cuánto</mat-label>
+                    <mat-label>Vasos/Día</mat-label>
                     <input type="number" formControlName="quantityAlcohol" matInput>
                 </mat-form-field>
             </section>

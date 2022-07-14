@@ -186,6 +186,7 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
         typeCancer: new FormControl(),
         cancerAge: new FormControl(),
         otro: new FormControl(),
+        otroreason: new FormControl()
       })
       this.habits = new FormGroup({
         idPatient: new FormControl(this.patientId, Validators.required),

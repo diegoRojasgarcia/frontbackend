@@ -63,8 +63,6 @@
 
             <section *ngIf="patientForm.pristine; else motivoestado">
 
-
-
             </section>
             <ng-template #motivoestado>
 
@@ -74,10 +72,7 @@
                         formControlName="motivorechazo">
                     <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                 </mat-form-field>
-
             </ng-template>
-
-
 
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -419,9 +414,10 @@
                     (change)="!$event.checked?pathologies.get('operationReason')?.reset():null">Ha sido operado alguna
                     vez
                 </mat-checkbox>
-                <mat-form-field appearance="fill" *ngIf="pathologies.get('operated')?.value">
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('operated')?.value">
                     <mat-label>Razón</mat-label>
-                    <input type="text" formControlName="operationReason" matInput>
+                    <input type="text" formControlName="operationReason" matInput #message maxlength="256">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                 </mat-form-field><br>
             </section>
 
@@ -429,11 +425,12 @@
                 <mat-checkbox formControlName="cancer" (change)="resetCancerConditionals($event.checked)">Ha tenido
                     cáncer
                 </mat-checkbox>
-                <mat-form-field appearance="fill" *ngIf="pathologies.get('cancer')?.value">
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('cancer')?.value">
                     <mat-label>Cuál</mat-label>
-                    <input type="text" formControlName="typeCancer" matInput
+                    <input type="text" formControlName="typeCancer" matInput #message maxlength="256"
                         (ngModelChange)="!$event?pathologies.get('cancerAge')?.reset():null">
-                </mat-form-field>
+                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field><br>
                 <mat-form-field appearance="fill"
                     *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
                     <mat-label>Edad</mat-label>
@@ -441,6 +438,12 @@
                 </mat-form-field>
             </section>
 
+            <mat-checkbox formControlName="otro" (change)="!$event.checked?pathologies.get('otroreason')?.reset():null">Otro</mat-checkbox>
+                <mat-form-field class="example" appearance="fill" *ngIf="pathologies.get('otro')?.value">
+                    <mat-label></mat-label>
+                    <input type="text" formControlName="otroreason" matInput #message maxlength="256">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field><br>
         </mat-expansion-panel>
 
 
@@ -475,14 +478,27 @@
                     (change)="!$event.checked?habits.get('quantityAlcohol')?.reset():null">Consume alcohol
                 </mat-checkbox>
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value">
-                    <mat-label>Cuánto</mat-label>
+                    <mat-label>Vasos/Día</mat-label>
                     <input type="number" formControlName="quantityAlcohol" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value ">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select formControlName="typealcohol">
+                        <mat-option *ngFor="let alcohol of alcoholList" [value]="alcohol">{{alcohol}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
             </section>
             <section>
-                <mat-checkbox formControlName="physicalActivity">Realiza actividad física (al menos caminar 20 min
-                    diarios)
+                <mat-checkbox formControlName="physicalActivity">Realiza actividad física
                 </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('physicalActivity')?.value ">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select formControlName="typeactivity">
+                        <mat-option *ngFor="let activity of activityList" [value]="activity">{{activity}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </section>
             <section>
                 <mat-checkbox formControlName="threeFruits">Consume a lo menos 3 porciones de frutas y verduras al día

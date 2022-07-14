@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges,OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -21,7 +21,6 @@ import { forkJoin, from, Observable, Subscription } from 'rxjs';
 import { CCRBiopsy } from '../../models/ccr-biopsy';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Router } from '@angular/router';
-import { MatDrawer } from '@angular/material/sidenav';
 @Component({
   selector: 'app-ccr-patient',
   templateUrl: './ccr-patient.component.html',
@@ -45,12 +44,15 @@ import { MatDrawer } from '@angular/material/sidenav';
     ])
   ]
 })
-export class CCRPatientComponent implements OnChanges, OnDestroy {
+export class CCRPatientComponent implements OnInit, OnChanges, OnDestroy {
   private subs$ = new Subscription();
   NO_TABLE_DATA = AppConstants.NO_TABLE_DATA
   FORM_ERROR: string = AppConstants.FORM_ERROR;
   FEATURES = Features
   PERMISSIONS = Permission
+
+  activityList: string[] = [];
+  alcoholList: string[] = [];
 
 
   @Input() patientId!: number;
@@ -215,6 +217,8 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
         operationReason: new FormControl(),
         typeCancer: new FormControl(),
         cancerAge: new FormControl(),
+        otro: new FormControl(),
+        otroreason: new FormControl()
       })
       this.habits = new FormGroup({
         idPatient: new FormControl(this.patientId, Validators.required),
@@ -227,7 +231,9 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
         quantityAlcohol: new FormControl(),
         physicalActivity: new FormControl(),
         threeFruits: new FormControl(),
-        friedFoods: new FormControl()
+        friedFoods: new FormControl(),
+        typealcohol: new FormControl(),
+        typeactivity: new FormControl(),
       })
       this.pageForm = new FormGroup({
         basic: this.basic,
@@ -237,6 +243,12 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
     }
   }
 
+  ngOnInit() {
+    this.subs$.add(this.admin.getPatientSelectData().subscribe(res => {
+      this.activityList = res.pcactivitys;
+      this.alcoholList = res.alcoholList;
+    }));
+  }
   /**
    * Adds a new coloncheck to the server.
    * 
@@ -454,6 +466,7 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
    *respective table with the new information.
    *
    */
+
   addFamilyMemberCancer(): void {
     if (this.familyMemberForm.valid) {
       this.subs$.add(this.ccrService.addFamilyCancerRiskSurvey(this.familyMemberForm.value).subscribe(res => {
@@ -471,9 +484,8 @@ export class CCRPatientComponent implements OnChanges, OnDestroy {
       this.familyMemberForm.markAllAsTouched()
       throw new AppError(this.FORM_ERROR);
     }
-
   }
-
+  
   /**
    * Removes a family member with cancer history.
    * 

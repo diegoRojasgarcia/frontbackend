@@ -32,6 +32,8 @@ export interface CBPRiskSurveyPathologies {
     crohn: boolean;
     ulcerativeColitis: boolean;
     moreThanOneSymptom: boolean;
+    otro:boolean;
+    otroreason?:string;
 }
 
 export interface CBPRiskSurveyHabits {

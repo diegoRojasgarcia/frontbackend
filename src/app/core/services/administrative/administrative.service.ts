@@ -75,6 +75,14 @@ export class AdministrativeService {
     return this.http.get<CustomHttpResponse<{ status: string }[]>>(API + "GetMaritalStatus").pipe(map(e => e.data.map(m => m.status)), shareReplay(CACHE_SIZE))
   }
 
+  public getPActivity(): Observable<string[]> {
+    return this.http.get<CustomHttpResponse<{ activity: string }[]>>(API + "GetPActivity").pipe(map(e => e.data.map(a => a.activity)), shareReplay(CACHE_SIZE))
+  }
+
+  public getAlcohol(): Observable<string[]> {
+    return this.http.get<CustomHttpResponse<{ alcohol: string }[]>>(API + "GetAlcohol").pipe(map(e => e.data.map(a => a.alcohol)), shareReplay(CACHE_SIZE))
+  }
+
   public getUserSelectData(): Observable<UserFork> {
     if (!this.user$)
       this.user$ = forkJoin([this.getSpecializations(), this.getPrivileges(), this.getProfessions()]).pipe(map(res => {
@@ -85,13 +93,15 @@ export class AdministrativeService {
 
   public getPatientSelectData(): Observable<PatientFork> {
     if (!this.patient$)
-      this.patient$ = forkJoin([this.getRegions(), this.getNationality(), this.getFonasa(), this.getCesfams(), this.getMaritalStatus()]).pipe(map(res => {
+      this.patient$ = forkJoin([this.getRegions(), this.getNationality(), this.getFonasa(), this.getCesfams(), this.getMaritalStatus(), this.getPActivity(), this.getAlcohol()]).pipe(map(res => {
         return {
-          regions: res[0].data,
+          regions: res[0],
           nationalities: res[1],
           fonasa: res[2],
           cesfams: res[3],
-          maritalStates: res[4]
+          maritalStates: res[4],
+          pcactivitys: res[5],
+          alcoholList: res[6]
         }
       }));
     return this.patient$;
@@ -109,7 +119,9 @@ interface PatientFork {
   nationalities: string[],
   cesfams: string[],
   fonasa: string[],
-  maritalStates: string[]
+  maritalStates: string[],
+  pcactivitys: string[],
+  alcoholList: string[]
 }
 interface UserFork {
   prefessions: Profession[];
