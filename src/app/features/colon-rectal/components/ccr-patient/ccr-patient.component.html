@@ -483,7 +483,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value ">
                     <mat-label>Tipo</mat-label>
-                    <mat-select formControlName="typealcohol">
+                    <mat-select formControlName="tipealcohol">
                         <mat-option *ngFor="let alcohol of alcoholList" [value]="alcohol">{{alcohol}}
                         </mat-option>
                     </mat-select>

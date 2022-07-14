@@ -394,8 +394,8 @@
             <section>
                 <mat-checkbox formControlName="smokes" (change)="resetSmokerConditional($event.checked)">Fuma
                 </mat-checkbox>
-                <mat-form-field  appearance="fill" *ngIf="habits.get('smokes')?.value">
-                    <mat-label>Unidades/día</mat-label>
+                <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
+                    <mat-label>Unidades/Día</mat-label>
                     <input type="number" formControlName="numberCigarettes" matInput>
                 </mat-form-field>
                 <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
@@ -414,10 +414,24 @@
                     <mat-label>Vasos/Día</mat-label>
                     <input type="number" formControlName="quantityAlcohol" matInput>
                 </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value ">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select formControlName="tipealcohol">
+                        <mat-option *ngFor="let alcohol of alcoholList" [value]="alcohol">{{alcohol}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </section>
             <section>
-                <mat-checkbox formControlName="physicalActivity">Realiza Actividad Física
+                <mat-checkbox formControlName="physicalActivity">Realiza actividad física
                 </mat-checkbox>
+                <mat-form-field appearance="fill" *ngIf="habits.get('physicalActivity')?.value ">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select formControlName="typeactivity">
+                        <mat-option *ngFor="let activity of activityList" [value]="activity">{{activity}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </section>
             <section>
                 <mat-checkbox formControlName="threeFruits">Consume a lo menos 3 porciones de frutas y verduras al día

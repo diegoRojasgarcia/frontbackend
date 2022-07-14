@@ -232,7 +232,7 @@ export class CCRPatientComponent implements OnInit, OnChanges, OnDestroy {
         physicalActivity: new FormControl(),
         threeFruits: new FormControl(),
         friedFoods: new FormControl(),
-        typealcohol: new FormControl(),
+        tipealcohol: new FormControl(),
         typeactivity: new FormControl(),
       })
       this.pageForm = new FormGroup({

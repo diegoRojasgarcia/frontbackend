@@ -28,10 +28,6 @@ export interface CCRRiskSurveyPathologies {
     cancer: boolean;
     typeCancer?: string;
     cancerAge?: number;
-    polypsColonRectum: boolean;
-    crohn: boolean;
-    ulcerativeColitis: boolean;
-    moreThanOneSymptom: boolean;
     otro:boolean;
     otroreason?:string;
 }
@@ -48,7 +44,7 @@ export interface CCRRiskSurveyHabits {
     threeFruits: boolean;
     friedFoods: boolean;
     typeactivity: string;
-    typealcohol: string;
+    tipealcohol: string;
 }
 
 export interface CCRRiskSurveyFamily {

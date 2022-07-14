@@ -93,15 +93,14 @@ export class AdministrativeService {
 
   public getPatientSelectData(): Observable<PatientFork> {
     if (!this.patient$)
-      this.patient$ = forkJoin([this.getRegions(), this.getNationality(), this.getFonasa(), this.getCesfams(), this.getMaritalStatus(), this.getPActivity(), this.getAlcohol()]).pipe(map(res => {
+      this.patient$ = forkJoin([this.getRegions(), this.getNationality(), this.getFonasa(), this.getCesfams(), this.getMaritalStatus(), this.getPActivity()]).pipe(map(res => {
         return {
-          regions: res[0],
+          regions: res[0].data,
           nationalities: res[1],
           fonasa: res[2],
           cesfams: res[3],
           maritalStates: res[4],
-          pcactivitys: res[5],
-          alcoholList: res[6]
+          pcactivitys: res[5]
         }
       }));
     return this.patient$;

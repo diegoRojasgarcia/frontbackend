@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatAccordion } from '@angular/material/expansion';
@@ -43,7 +43,7 @@ import { PatientService } from 'src/app/features/patient/services/patient.servic
     
   ]
 })
-export class CBPPatientComponent implements OnChanges, OnDestroy {
+export class CBPPatientComponent implements OnInit, OnChanges, OnDestroy {
   private subs$ = new Subscription();
 
   @ViewChild('tacPaginator') tacPaginator!: MatPaginator;
@@ -56,6 +56,9 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
   private FORM_ERROR = AppConstants.FORM_ERROR;
   NO_TABLE_DATA: string = AppConstants.NO_TABLE_DATA
   LUNG_RADS = RADS;
+
+  activityList: string[] = [];
+  alcoholList: string[] = [];
 
   PERMISSIONS = Permission;
   FEATURES = Features;
@@ -199,7 +202,9 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
         quantityAlcohol: new FormControl(),
         physicalActivity: new FormControl(),
         threeFruits: new FormControl(),
-        friedFoods: new FormControl()
+        friedFoods: new FormControl(),
+        tipealcohol: new FormControl(),
+        typeactivity: new FormControl(),
       })
       this.pageForm = new FormGroup({
         basic: this.basic,
@@ -208,6 +213,14 @@ export class CBPPatientComponent implements OnChanges, OnDestroy {
       })
     }
   }
+
+  ngOnInit() {
+    this.subs$.add(this.admin.getPatientSelectData().subscribe(res => {
+      this.activityList = res.pcactivitys;
+      this.alcoholList = res.alcoholList;
+    }));
+  }
+
   ngOnDestroy(): void {
     this.subs$.unsubscribe()
   }
