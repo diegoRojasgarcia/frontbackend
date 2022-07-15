@@ -55,6 +55,8 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
   nationalities: string[] = [];
   fonasa: string[] = [];
   mStates: string[] = [];
+  isapre: string[] = ["Banmédica", "Consalud", "Cruz Blanca", "Colmena", "Isalud", "Nueva más vida", "Vida tres", "Esencial"];// cambio para lo de isapre
+
 
   @Input() value: string = "";
 
@@ -83,6 +85,7 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
         mail: new FormControl(null, [Validators.pattern(AppConstants.emailPattern)]),
         fonasa: new FormControl(null, Validators.required),
         inAgeRange: new FormControl(null, [Validators.requiredTrue]),
+        isapre: new FormControl(null, Validators.required),// cambio isapre
         dataAgreement: new FormControl(null, [Validators.requiredTrue]),
         volunteerAgreement: new FormControl(null, [Validators.requiredTrue])
       }, [valSvc.validatePrevRegion()])

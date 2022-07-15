@@ -108,8 +108,7 @@ export class CBPMainComponent implements OnInit, OnDestroy {
       this.subs$.add(this.cbpService.getEnrollmentSurvey(patientId).subscribe(res => {
         const surveyForm = this.addSurveyInstance();
         const surveyData = res.data[0]
-        this.selectedIndex = this.patientTabs.length + 4;
-        const currentPatient: TabItem = { name: this.currentPatientName, patientId: this.currentPatientId, index: this.selectedIndex, surveyForm: surveyForm }
+        const currentPatient: TabItem = { name: this.currentPatientName, patientId: this.currentPatientId, index: 5, surveyForm: surveyForm }
 
         if (surveyData)
           currentPatient.surveyForm.setValue({
@@ -125,7 +124,7 @@ export class CBPMainComponent implements OnInit, OnDestroy {
             emphysemaFibrosis: surveyData.emphysemaFibrosis,
           })
         this.patientTabs.pop();
-        this.patientTabs.push(currentPatient);
+        this.selectedIndex = this.patientTabs.push(currentPatient) + 4;
       }))
     }
   }

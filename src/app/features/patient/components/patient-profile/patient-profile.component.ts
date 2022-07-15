@@ -66,6 +66,9 @@ export class PatientProfileComponent implements OnInit, OnChanges, OnDestroy {
   mStateList: string[] = [];
   fonasaList: string[] = [];
 
+  isapre: string[] = ["Banmédica", "Consalud", "Cruz Blanca", "Colmena", "Isalud", "Nueva más vida", "Vida tres", "Esencial"];
+
+
   patientName: string = 'Desconocido';
   patientForm: FormGroup;
   undo!: Patient;
@@ -98,7 +101,8 @@ export class PatientProfileComponent implements OnInit, OnChanges, OnDestroy {
       volunteerAgreement: new FormControl(null, Validators.requiredTrue),
       deceased: new FormControl(),
       deceasedByCancer: new FormControl(),
-      deceaseDate: new FormControl()
+      deceaseDate: new FormControl(),
+      isapre: new FormControl(null, Validators.required),//cambio isapre
     })
   }
   ngOnDestroy(): void {
@@ -237,6 +241,7 @@ export class PatientProfileComponent implements OnInit, OnChanges, OnDestroy {
       deceased: patient.deceased,
       deceasedByCancer: patient.deceasedByCancer,
       deceaseDate: patient.deceaseDate,
+      isapre: patient.isapre //cambio isapre
     })
   }
 }

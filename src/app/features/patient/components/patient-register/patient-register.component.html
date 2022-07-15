@@ -219,9 +219,17 @@
                 <table class="block">
                     <td>
                         <mat-form-field appearance="fill">
-                            <mat-label>FONASA *</mat-label>
+                            <mat-label>Seguro</mat-label>
                             <mat-select formControlName="fonasa">
                                 <mat-option *ngFor="let f of fonasa" [value]="f">{{f}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Tipo de isapre</mat-label>
+                            <mat-select formControlName="isapre"><!--  cambio para lo de isapre-->-->
+                                <mat-option *ngFor="let f of isapre" [value]="f">{{f}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </td>
@@ -269,6 +277,8 @@
                 </div>
             </form>
         </mat-step>
+
+        
         <mat-step [editable]="false">
             <ng-template matStepLabel>Resultados</ng-template>
             <p>{{final}}</p>

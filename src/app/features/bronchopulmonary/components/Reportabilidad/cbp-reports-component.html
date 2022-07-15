@@ -9,7 +9,7 @@
                     <p class="name"><strong>{{cantpacient}}</strong></p>
                 </div>
                 <div class="row">
-                    <p class="details">Pacientes Modulo Broncopulmonar</p>
+                    <p class="details">Pacientes Módulo Broncopulmonar</p>
                 </div>
             </div>
         </mat-grid-tile>
@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <p class="details">{{pestadorechazado}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{ppestadorechazado}} %</strong></p>
+                    <p class="name"><strong>{{(pestadorechazado/cantpacient) * 100}} %</strong></p>
                 </div>
                 <div class="row">
                     <p class="details">Pacientes Rechazados / Inactivos</p>
@@ -47,12 +47,62 @@
             </div>
         </mat-grid-tile>
         <mat-grid-tile >
-            <div class="container">
-                   
+          <div class="container">
+              <div class="row">
+                  <p class="details">{{priesgocist}} / {{cantpacient}}</p>
+                  <p class="name"><strong>{{ppriesgocist}} %</strong></p>
+              </div>
+              <div class="row">
+                  <p class="details">Pacientes con Presión Sistólica sobre 140</p>
+              </div>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <div class="container">
+            <div class="row">
+                <p class="details">{{priesgodist}} / {{cantpacient}}</p>
+                <p class="name"><strong>{{ppriesgodist}} %</strong></p>
             </div>
-        </mat-grid-tile>
-       
+            <div class="row">
+                <p class="details">Pacientes con Presión Distólica sobre 90</p>
+            </div>
+        </div>
+    </mat-grid-tile>
+        <mat-grid-tile >
+          <div class="container">
+              <div class="row">
+                  <p class="details">{{cantpatientbio}} / {{totalbio}}</p>
+                  <p class="name"><strong>{{(cantpatientbio/totalbio)*100}} %</strong></p>
+              </div>
+              <div class="row">
+                  <p class="details">Pacientes que se han realizado Biopsia</p>
+              </div>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <div class="container">
+            <div class="row">
+                <p class="details">{{cantpatienttac}} / {{totalbio}}</p>
+                <p class="name"><strong>{{(cantpatienttac/totalbio)*100}} %</strong></p>
+            </div>
+            <div class="row">
+                <p class="details">Pacientes que se han realizado TAC</p>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile >
+      <div class="container">
+          <div class="row">
+              <p class="details">{{cantimcalto}} / {{cantpacient}}</p>
+              <p class="name"><strong>{{pimcalto}} %</strong></p>
+          </div>
+          <div class="row">
+              <p class="details">Pacientes con IMC sobre 25</p>
+          </div>
+      </div>
+  </mat-grid-tile>
+
     </mat-grid-list>
 
-    
+
 </div>

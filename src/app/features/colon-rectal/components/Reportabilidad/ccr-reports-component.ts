@@ -44,8 +44,8 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
     sm: 1,
     xs: 1
   }
- 
-  constructor(private patientService: CCRPatientService,private breakpointObserver: BreakpointObserver) { 
+
+  constructor(private patientService: CCRPatientService,private breakpointObserver: BreakpointObserver) {
 
     this.sub$.add(this.breakpointObserver.observe([
       Breakpoints.XSmall,
@@ -93,19 +93,16 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
       this.ppneoplastic = Math.round((this.pneoplastic/this.cantpacient)*100);
       this.pcolonoscopy = dataSourcereports.filter(d => d.colonoscopy).length
       this.ppcolonosocpy = Math.round((this.pcolonoscopy/this.cantpacient)*100);
-      this.pmayoranios = dataSourcereports.filter(d => d.edad == 56).length
+      this.pmayoranios = dataSourcereports.filter(d => d.edad >= 56).length
       this.ppmayoranios = Math.round((this.pmayoranios/this.cantpacient)*100);
-      this.pestadorechazado = dataSourcereports.filter(d => d.estadopacienteccr == 'Rechazado').length
-      this.pestadoinactivos = dataSourcereports.filter(d => d.estadopacienteccr == 'Inactivo').length
+      this.pestadorechazado = dataSourcereports.filter(d => d.estadopacienteccr == 'Rechazado' || d.estadopacienteccr =="Inactivo").length
+      this.pestadoinactivos = dataSourcereports.filter(d => d.estadopacienteccr == 'Inactivo' || d.estadopacienteccr =="Rechazado").length
       this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
     }))
   }
-
-
-
 
 
 }

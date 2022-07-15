@@ -29,6 +29,8 @@ export class PatientService {
   public getPatient(id: number): Observable<CustomHttpResponse<Patient[]>> {
     return this.http.post<CustomHttpResponse<Patient[]>>(API + "GetPatientById", { idPatient: id });
   }
+
+  
   public getPatientByRUT(patientRut: number): Observable<CustomHttpResponse<Patient>> {
     return this.http.post<CustomHttpResponse<Patient>>(API + "GetPatientsByRut", { rut: patientRut });
   }

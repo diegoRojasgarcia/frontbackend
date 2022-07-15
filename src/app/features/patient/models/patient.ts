@@ -21,12 +21,13 @@ export interface Patient {
     deceased?:boolean;
     deceasedByCancer?:boolean;
     cancerDetectionDate?:Date;
-    fonasa?:string;
+    fonasa?:string;// cambio para lo de isapre
     volunteerAgreement?:boolean;
     mail?:string;
     idPatient:number;
     age?:number
     deceaseDate?:Date;
+    isapre?: string;// cambio para lo de isapre
 }
 
 export interface CancerCheck{

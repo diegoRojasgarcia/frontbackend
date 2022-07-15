@@ -59,7 +59,7 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
   @Input() filter!: string;
   @Input() filter1!: string;
 
-  @Output() openProfile: EventEmitter<number> = new EventEmitter<number>();
+  @Output() openProfile: EventEmitter<number> = new EventEmitter<number>()
 
   filterMsg: string = '';
 
@@ -92,7 +92,7 @@ export class CBPPatientListComponent implements AfterViewInit, OnDestroy {
    * 
    *
    */
-  handleProfile(patientId: number): void {
+   handleProfile(patientId: number) {
     this.openProfile.emit(patientId);
   }
 

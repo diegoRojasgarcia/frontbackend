@@ -31,14 +31,16 @@
     </mat-tab>
 
     <mat-tab *ngFor="let patient of patientTabs">
-        <ng-template matTabLabel>
+        <ng-template mat-tab-label>
             <div>{{patient.name}}</div>
-            <button mat-icon-button (click)="closeProfile()"><mat-icon>close</mat-icon></button>
+            <button mat-icon-button (click)="closeProfile()">
+                <mat-icon>close</mat-icon>
+            </button>
         </ng-template>
         <ng-template matTabContent>
             <div class="container">
                 <div class="block">
-                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock"></app-patient-profile>
+                    <app-patient-profile #baseProfile [patientId]="patient.patientId" [(isEditable)]="lock"> </app-patient-profile>
                     <app-cbp-patient #cbpProfile [patientId]="patient.patientId"></app-cbp-patient>
                 </div>
             </div>

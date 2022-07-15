@@ -8,7 +8,7 @@ import { CustomHttpResponse } from 'src/app/core/models/http-response';
 import { cbpStatistics } from 'src/app/features/bronchopulmonary/models/cbp-statistics';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { TACTrackingPatient } from '../../models/cbp-tracking';
-import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
+import { CBPPatientReports,OtherReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
 import { forkJoin } from 'rxjs';
 import { CBPRiskSurveyFamilyCancer, CBPRiskSurveyGeneral, CBPRiskSurveyHabits, CBPRiskSurveyPathologies } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
 import { map,shareReplay } from 'rxjs/operators';
@@ -97,6 +97,10 @@ export class CBPPatientService {
 
   public updatePatient(data: CBPPatient): Observable<CustomHttpResponse<any>>{
     return this.http.put<CustomHttpResponse<any>>(API+"UpdatePatientCBP", data);
+  }
+
+  getOhterReports(): Observable<CustomHttpResponse<OtherReports>> {
+    return this.http.get<CustomHttpResponse<OtherReports>>(API + "othersReports")
   }
 
   //patient risk survey

@@ -105,10 +105,10 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     this.dataSource.filterPredicate = (data: CCRPatient, filter: string) => {
       switch (filter) {
         case '1':
-          this.filterMsg = 'Filtro: COLONCHECK-POSITIVO'
+          this.filterMsg = 'Filtro: COLONTEST-POSITIVO'
           return data.coloncheckResult === true
         case '2':
-          this.filterMsg = 'Filtro: COLONCHECK-NEGATIVO'
+          this.filterMsg = 'Filtro: COLONTEST-NEGATIVO'
           return data.coloncheckResult === false
         case '3':
           this.filterMsg = 'Filtro: COLONOSCOPÍA-CON_HALLAZGOS'
@@ -173,7 +173,7 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
       { header: 'Años Fumando', key: 'ysmoking', width: 15},
       { header: 'Fecha Deteccion Cancer ', key: 'cancerdetectiondate', width: 25 },
       { header: 'Colon Check', key: 'testresultcoloncheck', width: 20 },
-      { header: 'Ultimo colon-check', key: 'lastcoloncheck', width: 20},
+      { header: 'Ultimo coloTest', key: 'lastcoloncheck', width: 20},
       { header: 'Cantidad Test Colon-Check', key: 'cantcoloncheck', width:10},
       { header: 'Colon Oscopia', key: 'colonoscopy', width: 13},
       { header: 'Polipos', key: 'polyps', width: 13},
@@ -193,7 +193,7 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
 
     workbook.xlsx.writeBuffer().then((data) => {
       let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      fs.saveAs(blob, 'ReportePacientes.xlsx');
+      fs.saveAs(blob, 'ReportePacientesModuloColoRectal.xlsx');
     })
   }
 }

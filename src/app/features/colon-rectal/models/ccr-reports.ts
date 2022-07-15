@@ -5,7 +5,7 @@ export interface CCRPatientreports extends Patient {
     estadopacienteccr?:string,
     name?:string,
     rut:string,
-    edad?:number,
+    edad:number,
     birthday?:string,
     sex?:string,
     cellphone?:number,

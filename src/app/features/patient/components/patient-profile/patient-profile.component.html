@@ -74,11 +74,16 @@
                             <mat-datepicker-toggle matSuffix [for]="birthdayPicker"></mat-datepicker-toggle>
                             <mat-datepicker #birthdayPicker></mat-datepicker>
                         </mat-form-field>
-
                         <mat-form-field appearance="fill">
-                            <mat-label>Fonasa</mat-label>
+                            <mat-label>Seguro</mat-label>
                             <mat-select formControlName="fonasa">
                                 <mat-option *ngFor="let fonasa of fonasaList" [value]="fonasa">{{ fonasa }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Tipo de Isapre</mat-label><!-- // cambio para lo de isapre-->
+                            <mat-select formControlName="isapre"><!-- // cambio para lo de isapre-->
+                                <mat-option *ngFor="let isa of isapre" [value]="isa">{{ isa }}</mat-option><!-- // cambio para lo de isapre-->
                             </mat-select>
                         </mat-form-field>
                     </section>

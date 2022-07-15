@@ -4,8 +4,8 @@ import { CBPPatientService } from 'src/app/features/bronchopulmonary/services/cb
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { Subscription } from 'rxjs';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports';
-import { cbpStatistics } from 'src/app/features/bronchopulmonary/models/cbp-statistics';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { OtherReports } from '../../models/cbp-reports';
 
 @Component({
   selector: 'app-cbp-reports',
@@ -15,20 +15,29 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export class PatientCBPReports implements AfterViewInit, OnDestroy {
 
-
   private sub$ = new Subscription()
   dataSourcereports!: MatTableDataSource<CBPPatientReports>;
-  dataSourcestatistics!: MatTableDataSource<cbpStatistics>;
+  dataSourcereportsOther!: OtherReports;
   NO_TABLE_DATA = AppConstants.NO_TABLE_DATA
   private NO_DATA = AppConstants.NO_DATA;
   cantpacient!:number;
   cantfumadores!:number;
   pfumadores!:number;
-  pmayoranios!:number;
+  pmayoranios!:number | undefined;
   ppmayoranios!:number;
   pestadorechazado!:number;
   pestadoinactivos!:number;
   ppestadorechazado!:number;
+  priesgocist!:number;
+  ppriesgocist!:number;
+  priesgodist!:number;
+  ppriesgodist!:number;
+  cantimcalto!:number;
+  pimcalto!:number;
+  cantpatientbio!: number;
+  totalbio!: number;
+  cantpatienttac!: number;
+
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
   cols = 2;
@@ -39,8 +48,8 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
     sm: 1,
     xs: 1
   }
- 
-  constructor(private patientService: CBPPatientService,private breakpointObserver: BreakpointObserver) { 
+
+  constructor(private patientService: CBPPatientService,private breakpointObserver: BreakpointObserver) {
 
     this.sub$.add(this.breakpointObserver.observe([
       Breakpoints.XSmall,
@@ -79,27 +88,30 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.cantpacient = dataSourcereports.length;
       this.cantfumadores = dataSourcereports.filter(d => d.smokes).length;
       this.pfumadores = Math.round((this.cantfumadores/this.cantpacient)*100);
-      this.pmayoranios = dataSourcereports.filter(d => d.edad == 56).length
+      this.pmayoranios = dataSourcereports.filter(d => d.edad >= 56).length
       this.ppmayoranios = Math.round((this.pmayoranios/this.cantpacient)*100);
-      this.pestadorechazado = dataSourcereports.filter(d => d.estadocbp == 'Rechazado').length
+      this.pestadorechazado = dataSourcereports.filter(d => d.estadocbp == 'Rechazado' || d.estadocbp == 'Inactivo').length
       this.pestadoinactivos = dataSourcereports.filter(d => d.estadocbp == 'Inactivo').length
       this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
+      this.priesgocist = dataSourcereports.filter(d => d.pasystolic >=140).length
+      this.ppriesgocist = Math.round((this.priesgocist/this.cantpacient)*100);
+      this.priesgodist = dataSourcereports.filter(d => d.padiastolic >=90).length
+      this.ppriesgodist = Math.round((this.priesgodist/this.cantpacient)*100);
+      this.cantimcalto = dataSourcereports.filter(d => d.imc >=25).length
+      this.pimcalto = Math.round((this.cantimcalto/this.cantpacient)*100);
+
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
     }))
+    this.sub$.add(this.patientService.getOhterReports().subscribe(res => {
+      const dataSourcereportsOther = res.data;
 
-    this.sub$.add(this.patientService.getAllCBPPAtientsStadistics().subscribe(res => {
-      const dataSourcestatistics = res.data;
-      this.cantpacient = dataSourcestatistics.length;
-    }, err => {
-      this.dataSourcestatistics = new MatTableDataSource();
+      this.cantpatientbio = dataSourcereportsOther.cantpatientbio ? dataSourcereportsOther.cantpatientbio : 0;
+      this.totalbio = dataSourcereportsOther.totalbio ? dataSourcereportsOther.totalbio : 0;
+      this.cantpatienttac = dataSourcereportsOther.cantpatienttac ? dataSourcereportsOther.cantpatienttac : 0;
+    }, () => {
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
     }))
-
   }
-
-
-
-    
 }

@@ -1,5 +1,6 @@
 import { Patient } from "../../patient/models/patient";
 
+
 export interface CBPPatientReports {
     idpatientcbp?:number;
     estadocbp?:string
@@ -9,7 +10,7 @@ export interface CBPPatientReports {
     lastname2?:string;
     mail?:string;
     sex?: string;
-    edad?:number;
+    edad:number;
     birthday?:string;
     cellphone?: number;
     emergencycellphone?: number;
@@ -18,11 +19,19 @@ export interface CBPPatientReports {
     derivacion?: string;
     weight?:number;
     hegith?:number;
-    imc?:number;
+    imc:number;
     cabdominal?:number;
-    padiastolic?:number;
-    pasystolic?:number;
+    padiastolic:number;
+    pasystolic:number;
     smokes?:boolean;
     numbercigarettes?:number;
     ysmoking:number;
 }
+
+
+export interface OtherReports {
+  cantpatientbio?: number;
+  totalbio?: number;
+  cantpatienttac?: number;
+}
+
