@@ -18,7 +18,7 @@ import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog
 import { CBPPatientService } from '../../services/cbp-patient/cbp-patient.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { PatientService } from 'src/app/features/patient/services/patient.service';
-
+import { alcohol } from 'src/app/features/users-management/models/alcohol';
 @Component({
   selector: 'app-cbp-patient',
   templateUrl: './cbp-patient.component.html',
@@ -58,7 +58,7 @@ export class CBPPatientComponent implements OnInit, OnChanges, OnDestroy {
   LUNG_RADS = RADS;
 
   activityList: string[] = [];
-  alcoholList: string[] = [];
+  alcoholList: alcohol[] = [];
 
   PERMISSIONS = Permission;
   FEATURES = Features;
@@ -217,8 +217,10 @@ export class CBPPatientComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit() {
     this.subs$.add(this.admin.getPatientSelectData().subscribe(res => {
       this.activityList = res.pcactivitys;
-      this.alcoholList = res.alcoholList;
     }));
+    this.subs$.add(this.cbpService.getAlcohol().subscribe(res => {
+      this.alcoholList = res.data
+    }))
   }
 
   ngOnDestroy(): void {

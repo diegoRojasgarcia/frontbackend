@@ -11,9 +11,11 @@ import { TACTrackingPatient } from '../../models/cbp-tracking';
 import { CBPPatientReports } from 'src/app/features/bronchopulmonary/models/cbp-reports'
 import { forkJoin } from 'rxjs';
 import { CBPRiskSurveyFamilyCancer, CBPRiskSurveyGeneral, CBPRiskSurveyHabits, CBPRiskSurveyPathologies } from 'src/app/features/bronchopulmonary/models/cbp-risk-survey';
-import { map } from 'rxjs/operators';
+import { map,shareReplay } from 'rxjs/operators';
+import { alcohol } from 'src/app/features/users-management/models/alcohol';
 
 const API = AppConstants.CBP_PATIENT_API
+const CACHE_SIZE = 1;
 
 @Injectable()
 export class CBPPatientService {
@@ -23,6 +25,10 @@ export class CBPPatientService {
 
   registerEnrollmentSurvey(data: CBPEnrollmentSurvey): Observable<CustomHttpResponse<any>> {
     return this.http.post<CustomHttpResponse<any>>(API + "RegisterEnrollmentSurveyCBP", data)
+  }
+
+  public getAlcohol(): Observable<CustomHttpResponse<alcohol[]>> {
+    return this.http.get<CustomHttpResponse<alcohol[]>>(API + "GetAlcohol").pipe(shareReplay(CACHE_SIZE));
   }
 
   getEnrollmentSurvey(patientId: number): Observable<CustomHttpResponse<CBPEnrollmentSurvey[]>> {

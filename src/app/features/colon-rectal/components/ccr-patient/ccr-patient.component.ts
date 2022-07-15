@@ -21,6 +21,8 @@ import { forkJoin, from, Observable, Subscription } from 'rxjs';
 import { CCRBiopsy } from '../../models/ccr-biopsy';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Router } from '@angular/router';
+
+import { alcohol } from 'src/app/features/users-management/models/alcohol';
 @Component({
   selector: 'app-ccr-patient',
   templateUrl: './ccr-patient.component.html',
@@ -52,7 +54,7 @@ export class CCRPatientComponent implements OnInit, OnChanges, OnDestroy {
   PERMISSIONS = Permission
 
   activityList: string[] = [];
-  alcoholList: string[] = [];
+  alcoholList: alcohol[] = [];
 
 
   @Input() patientId!: number;
@@ -246,8 +248,10 @@ export class CCRPatientComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit() {
     this.subs$.add(this.admin.getPatientSelectData().subscribe(res => {
       this.activityList = res.pcactivitys;
-      this.alcoholList = res.alcoholList;
     }));
+    this.subs$.add(this.ccrService.getAlcohol().subscribe(res => {
+      this.alcoholList = res.data
+    }))
   }
   /**
    * Adds a new coloncheck to the server.
@@ -256,6 +260,8 @@ export class CCRPatientComponent implements OnInit, OnChanges, OnDestroy {
    * coloncheck data. If success, insert the new exam in the coloncheck 
    * table.
    */
+
+  
   addColoncheck() {
     if (this.coloncheckForm.valid) {
       this.subs$.add(this.ccrService.addColonCheck(this.coloncheckForm.value).subscribe(res => {

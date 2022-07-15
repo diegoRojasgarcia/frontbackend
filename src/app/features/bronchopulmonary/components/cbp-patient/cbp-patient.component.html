@@ -417,7 +417,7 @@
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value ">
                     <mat-label>Tipo</mat-label>
                     <mat-select formControlName="tipealcohol">
-                        <mat-option *ngFor="let alcohol of alcoholList" [value]="alcohol">{{alcohol}}
+                        <mat-option *ngFor="let alcohol of alcoholList" [value]="alcohol.alcohol">{{alcohol.alcohol}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -441,6 +441,10 @@
                 <mat-checkbox formControlName="friedFoods">Consume semanalmente 2 o mas alimentos fritos</mat-checkbox>
             </section>
         </mat-expansion-panel>
+
+
+
+
         <mat-expansion-panel (opened)="loadAllRiskSurvey()">
             <mat-expansion-panel-header>
                 <mat-panel-title>

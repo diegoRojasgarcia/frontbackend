@@ -11,9 +11,11 @@ import { CustomHttpResponse } from 'src/app/core/models/http-response';
 import { AppConstants } from 'src/app/core/constants/app.constants';
 import { CCRPatientSchedule } from '../../models/patient-schedule';
 import { CCRBiopsy } from '../../models/ccr-biopsy';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
+import { alcohol } from 'src/app/features/users-management/models/alcohol';
 
 const API = AppConstants.CCR_PATIENT_API
+const CACHE_SIZE = 1;
 
 @Injectable()
 export class CCRPatientService {
@@ -22,6 +24,10 @@ export class CCRPatientService {
   // CCR patients endpoints
   public getPatientById(patientId: number): Observable<CustomHttpResponse<CCRPatient[]>> {
     return this.http.post<CustomHttpResponse<CCRPatient[]>>(API + "GetPatientCCRById", { idPatient: patientId });
+  }
+
+  public getAlcohol(): Observable<CustomHttpResponse<alcohol[]>> {
+    return this.http.get<CustomHttpResponse<alcohol[]>>(API + "GetAlcohol").pipe(shareReplay(CACHE_SIZE));
   }
 
   public updatePatient(data: CCRPatient): Observable<CustomHttpResponse<any>> {
@@ -199,6 +205,8 @@ export class CCRPatientService {
     return this.http.put<CustomHttpResponse<any>>(API + "UpdateScheduleContactTracking", { id_patient: patientId, contact: value }, { params: params })
   }
 }
+
+
 
 interface RiskFork {
   general: CCRRiskSurveyGeneral,
