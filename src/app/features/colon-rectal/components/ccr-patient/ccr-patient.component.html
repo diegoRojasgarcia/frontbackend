@@ -100,7 +100,7 @@
                 </td>
                 <td>
                     <mat-form-field appearance="fill">
-                        <mat-label>Fecha del exámen</mat-label>
+                        <mat-label>Fecha del examen</mat-label>
                         <input matInput [matDatepicker]="checkDate" formControlName="testDate">
                         <mat-datepicker-toggle matSuffix [for]="checkDate"></mat-datepicker-toggle>
                         <mat-datepicker #checkDate></mat-datepicker>
@@ -117,13 +117,13 @@
 
                     <!-- Date Column -->
                     <ng-container matColumnDef="testDate">
-                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Fecha Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{formatDate(exam.testDate)}} </td>
                     </ng-container>
 
                     <!-- Exam Column -->
                     <ng-container matColumnDef="testResult">
-                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Resultado Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{checkColoncheckResult(exam.testResult)}} </td>
                     </ng-container>
 
@@ -163,7 +163,7 @@
                     </td>
                     <td>
                         <mat-form-field appearance="fill">
-                            <mat-label>Fecha del exámen</mat-label>
+                            <mat-label>Fecha del examen</mat-label>
                             <input matInput [matDatepicker]="scopyDate" formControlName="testDate">
                             <mat-datepicker-toggle matSuffix [for]="scopyDate"></mat-datepicker-toggle>
                             <mat-datepicker #scopyDate></mat-datepicker>
@@ -192,13 +192,13 @@
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="testDate">
-                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Fecha Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{formatDate(exam.testDate)}} </td>
                     </ng-container>
 
                     <!-- Weight Column -->
                     <ng-container matColumnDef="testResult">
-                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Resultado Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{checkColonoscopyResult(exam.testResult)}} </td>
                     </ng-container>
 
@@ -244,7 +244,7 @@
                     <p>Nueva Biopsia</p><br>
                     <p>
                         <mat-form-field appearance="fill">
-                            <mat-label>Fecha del exámen</mat-label>
+                            <mat-label>Fecha del examen</mat-label>
                             <input matInput [matDatepicker]="bioDate" formControlName="biopsyDate">
                             <mat-datepicker-toggle matSuffix [for]="bioDate"></mat-datepicker-toggle>
                             <mat-datepicker #bioDate></mat-datepicker>
@@ -269,7 +269,7 @@
 
                     <!-- Date Column -->
                     <ng-container matColumnDef="biopsyDate">
-                        <th mat-header-cell *matHeaderCellDef> Fecha Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Fecha Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{formatDate(exam.biopsyDate)}} </td>
                     </ng-container>
                     <!-- Delete Column -->
@@ -283,7 +283,7 @@
 
                     <!-- Result Column -->
                     <ng-container matColumnDef="result">
-                        <th mat-header-cell *matHeaderCellDef> Resultado Exámen </th>
+                        <th mat-header-cell *matHeaderCellDef> Resultado Examen </th>
                         <td mat-cell *matCellDef="let exam"> {{exam.result}} </td>
                     </ng-container>
 
@@ -334,29 +334,29 @@
             <section>
                 <mat-form-field appearance="fill">
                     <mat-label>Peso</mat-label>
-                    <input type="number" matInput formControlName="weight">
+                    <input type="number" min="0" matInput formControlName="weight">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Altura</mat-label>
-                    <input type="number" matInput formControlName="height">
+                    <input type="number" min="0" matInput formControlName="height">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>IMC</mat-label>
-                    <input type="number" matInput formControlName="imc">
+                    <input type="number" min="0" matInput formControlName="imc">
                 </mat-form-field>
             </section>
             <section>
                 <mat-form-field appearance="fill">
                     <mat-label>Circ. Abdominal</mat-label>
-                    <input type="number" matInput formControlName="cAbdominal">
+                    <input type="number" min="0" matInput formControlName="cAbdominal">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Presión Sistólica</mat-label>
-                    <input type="number" matInput formControlName="paSystolic">
+                    <input type="number" min="0" matInput formControlName="paSystolic">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Presión Diástolica</mat-label>
-                    <input type="number" matInput formControlName="paDiastolic">
+                    <input type="number" min="0" matInput formControlName="paDiastolic">
                 </mat-form-field>
             </section>
             <section>
@@ -434,7 +434,7 @@
                 <mat-form-field appearance="fill"
                     *ngIf="pathologies.get('cancer')?.value && pathologies.get('typeCancer')?.value">
                     <mat-label>Edad</mat-label>
-                    <input type="number" formControlName="cancerAge" matInput>
+                    <input type="number" min="0" formControlName="cancerAge" matInput>
                 </mat-form-field>
             </section>
 
@@ -463,11 +463,11 @@
                 </mat-checkbox>
                 <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
                     <mat-label>Unidades/Día</mat-label>
-                    <input type="number" formControlName="numberCigarettes" matInput>
+                    <input type="number" min="0" formControlName="numberCigarettes" matInput>
                 </mat-form-field>
                 <mat-form-field appearance="fill" *ngIf="habits.get('smokes')?.value">
                     <mat-label>Años Fumando</mat-label>
-                    <input type="number" formControlName="yearsSmoking" matInput>
+                    <input type="number" min="0" formControlName="yearsSmoking" matInput>
                 </mat-form-field>
             </section>
             
@@ -477,7 +477,7 @@
                 </mat-checkbox>
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value">
                     <mat-label>Vasos/Día</mat-label>
-                    <input type="number" formControlName="quantityAlcohol" matInput>
+                    <input type="number" min="0" formControlName="quantityAlcohol" matInput>
                 </mat-form-field>
                 <mat-form-field appearance="fill" *ngIf="habits.get('drinkAlcohol')?.value ">
                     <mat-label>Tipo</mat-label>
@@ -532,7 +532,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Edad de detección</mat-label>
-                    <input type="number" formControlName="age" matInput required>
+                    <input type="number" min="0" formControlName="age" matInput required>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Cancer</mat-label>

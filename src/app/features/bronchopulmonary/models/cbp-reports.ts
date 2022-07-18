@@ -35,6 +35,8 @@ export interface CBPPatientReports {
     nodule?:string;
     size?:number;
     lastbiopsy?:Date;
+    operated?:boolean;
+    cancer?:boolean;
 }
 
 

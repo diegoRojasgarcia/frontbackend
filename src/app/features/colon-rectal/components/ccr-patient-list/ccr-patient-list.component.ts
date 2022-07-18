@@ -34,7 +34,7 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
   columnsJoin: ColumnInterface[] = [
     { columnName: 'Nombre', columnValue: 'name', cell: (element: CCRPatient): string => element.name + " " + element.lastName + " " + (element.lastName2 ?? "") },
     { columnName: 'RUT', columnValue: 'rut', cell: (element: CCRPatient): string => element.rut ?? this.NO_DATA },
-    { columnName: 'COLON-CHECK', columnValue: 'coloncheckResult', cell: (element: CCRPatient): boolean => element.coloncheckResult },
+    { columnName: 'COLON-TEST', columnValue: 'coloncheckResult', cell: (element: CCRPatient): boolean => element.coloncheckResult },
     { columnName: 'COLONOSCOPÍA', columnValue: 'colonoscopyResult', cell: (element: CCRPatient): boolean => element.colonoscopyResult },
     { columnName: 'ESTADO', columnValue: 'state', cell: (element: CCRPatient): string => element.state ?? this.NO_DATA },
     { columnName: '', columnValue: 'expand', cell: (element: CCRPatient) => undefined },

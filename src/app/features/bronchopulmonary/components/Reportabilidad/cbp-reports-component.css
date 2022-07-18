@@ -4,11 +4,6 @@ mat-grid-tile {
     text-align: center;
 }
 
-#divChart{
-    display: block;
-    width: 200px;
-    height: 200px;
-}
 
 .mat-icon {
     width: auto;
@@ -16,18 +11,32 @@ mat-grid-tile {
     color: #673ab7;
 }
 
+.expansionpanel{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
 .mat-grid-tile .mat-figure {
     justify-content: flex-start !important;
     align-items: flex-start !important;
 }
+.mat-grid .container{
+    width: 100%;
+    background: #EFEFEF;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2vw;
+    color: #595260;
+}
 
 .menu-container {
-    margin-top: 80px;
+    margin-top: 90px;
     padding-left: 15%;
     text-align: center;
     justify-content: center;
     max-width: 70%;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    
 }
 
 .menu-container .container {
@@ -40,7 +49,7 @@ p.name {
 }
 
 p.details {
-    font-size: large;
+    font-size: small;
     color: #595260;
 }
 

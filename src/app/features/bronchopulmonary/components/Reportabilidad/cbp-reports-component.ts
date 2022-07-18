@@ -41,6 +41,22 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
   pacientesf!:number;
   noretornado!:number;
   pnoretornado!:number;
+  pfonasa!:number;
+  ppfonasa!:number;
+  pisapre!:number;
+  ppisapre!:number;
+  pdiabetes!:number;
+  ppdiabetes!:number;
+  ppepilepsy!:number;
+  pepilepsy!:number;
+  pgastriculcer!:number;
+  ppgastriculcer!:number;
+  phypo!:number;
+  pphypo!:number;
+  poperated!:number;
+  ppoperated!:number;
+  pcancer!:number;
+  ppcancer!:number
 
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
@@ -107,6 +123,23 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.pacientesf = dataSourcereports.filter(d => d.sex== 'F').length
       this.noretornado = dataSourcereports.filter(d => d.state == 'No Retornado').length
       this.pnoretornado = Math.round((this.noretornado/this.cantpacient)*100);
+      this.pfonasa = dataSourcereports.filter(d => d.fonasa == 'Fonasa').length
+      this.ppfonasa = Math.round((this.pfonasa/this.cantpacient)*100);
+      this.pisapre = dataSourcereports.filter(d => d.fonasa == 'Isapre').length
+      this.ppisapre = Math.round((this.pisapre/this.cantpacient)*100);
+
+      this.pdiabetes = dataSourcereports.filter(d => d.diabetes).length
+      this.ppdiabetes = Math.round((this.pdiabetes/this.cantpacient)*100);
+      this.pepilepsy = dataSourcereports.filter(d => d.epilepsy).length
+      this.ppepilepsy = Math.round((this.pepilepsy/this.cantpacient)*100);
+      this.pgastriculcer = dataSourcereports.filter(d => d.gastricul).length
+      this.ppgastriculcer = Math.round((this.pgastriculcer/this.cantpacient)*100);
+      this.phypo = dataSourcereports.filter(d => d.hypo).length
+      this.pphypo = Math.round((this.phypo/this.cantpacient)*100);
+      this.poperated = dataSourcereports.filter(d => d.operated).length
+      this.ppoperated = Math.round((this.poperated/this.cantpacient)*100);
+      this.pcancer = dataSourcereports.filter(d => d.cancer).length
+      this.ppcancer = Math.round((this.pcancer/this.cantpacient)*100);
 
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
