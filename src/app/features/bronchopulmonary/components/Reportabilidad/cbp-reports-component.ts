@@ -37,6 +37,10 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
   cantpatientbio!: number;
   totalbio!: number;
   cantpatienttac!: number;
+  pacientesm!:number;
+  pacientesf!:number;
+  noretornado!:number;
+  pnoretornado!:number;
 
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
@@ -90,8 +94,8 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.pfumadores = Math.round((this.cantfumadores/this.cantpacient)*100);
       this.pmayoranios = dataSourcereports.filter(d => d.edad >= 56).length
       this.ppmayoranios = Math.round((this.pmayoranios/this.cantpacient)*100);
-      this.pestadorechazado = dataSourcereports.filter(d => d.estadocbp == 'Rechazado' || d.estadocbp == 'Inactivo').length
-      this.pestadoinactivos = dataSourcereports.filter(d => d.estadocbp == 'Inactivo').length
+      this.pestadorechazado = dataSourcereports.filter(d => d.state == 'Rechazado').length
+      this.pestadoinactivos = dataSourcereports.filter(d => d.state == 'Inactivo').length
       this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
       this.priesgocist = dataSourcereports.filter(d => d.pasystolic >=140).length
       this.ppriesgocist = Math.round((this.priesgocist/this.cantpacient)*100);
@@ -99,6 +103,10 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.ppriesgodist = Math.round((this.priesgodist/this.cantpacient)*100);
       this.cantimcalto = dataSourcereports.filter(d => d.imc >=25).length
       this.pimcalto = Math.round((this.cantimcalto/this.cantpacient)*100);
+      this.pacientesm = dataSourcereports.filter(d => d.sex== 'M').length
+      this.pacientesf = dataSourcereports.filter(d => d.sex== 'F').length
+      this.noretornado = dataSourcereports.filter(d => d.state == 'No Retornado').length
+      this.pnoretornado = Math.round((this.noretornado/this.cantpacient)*100);
 
     }, err => {
       this.dataSourcereports = new MatTableDataSource();

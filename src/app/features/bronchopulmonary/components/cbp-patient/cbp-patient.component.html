@@ -45,6 +45,7 @@
                         <mat-option value="Inactivo">Inactivo</mat-option>
                         <mat-option value="Derivado">Derivado</mat-option>
                         <mat-option value="Rechazado">Rechazado</mat-option>
+                        <mat-option value="No Retornado">No Retornado</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
@@ -403,9 +404,7 @@
                     <input type="number" formControlName="yearsSmoking" matInput>
                 </mat-form-field>
             </section>
-            <section>
-                <mat-checkbox formControlName="eatCerealFiber">Consume diariamente cereales/fibras</mat-checkbox>
-            </section>
+            
             <section>
                 <mat-checkbox formControlName="drinkAlcohol"
                     (change)="!$event.checked?habits.get('quantityAlcohol')?.reset():null">Consume alcohol
@@ -432,6 +431,9 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
+            </section>
+            <section>
+                <mat-checkbox formControlName="eatCerealFiber">Consume diariamente cereales/fibras</mat-checkbox>
             </section>
             <section>
                 <mat-checkbox formControlName="threeFruits">Consume a lo menos 3 porciones de frutas y verduras al día

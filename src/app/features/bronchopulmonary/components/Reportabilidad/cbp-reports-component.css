@@ -27,6 +27,11 @@ mat-grid-tile {
     text-align: center;
     justify-content: center;
     max-width: 70%;
+    margin-bottom: 50px;
+}
+
+.menu-container .container {
+    margin-right: 30px;
 }
 
 p.name {

@@ -23,6 +23,8 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
   countpolyps!:number;
   cantfumadores!:number;
   pfumadores!:number;
+  cantalcohol!:number;
+  pcantalcohol!:number;
   ppolipos!:number;
   pppolipos!:number;
   pneoplastic!:number;
@@ -34,6 +36,28 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
   pestadorechazado!:number;
   pestadoinactivos!:number;
   ppestadorechazado!:number;
+  pacientesm!:number;
+  pacientesf!:number;
+  noretornado!:number;
+  pnoretornado!:number;
+  numfonasa!:number;
+  pnumfonasa!:number;
+  numisapre!:number;
+  pnumisapre!:number;
+  pbiopsy!:number;
+  ppbiopsy!:number;
+  pdiabetes!:number;
+  ppdiabetes!:number;
+  ppepilepsy!:number;
+  pepilepsy!:number;
+  pgastriculcer!:number;
+  ppgastriculcer!:number;
+  phypo!:number;
+  pphypo!:number;
+  poperated!:number;
+  ppoperated!:number;
+  pcancer!:number;
+  ppcancer!:number
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
   cols = 2;
@@ -83,21 +107,45 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
     this.sub$.add(this.patientService.getAllCCRPatientsForReports().subscribe(res => {
       const dataSourcereports = res.data;
       this.cantpacient = dataSourcereports.length;
-      this.checkcolonCountTrue = dataSourcereports.filter(d => d.testresultcoloncheck).length
+      this.checkcolonCountTrue = dataSourcereports.filter(d => d.colontestresult).length
       this.pcloncheck = Math.round((this.checkcolonCountTrue/this.cantpacient)*100);
       this.cantfumadores = dataSourcereports.filter(d => d.smokes).length
       this.pfumadores = Math.round((this.cantfumadores/this.cantpacient)*100);
       this.ppolipos = dataSourcereports.filter(d => d.polyps).length
       this.pppolipos = Math.round((this.ppolipos/this.cantpacient)*100);
-      this.pneoplastic = dataSourcereports.filter(d => d.neoplasticlesion).length
+      this.pneoplastic = dataSourcereports.filter(d => d.neoplasticLesion).length
       this.ppneoplastic = Math.round((this.pneoplastic/this.cantpacient)*100);
-      this.pcolonoscopy = dataSourcereports.filter(d => d.colonoscopy).length
+      this.pcolonoscopy = dataSourcereports.filter(d => d.colonosresult).length
       this.ppcolonosocpy = Math.round((this.pcolonoscopy/this.cantpacient)*100);
       this.pmayoranios = dataSourcereports.filter(d => d.edad >= 56).length
       this.ppmayoranios = Math.round((this.pmayoranios/this.cantpacient)*100);
-      this.pestadorechazado = dataSourcereports.filter(d => d.estadopacienteccr == 'Rechazado' || d.estadopacienteccr =="Inactivo").length
-      this.pestadoinactivos = dataSourcereports.filter(d => d.estadopacienteccr == 'Inactivo' || d.estadopacienteccr =="Rechazado").length
+      this.pestadorechazado = dataSourcereports.filter(d => d.state == 'Rechazado' ).length
+      this.pestadoinactivos = dataSourcereports.filter(d => d.state == 'Inactivo' ).length
       this.ppestadorechazado = Math.round((this.pestadorechazado + this.pestadoinactivos /this.cantpacient)*100);
+      this.pacientesm = dataSourcereports.filter(d => d.sex== 'M').length
+      this.pacientesf = dataSourcereports.filter(d => d.sex== 'F').length
+      this.noretornado = dataSourcereports.filter(d => d.state == 'No Retornado').length
+      this.pnoretornado = Math.round((this.noretornado/this.cantpacient)*100);
+      this.numfonasa = dataSourcereports.filter(d => d.fonasa == 'Fonasa').length
+      this.pnumfonasa = Math.round((this.numfonasa/this.cantpacient)*100);
+      this.numisapre = dataSourcereports.filter(d => d.fonasa == 'Isapre').length
+      this.pnumisapre = Math.round((this.numisapre/this.cantpacient)*100);
+      this.cantalcohol = dataSourcereports.filter(d => d.drinkAlcohol).length
+      this.pcantalcohol = Math.round((this.cantalcohol/this.cantpacient)*100);
+      this.pbiopsy = dataSourcereports.filter(d => d.biopsydate).length
+      this.ppbiopsy = Math.round((this.pbiopsy/this.cantpacient)*100);
+      this.pdiabetes = dataSourcereports.filter(d => d.diabetes).length
+      this.ppdiabetes = Math.round((this.pdiabetes/this.cantpacient)*100);
+      this.pepilepsy = dataSourcereports.filter(d => d.epilepsy).length
+      this.ppepilepsy = Math.round((this.pepilepsy/this.cantpacient)*100);
+      this.pgastriculcer = dataSourcereports.filter(d => d.gastricUlcer).length
+      this.ppgastriculcer = Math.round((this.pgastriculcer/this.cantpacient)*100);
+      this.phypo = dataSourcereports.filter(d => d.hypoHyperThyroidism).length
+      this.pphypo = Math.round((this.phypo/this.cantpacient)*100);
+      this.poperated = dataSourcereports.filter(d => d.operated).length
+      this.ppoperated = Math.round((this.poperated/this.cantpacient)*100);
+      this.pcancer = dataSourcereports.filter(d => d.cancer).length
+      this.ppcancer = Math.round((this.pcancer/this.cantpacient)*100);
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;

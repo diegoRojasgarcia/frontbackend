@@ -1,32 +1,43 @@
-import { Patient } from "../../patient/models/patient";
 
-export interface CCRPatientreports extends Patient {
-    id_patient?:string,
-    estadopacienteccr?:string,
-    name?:string,
-    rut:string,
-    edad:number,
-    birthday?:string,
-    sex?:string,
-    cellphone?:number,
-    address?:string,
-    previcion?:string,
-    peso?:number,
-    altura?:number,
-    imc?:number,
-    cmabdominal?:number,
-    smokes?:boolean,
-    ncigarettes?:number,
-    ysmoking?:number,
-    cancerdetectiondate?:Date,
-    testresultcoloncheck?:boolean,
-    lastcoloncheck?:Date,
-    cantcoloncheck?:number,
-    colonoscopy?:boolean,
-    polyps?:boolean,
-    neoplasticlesion?:boolean,
-    lastcolonoscopy?:Date,
-    cantcolonoscopy?:number,
-    lastbiopsy?:Date,
-    cantbiopsy?:number
+export interface CCRPatientreports {
+    idPatient?:string;
+    address?:string;
+    biopsydate?:Date;
+    birthday?:Date;
+    cAbdominal?:number;
+    cancer?:boolean;
+    cellphone?:number;
+    cesfam?:string;
+    colonosresult?:boolean;
+    colontestresult?:boolean;
+    diabetes?:boolean;
+    drinkAlcohol?:boolean;
+    edad:number;
+    emergencyPhone?:number;
+    epilepsy?:boolean;
+    fechacolonoscopy?:Date;
+    fechacolontest?:Date;
+    fonasa?:string;
+    gastricUlcer?:Boolean;
+    height?:number;
+    hypoHyperThyroidism?:boolean;
+    imc?:number;
+    isapre?:string;
+    lastName?:string;
+    lastName2?:string;
+    mail?:string;
+    name?:string;
+    neoplasticLesion?:boolean;
+    operated?:boolean;
+    paSystolic?:number;
+    polyps?:boolean;
+    rut?:number;
+    sex?:string;
+    smokes?:boolean;
+    state?:string;
+    typeactivity?:string;
+    village?:string;
+    weight?:number;
+
+
 }

@@ -16,11 +16,38 @@
         <mat-grid-tile >
             <div class="container">
                 <div class="row">
-                    <p class="details">{{pestadorechazado}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{(pestadorechazado/cantpacient) * 100}} %</strong></p>
+                    <p class="details"></p>
+                    <p class="name"><strong>{{pacientesm}}</strong></p>
                 </div>
                 <div class="row">
-                    <p class="details">Pacientes Rechazados / Inactivos</p>
+                    <p class="details">Pacientes Masculinos </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <p class="details"></p>
+                    <p class="name"><strong>{{pacientesf}}</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Femeninos</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="name"><strong>{{pestadorechazado}}</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Rechazados</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <p class="name"><strong>{{pestadoinactivos}}</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes Inactivos</p>
                 </div>
             </div>
         </mat-grid-tile>
@@ -32,6 +59,17 @@
                 </div>
                 <div class="row">
                     <p class="details">Pacientes Fumadores</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="container">
+                <div class="row">
+                    <p class="details">{{cantfumadores}} / {{cantpacient}}</p>
+                    <p class="name"><strong>{{pfumadores}} %</strong></p>
+                </div>
+                <div class="row">
+                    <p class="details">Pacientes consumidores de alchol</p>
                 </div>
             </div>
         </mat-grid-tile>
@@ -90,17 +128,6 @@
             </div>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile >
-      <div class="container">
-          <div class="row">
-              <p class="details">{{cantimcalto}} / {{cantpacient}}</p>
-              <p class="name"><strong>{{pimcalto}} %</strong></p>
-          </div>
-          <div class="row">
-              <p class="details">Pacientes con IMC sobre 25</p>
-          </div>
-      </div>
-  </mat-grid-tile>
 
     </mat-grid-list>
 

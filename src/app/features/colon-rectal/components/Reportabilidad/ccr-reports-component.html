@@ -1,99 +1,317 @@
 <app-title [pageTitle]="'Reportes'"></app-title>
 
+
 <div class="menu-container">
-    <mat-grid-list #grid [cols]="cols" rowHeight="5:1">
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details"></p>
-                    <p class="name"><strong>{{cantpacient}}</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes Módulo Colorectal</p>
-                </div>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{pestadorechazado}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{(pestadorechazado/cantpacient)*100}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes Rechazados / Inactivos</p>
-                </div>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{checkcolonCountTrue}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{pcloncheck}} %</strong> </p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes ColonTest Positivos</p>
-                </div>
-            </div>
-        </mat-grid-tile>
 
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{cantfumadores}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{pfumadores}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes Fumadores</p>
-                </div>
-            </div>
-        </mat-grid-tile>
+    <mat-accordion class="expansionpanel">
 
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{ppolipos}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{pppolipos}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes con Pólipos</p>
-                </div>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{pneoplastic}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{ppneoplastic}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes con Lesión Neoplásicas</p>
-                </div>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{pcolonoscopy}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{ppcolonosocpy}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes con Colonoscopia realizada</p>
-                </div>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile >
-            <div class="container">
-                <div class="row">
-                    <p class="details">{{pmayoranios}} / {{cantpacient}}</p>
-                    <p class="name"><strong>{{ppmayoranios}} %</strong></p>
-                </div>
-                <div class="row">
-                    <p class="details">Pacientes mayores de 55 años</p>
-                </div>
-            </div>
-        </mat-grid-tile>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Estadísticas de pacientes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list #grid [cols]="cols" rowHeight="3:1">
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details"></p>
+                            <p class="name"><strong>{{cantpacient}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Cantidad Pacientes Módulo Colorectal</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details"></p>
+                            <p class="name"><strong>{{pacientesm}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Masculinos </p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details"></p>
+                            <p class="name"><strong>{{pacientesf}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Femeninos</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="name"><strong>{{pestadorechazado}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Rechazados</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <p class="name"><strong>{{pestadoinactivos}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Inactivos</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <p class="name"><strong>{{noretornado}}</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes 'No Retornados'</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
 
-    </mat-grid-list>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{numfonasa}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pnumfonasa}} %</strong> </p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Porcentaje Pacientes Fonasa</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{numisapre}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pnumisapre}} %</strong> </p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Porcentaje Pacientes Isapre</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pmayoranios}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppmayoranios}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes mayores de 55 años</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{0}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{0}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Extranjeros</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
 
 
+            </mat-grid-list>
+        </mat-expansion-panel>
+
+
+
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Estadísticas de Hábitos
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list #grid [cols]="cols" rowHeight="3:1">
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{cantfumadores}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pfumadores}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Fumadores</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{cantalcohol}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pcantalcohol}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes que consumen alcohol</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+
+        </mat-expansion-panel>
+
+
+
+
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Estadísticas De Exámenes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list #grid [cols]="cols" rowHeight="3:1">
+
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{checkcolonCountTrue}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pcloncheck}} %</strong> </p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes ColonTest Positivos</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{ppolipos}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pppolipos}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Pólipos</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pneoplastic}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppneoplastic}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Lesión Neoplásicas</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pcolonoscopy}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppcolonosocpy}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Colonoscopia realizada</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+
+
+
+            </mat-grid-list>
+
+            <mat-grid-list #grid [cols]="1" rowHeight="7:1">
+
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pbiopsy}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppbiopsy}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Que se Han Relizado Biopsia</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-expansion-panel>
+
+
+
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Estadísticas De Antecedentes Médicos 
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list #grid [cols]="cols" rowHeight="3:1">
+
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pdiabetes}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppdiabetes}} %</strong> </p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Con Diabetes</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pepilepsy}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppepilepsy}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Epilepsia</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pgastriculcer}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppgastriculcer}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Úlcera Péptica</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{phypo}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{pphypo}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes con Hipo/Hipertiroidismo</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{poperated}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppoperated}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Operados</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="container">
+                        <div class="row">
+                            <p class="details">{{pcancer}} / {{cantpacient}}</p>
+                            <p class="name"><strong>{{ppcancer}} %</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="details">Pacientes Que Contienen Algún Cancer</p>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+
+
+
+            </mat-grid-list>
+
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>

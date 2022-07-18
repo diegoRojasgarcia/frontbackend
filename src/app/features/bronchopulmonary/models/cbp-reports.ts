@@ -2,30 +2,39 @@ import { Patient } from "../../patient/models/patient";
 
 
 export interface CBPPatientReports {
-    idpatientcbp?:number;
-    estadocbp?:string
+    idpatient?:number;
+    state?:string
     rut:string;
     name?: string;
     lastname? : string;
     lastname2?:string;
-    mail?:string;
     sex?: string;
     edad:number;
     birthday?:string;
     cellphone?: number;
-    emergencycellphone?: number;
+    ephone?: number;
+    mail?:string;
     fonasa?: string;
     cesfam?: string;
+    address: string;
+    village: string;
     derivacion?: string;
     weight?:number;
     hegith?:number;
     imc:number;
-    cabdominal?:number;
-    padiastolic:number;
+    cabdomen?:number;
     pasystolic:number;
+    padiastolic:number;
     smokes?:boolean;
-    numbercigarettes?:number;
-    ysmoking:number;
+    drinkalcohol:boolean;
+    diabetes?:boolean;
+    epilepsy?:boolean;
+    gastricul:boolean;
+    hypo?:boolean;
+    lrads?:number;
+    nodule?:string;
+    size?:number;
+    lastbiopsy?:Date;
 }
 
 

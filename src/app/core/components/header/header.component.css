@@ -15,6 +15,7 @@
 .logo-img {
     width: 100%;
     margin: 0;
+    margin-top: 1px;
 }
 
 .menu-logo {
@@ -57,9 +58,9 @@ a {
 .sidenav {
     margin-top: 0;
     padding-top: 30px;
-    width: 30vw;
+    width: 60vw;
     min-width: 230px;
-    max-width: 400px;
+    max-width: 450px;
     background-color: #673ab7;
     color: white;
     text-align: center;
@@ -82,8 +83,9 @@ a {
 }
 
 .menu-option-icon {
-    margin-right: 8%;
+    margin-right: 9%;
     font-size: 2vmax;
+    margin-bottom: 12px;
 }
 
 .sticky-main-header {

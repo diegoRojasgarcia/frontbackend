@@ -152,40 +152,40 @@ export class CCRPatientListComponent implements AfterViewInit, OnDestroy {
     let titleRow = worksheet.addRow(['']);
     
     worksheet.columns = [
-      { header: 'id', key: 'id_patient', width: 6},
-      { header: 'Estado', key: 'estadopacienteccr', width: 10},
+      { header: 'id', key: 'idPatient', width: 6},
+      { header: 'Estado', key: 'state', width: 10},
       { header: 'Nombre', key: 'name', width: 20},
-      { header: 'Apellido Paterno', key: 'lastname', width: 20, },
-      { header: 'Apellido Materno', key: 'lastname2', width: 20 },
+      { header: 'Apellido Paterno', key: 'lastName', width: 20, },
+      { header: 'Apellido Materno', key: 'lastName2', width: 20 },
       { header: 'Rut', key: 'rut', width: 15 },
       { header: 'Edad', key: 'edad', width: 6 },
       { header: 'Fecha Nacimiento', key: 'birthday', width: 20 },
       { header: 'Sexo', key: 'sex', width: 5},
-      { header: 'Telefono', key: 'cellphone', width: 10 },
-      { header: 'Direccion', key: 'address', width: 20 },
-      { header: 'Prevision', key: 'previcion', width: 10 },
-      { header: 'Peso (kg)', key: 'peso', width: 10},
-      { header: 'Altura (cm)', key: 'altura', width: 15},
+      { header: 'Teléfono', key: 'cellphone', width: 10 },
+      { header: 'Teléfono Emergencia', key: 'emergencyPhone', width: 10 },
+      { header: 'Email', key: 'mail', width: 16 },
+      { header: 'Dirección', key: 'address', width: 20 },
+      { header: 'Villa', key: 'village', width: 20 },
+      { header: 'Prevision', key: 'fonasa', width: 10 },
+      { header: 'Peso (kg)', key: 'weight', width: 10},
+      { header: 'Altura (cm)', key: 'height', width: 15},
       { header: 'IMC', key: 'imc', width: 5},
-      { header: 'C. Abdominal', key: 'cmabdominal', width: 15},
+      { header: 'C. Abdominal', key: 'cAbdominal', width: 15},
       { header: 'Fumador', key: 'smokes', width: 15},
-      { header: 'Cantidad Cigarros', key: 'ncigarettes', width: 15},
-      { header: 'Años Fumando', key: 'ysmoking', width: 15},
-      { header: 'Fecha Deteccion Cancer ', key: 'cancerdetectiondate', width: 25 },
-      { header: 'Colon Check', key: 'testresultcoloncheck', width: 20 },
-      { header: 'Ultimo coloTest', key: 'lastcoloncheck', width: 20},
-      { header: 'Cantidad Test Colon-Check', key: 'cantcoloncheck', width:10},
-      { header: 'Colon Oscopia', key: 'colonoscopy', width: 13},
+      { header: 'Alcohol', key: 'drinkAlcohol', width: 15},
+      { header: 'Operado', key: 'operated', width: 15},
+      { header: 'Cáncer', key: 'cancer', width: 25 },
+      { header: 'Colon Test', key: 'colontestresult', width: 20 },
+      { header: 'Ultimo ColonTest', key: 'fechacolontest', width: 20},
+      { header: 'Colon Oscopia', key: 'colonosresult', width: 13},
       { header: 'Polipos', key: 'polyps', width: 13},
-      { header: 'Lesion Neoplastica', key: 'neoplasticlesion', width: 13},
-      { header: 'Ultima Colonosocopia', key: 'lastcolonoscopy', width: 20 },
-      { header: 'Cantidad Colonoscopias', key: 'cantcolonoscopy', width: 10},
-      { header: 'Ultima Biopsia', key: 'lastbiopsy', width: 20},
-      { header: 'Cantidad biopsias', key: 'cantbiopsy', width: 20 },
+      { header: 'Lesion Neoplastica', key: 'neoplasticLesion', width: 13},
+      { header: 'Última Colonosocopia', key: 'fechacolonoscopy', width: 20 },
+      { header: 'Última Biopsia', key: 'biopsydate', width: 20},
     ];
     
     this.dataSourcereports.data.forEach(e => {
-      let row = worksheet.addRow({id_patient:e.idPatient,estadopacienteccr:e.estadopacienteccr,name: e.name,lastname: e.lastName, lastname2: e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,address:e.address,previcion:e.previcion,peso:e.peso,altura:e.altura,imc:e.imc, cmabdominal:e.cmabdominal,smokes: e.smokes, ncigarettes:e.ncigarettes,ysmoking:e.ysmoking , cancerdetectiondate: e.cancerdetectiondate, testresultcoloncheck:e.testresultcoloncheck, lastcoloncheck:e.lastcoloncheck,cantcoloncheck:e.cantcoloncheck,colonoscopy:e.colonoscopy, polyps:e.polyps,neoplasticlesion: e.neoplasticlesion,lastcolonoscopy:e.lastcolonoscopy,cantcolonoscopy: e.cantcolonoscopy, lastbiopsy: e.lastbiopsy, cantbiopsy:e.cantbiopsy}, "n");
+      let row = worksheet.addRow({idPatient:e.idPatient,state:e.state,name: e.name,lastName: e.lastName,lastName2:e.lastName2, rut:e.rut,edad:e.edad,birthday: e.birthday, sex:e.sex, cellphone:e.cellphone,emergencyPhone:e.emergencyPhone,mail:e.mail,address:e.address,village:e.village,fonasa:e.fonasa,weight:e.weight,height:e.height,imc:e.imc, cAbdominal:e.cAbdominal,smokes: e.smokes,drinkAlcohol:e.drinkAlcohol, operated:e.operated,cancer: e.cancer, colontestresult:e.colontestresult, fechacolontest:e.fechacolontest,colonosresult:e.colonosresult, polyps:e.polyps,neoplasticLesion: e.neoplasticLesion,fechacolonoscopy:e.fechacolonoscopy, biopsydate: e.biopsydate}, "n");
     });
     titleRow.font = { name: 'calibri', family: 4, size: 12, bold: true, }
     worksheet.getCell('B1').alignment = { vertical: 'middle', horizontal: 'center' };

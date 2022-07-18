@@ -28,8 +28,8 @@
             <button mat-list-item class="menu-btn" (click)="toUsersAdministration()">
                 <mat-icon class="menu-option-icon">manage_accounts </mat-icon> ADMINISTRACIÓN
             </button>
-            <mat-divider></mat-divider>
-            <div mat-subheader class="menu-btn">Menú Cáncer</div>
+            <mat-divider></mat-divider><br><br>
+            <div class="menu-title">MENU CÁNCER</div><br>
             <span *appSpeciality="SPECIALITIES.CBP"> 
                 <button mat-list-item class="menu-btn" (click)="toCBP()"><mat-icon class="menu-option-icon">home</mat-icon> BRONCOPULMONAR </button>
             </span>
@@ -38,6 +38,7 @@
                     <mat-icon class="menu-option-icon">home</mat-icon> COLORRECTAL
                 </button>
             </span>
+            <mat-divider></mat-divider>
         </mat-action-list>
     </mat-drawer>
 

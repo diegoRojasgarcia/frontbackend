@@ -101,7 +101,7 @@
             <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
                 <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
 
-                    <mat-list *ngIf="element.state == 'Activo'; else elseestado">
+                    <mat-list *ngIf="element.state == 'Activo'; else elseestado || element.state == 'Derivado'">
 
                         <mat-list>
                             <mat-list-item>
@@ -113,28 +113,14 @@
                                 {{element.mail}}
                             </mat-list-item>
                         </mat-list>
-                    </mat-list>
-                    <mat-list *ngIf="element.state == 'Derivado'">
-
-                        <mat-list>
-                            <mat-list-item>
-                                <mat-icon mat-list-icon color="primary">phone</mat-icon>
-                                {{element.cellphone}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                <mat-icon mat-list-icon color="primary">contact_mail</mat-icon>
-                                {{element.mail}}
-                            </mat-list-item>
-                        </mat-list>
-                    </mat-list>
-                    <mat-list *ngIf="element.state == 'Inactivo'">
-                        <div matSubheader>MOTIVO: {{element.motivorechazo}} </div>
-                    </mat-list>
+                    </mat-list> 
 
                     <ng-template #elseestado>
-                        <mat-list *ngIf="element.state == 'Rechazado'">
+
+                        <mat-list *ngIf="element.state == 'Rechazado' || element.state == 'Inactivo' || element.state == 'No Retornado'">
                             <div matSubheader>MOTIVO: {{element.motivorechazo}} </div>
                         </mat-list>
+
                     </ng-template>
 
                     <div class="go-to-profile">
