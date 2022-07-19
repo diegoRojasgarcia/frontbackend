@@ -87,7 +87,8 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
         inAgeRange: new FormControl(null, [Validators.requiredTrue]),
         isapre: new FormControl(null, Validators.required),// cambio isapre
         dataAgreement: new FormControl(null, [Validators.requiredTrue]),
-        volunteerAgreement: new FormControl(null, [Validators.requiredTrue])
+        volunteerAgreement: new FormControl(null, [Validators.requiredTrue]),
+        extranjero: new FormControl(),
       }, [valSvc.validatePrevRegion()])
     this.enrollmentSurvey = new FormGroup({})
 
@@ -327,6 +328,8 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
       volunteerAgreement: patient.volunteerAgreement,
       inAgeRange: true,
       dataAgreement: true,
+      extranjero:patient.extranjero,
+      isapre: patient.isapre
     })
   }
 

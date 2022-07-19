@@ -163,7 +163,7 @@
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            <mat-error *ngIf="showOptionalRegion && patientData.hasError('regionReq')">{{requiredField}}</mat-error>
+                            
                         </td>
                     </section>
                     <section cellspacing="0">
@@ -183,6 +183,13 @@
                                     <mat-option value="Antofagasta">Antofagasta</mat-option>
                                 </mat-select>
                             </mat-form-field>
+                        </td>
+                        <td class="butomextranjero">
+                            <div *ngIf="showOptionalRegion" >
+                                <br>
+                                <mat-checkbox formControlName="extranjero">¿El paciente es extranjero? </mat-checkbox>
+                            </div>
+                            
                         </td>
 
                     </section>

@@ -2,17 +2,17 @@
 
     "data": [{
             "type": "boolean",
-            "msg": "Ha tenido o tiene: sangrado en deposiciones.",
+            "msg": "Ha tenido o tiene sangrado en deposiciones.",
             "name": "bleedingInStools"
         },
         {
             "type": "boolean",
-            "msg": "Ha tenido o tiene: alteración en hábitos intestinales (diarrea o estreñimiento).",
+            "msg": "Ha tenido o tiene alteración en hábitos intestinales (diarrea o estreñimiento).",
             "name": "alterationOfBowelHabits"
         },
         {
             "type": "boolean",
-            "msg": "Ha tenido o tiene: dolor abdominal por mas de 30 días, en los últimos 6 meses.",
+            "msg": "Ha tenido o tiene dolor abdominal por mas de 30 días, en los últimos 6 meses.",
             "name": "abdominalPain"
         },
         {
@@ -22,22 +22,22 @@
         },
         {
             "type": "boolean",
-            "msg": "Ha tenido o tiene: cancer de colon o recto.",
+            "msg": "Ha tenido o tiene cancer de colon o recto.",
             "name": "caColonRectum"
         },
         {
             "type": "boolean",
-            "msg": "Se ha realizado: colonoscopía completa este último año.",
+            "msg": "Se ha realizado colonoscopía completa este último año.",
             "name": "colonoscopy"
         },
         {
             "type": "boolean",
-            "msg": "Presenta: colitis ulcerosa.",
+            "msg": "Presenta colitis ulcerosa.",
             "name": "colitis"
         },
         {
             "type": "boolean",
-            "msg": "Presenta: enfermedad de Crohn.",
+            "msg": "Presenta enfermedad de Crohn.",
             "name": "crohn"
         }
     ]

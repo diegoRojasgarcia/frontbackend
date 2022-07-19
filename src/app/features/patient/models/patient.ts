@@ -28,6 +28,7 @@ export interface Patient {
     age?:number
     deceaseDate?:Date;
     isapre?: string;// cambio para lo de isapre
+    extranjero?:boolean;
 }
 
 export interface CancerCheck{
