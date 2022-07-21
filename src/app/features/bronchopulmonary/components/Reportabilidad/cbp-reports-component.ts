@@ -56,7 +56,9 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
   poperated!:number;
   ppoperated!:number;
   pcancer!:number;
-  ppcancer!:number
+  ppcancer!:number;
+  pextranjero!:number;
+  ppextranjero!:number;
 
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
@@ -140,6 +142,8 @@ export class PatientCBPReports implements AfterViewInit, OnDestroy {
       this.ppoperated = Math.round((this.poperated/this.cantpacient)*100);
       this.pcancer = dataSourcereports.filter(d => d.cancer).length
       this.ppcancer = Math.round((this.pcancer/this.cantpacient)*100);
+      this.pextranjero = dataSourcereports.filter(d => d.extranjero).length
+      this.ppextranjero = Math.round((this.pextranjero/this.cantpacient)*100);
 
     }, err => {
       this.dataSourcereports = new MatTableDataSource();

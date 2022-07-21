@@ -38,6 +38,5 @@ export interface CCRPatientreports {
     typeactivity?:string;
     village?:string;
     weight?:number;
-
-
+    extranjero?:boolean;
 }

@@ -37,6 +37,7 @@ export interface CBPPatientReports {
     lastbiopsy?:Date;
     operated?:boolean;
     cancer?:boolean;
+    extranjero?:boolean;
 }
 
 

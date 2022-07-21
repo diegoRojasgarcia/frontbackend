@@ -58,6 +58,8 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
   ppoperated!:number;
   pcancer!:number;
   ppcancer!:number
+  pextranjero!:number;
+  ppextranjero!:number;
      // @ViewChild('grid') grid: MatGridList;
   // @ViewChild('grid') grid: MatGridList;
   cols = 2;
@@ -146,6 +148,8 @@ export class ColonRectalReportsComponent implements AfterViewInit, OnDestroy {
       this.ppoperated = Math.round((this.poperated/this.cantpacient)*100);
       this.pcancer = dataSourcereports.filter(d => d.cancer).length
       this.ppcancer = Math.round((this.pcancer/this.cantpacient)*100);
+      this.pextranjero = dataSourcereports.filter(d => d.extranjero).length
+      this.ppextranjero = Math.round((this.pextranjero/this.cantpacient)*100);
     }, err => {
       this.dataSourcereports = new MatTableDataSource();
       this.NO_TABLE_DATA = AppConstants.NO_TABLE_DATA_ERROR;
