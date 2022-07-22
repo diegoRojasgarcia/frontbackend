@@ -51,7 +51,7 @@ export class AppConstants {
     // CANCER
     public static CBP_NAME: string = "Broncopulmonar";
     public static CBP_KEY: string = "CBP";
-    public static CCR_NAME: string = "Colorectal";
+    public static CCR_NAME: string = "Colorrectal";
     public static CCR_KEY: string = "CCR";
 
     // ERROR HANDLING

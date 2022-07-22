@@ -84,8 +84,8 @@ export class PatientRegisterComponent implements OnInit, OnChanges, OnDestroy {
         emergencyPhone: new FormControl(null, [Validators.pattern(AppConstants.phoneNumberPattern)]),
         mail: new FormControl(null, [Validators.pattern(AppConstants.emailPattern)]),
         fonasa: new FormControl(null, Validators.required),
-        inAgeRange: new FormControl(null, [Validators.requiredTrue]),
-        isapre: new FormControl(null, Validators.required),// cambio isapre
+        inAgeRange: new FormControl(),
+        isapre: new FormControl(),// cambio isapre
         dataAgreement: new FormControl(null, [Validators.requiredTrue]),
         volunteerAgreement: new FormControl(null, [Validators.requiredTrue]),
         extranjero: new FormControl(),

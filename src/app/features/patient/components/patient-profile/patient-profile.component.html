@@ -203,7 +203,7 @@
                                 <input matInput formControlName="village">
                             </mat-form-field>
                             <td style="vertical-align: top;">
-                                <mat-radio-group aria-label="Seleccione una opción" formControlName="residenceTime">
+                                <mat-radio-group  aria-label="Seleccione una opción" formControlName="residenceTime">
                                     <p>Tiempo de residencia: </p>
                                     <mat-radio-button [value]="false">Menos de 5 años
                                     </mat-radio-button>
@@ -211,7 +211,7 @@
                                 </mat-radio-group>
                             </td>
                             <td>
-                                <mat-form-field *ngIf="!patientForm.get('residenceTime')?.value" appearance="fill">
+                                <mat-form-field class="blockee" *ngIf="!patientForm.get('residenceTime')?.value" appearance="fill">
                                     <mat-label>Indique la región anterior.</mat-label>
                                     <mat-select formControlName="previousRegion">
                                         <mat-option *ngFor="let region of regions" [value]="region.codigo">{{region.nombre}}
@@ -234,6 +234,7 @@
                                 <mat-option *ngFor="let cesfam of cesfamList" [value]="cesfam"> {{ cesfam }}</mat-option>
                             </mat-select>
                         </mat-form-field>
+                            <mat-checkbox class="extranjero" formControlName="extranjero">¿El paciente es extranjero? </mat-checkbox>
                     </section>
                 </div>
             </div>

@@ -184,15 +184,17 @@
                                 </mat-select>
                             </mat-form-field>
                         </td>
-                        <td class="butomextranjero">
-                            <div *ngIf="showOptionalRegion" >
-                                <br>
-                                <mat-checkbox formControlName="extranjero">¿El paciente es extranjero? </mat-checkbox>
-                            </div>
-                            
-                        </td>
+                            <td class="butomextranjero">
+                                <div *ngIf="showOptionalRegion" >
+                                    <br>
+                                    <mat-checkbox formControlName="extranjero">¿El paciente es extranjero? </mat-checkbox>
+                                </div>
+                                
+                            </td>
+                       
 
                     </section>
+                    
                 </div>
                 <h4>Contacto</h4>
                 <mat-divider></mat-divider>
@@ -235,7 +237,7 @@
                     <td>
                         <mat-form-field appearance="fill">
                             <mat-label>Tipo de isapre</mat-label>
-                            <mat-select formControlName="isapre"><!--  cambio para lo de isapre-->-->
+                            <mat-select formControlName="isapre"><!--  cambio para lo de isapre-->
                                 <mat-option *ngFor="let f of isapre" [value]="f">{{f}}</mat-option>
                             </mat-select>
                         </mat-form-field>

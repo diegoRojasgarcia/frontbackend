@@ -102,7 +102,8 @@ export class PatientProfileComponent implements OnInit, OnChanges, OnDestroy {
       deceased: new FormControl(),
       deceasedByCancer: new FormControl(),
       deceaseDate: new FormControl(),
-      isapre: new FormControl(null, Validators.required),//cambio isapre
+      isapre: new FormControl(),//cambio isapre
+      extranjero: new FormControl(),
     })
   }
   ngOnDestroy(): void {
@@ -241,7 +242,8 @@ export class PatientProfileComponent implements OnInit, OnChanges, OnDestroy {
       deceased: patient.deceased,
       deceasedByCancer: patient.deceasedByCancer,
       deceaseDate: patient.deceaseDate,
-      isapre: patient.isapre //cambio isapre
+      isapre: patient.isapre, //cambio isapre
+      extranjero: patient.extranjero
     })
   }
 }

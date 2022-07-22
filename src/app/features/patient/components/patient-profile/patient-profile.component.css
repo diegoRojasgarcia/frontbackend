@@ -3,6 +3,16 @@
     margin-top: -0.1%;
 }
 
+.blockee{
+    margin-left: 37px;
+}
+
+.extranjero{
+    margin-left: 20px;
+}
+
+
+
 .action-buttons {
     display: flex;
     justify-content: space-between;
