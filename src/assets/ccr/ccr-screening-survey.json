@@ -17,7 +17,7 @@
         },
         {
             "type": "boolean",
-            "msg": "Presenta: baja de peso involuntaria.",
+            "msg": "Presenta baja de peso involuntaria.",
             "name": "weightLoss"
         },
         {

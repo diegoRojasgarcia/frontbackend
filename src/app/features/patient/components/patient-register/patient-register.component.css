@@ -9,10 +9,22 @@
     margin: 3%;
 }
 
+.container{
+    justify-content: center;
+    overflow-y: scroll;
+    max-height: 88vh;
+}
+
 .buscador {
     display: flex;
     justify-content: right;
     margin-right: 55px;
+}
+
+.mx-auto{
+    position: relative;
+    left:40%;
+
 }
 
 .butomextranjero{
@@ -30,7 +42,6 @@ h1 {
 
 .action-toolbar {
     padding: 30px;
-    padding-left: 55px;
     padding-top: 50px;
     padding-bottom: 0px;
 }

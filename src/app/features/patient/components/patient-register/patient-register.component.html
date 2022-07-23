@@ -1,10 +1,9 @@
 <div class="stepper-container">
     <app-title [pageTitle]="'Nuevo Paciente'"></app-title>
 
-   
-        <div class="action-toolbar" >
+        <!-- Search function -->
 
-            <!-- Search function -->
+        <div class="mx-auto" style="width: 200px;">
             <mat-form-field appearance="fill">
                 <mat-label>Buscar Paciente</mat-label>
                 <input matInput type="text" [(ngModel)]="value" (keyup)="search()">
@@ -12,10 +11,10 @@
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
-            
-        </div>
-            
-
+       </div>
+       
+        
+        
     <mat-stepper linear #stepper>
         <mat-step [stepControl]="patientData" [editable]="false">
             <div *ngIf="!isEditable">
